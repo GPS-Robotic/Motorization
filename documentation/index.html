@@ -1,0 +1,23 @@
+---
+layout: default
+title: GPS on wheels - Documentation
+category: documentation
+---
+
+<section class="inner">
+  <h1>Documentation</h1>
+  <p>Follow us through the steps of our project.</p>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+        <span class="date">{{ post.date | date_to_string }}</span>
+        <strong><a href="{{ post.url }}">{{ post.title }}</a></strong>
+        {% if post.french %}
+          <img src="/images/french.png" alt="French post" class="french-flag" title="This post is in french" />
+        {% endif %}
+        <br />
+        <span class="description">{{ post.description }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

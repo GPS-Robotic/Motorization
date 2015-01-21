@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="inner">
+
+  <h1>The Team</h1>
+
+  <p class="fancy">
+    This is the more general description of the team. Next we include everyone.
+  </p>
+
+  <ul class="team-nav">
+    <li {% if page.url == '/team/index.html' %}class="active"{% endif %}>
+      <a href="/team/">Max</a>
+    </li><li {% if page.url == '/team/philipp.html' %}class="active"{% endif %}>
+      <a href="/team/philipp.html">Philipp</a>
+    </li><li {% if page.url == '/team/tobi.html' %}class="active"{% endif %}>
+      <a href="/team/tobi.html">Tobi</a>
+    </li>
+  </ul>
+
+  {{ content }}
+
+  <div class="fancy center convinced">
+    <!-- <a class="btn btn-lg" href="http://freelancebooking.pro/en/users/ssaunier">Book me</a>
+
+    <br /><br /> -->
+
+  </div>
+
+</div>
