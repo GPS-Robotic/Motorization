@@ -12,7 +12,7 @@ Just a short welcome to our page
 ## Hardware
 
 Our Reely Blaze RC car finally arrived and we started assembling it.
-<p><img src="{{ site.baseurl }}/images/documentation/assembly.jpg" alt="Our model car assembly."></p>
+<p><img src="{{ site.baseurl }}/images/documentation/assembly.jpg" alt="Our model car assembly." width="80%"></p>
 
 Current status: We finished the assembly and are now able to drive! This was great fun :-)
 
