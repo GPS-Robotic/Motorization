@@ -7,16 +7,16 @@
   <title>
     {{ page.title }}
   </title>
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/site.css">
   <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Asap:400,700,400italic">
-  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="{{ site.baseurl }}/buggy_icon.jpg" rel="shortcut icon" type="image/x-icon" />
   {% if page.description %}<meta name="description" content="{{page.description}}" />{% endif %}
-  <link rel="alternate" type="application/atom+xml" title="RSS Feed for Sébastien Saunier's blog" href="/feed.xml" />
+  <link rel="alternate" type="application/atom+xml" title="RSS Feed for Sébastien Saunier's blog" href="{{ site.baseurl }}/feed.xml" />
 
   {% if page.url == '/index.html' %}
-    <link rel="alternate" hreflang="de" href="/de/" />
-  {% elsif page.url == '/fr/index.html' %}
-    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="de" href="{{ site.baseurl }}/de/" />
+  {% elsif page.url == '/de/index.html' %}
+    <link rel="alternate" hreflang="en" href="{{ site.baseurl }}/" />
   {% endif %}
 
   {{ page.extra_head }}
@@ -34,23 +34,23 @@
   <div class="header-container">
     <header class="inner">
       <nav>
-        <a class="{% if page.category == 'about' %} selected {% endif %}" href="/">Home</a>
-        <a class="{% if page.category == 'project' %} selected {% endif %}" href="/project/">The Project</a>
-        <a class="{% if page.category == 'team' %} selected {% endif %}" href="/team/">The Team</a>
-        <a class="{% if page.category == 'contact' %} selected {% endif %} contact" href="/contact/">Contact</a>
-        <a class="{% if page.category == 'documentation' %} selected {% endif %}" href="/documentation/">Documentation</a>
+        <a class="{% if page.category == 'about' %} selected {% endif %}" href="{{ site.baseurl }}/">Home</a>
+        <a class="{% if page.category == 'project' %} selected {% endif %}" href="{{ site.baseurl }}/project/">The Project</a>
+        <a class="{% if page.category == 'team' %} selected {% endif %}" href="{{ site.baseurl }}/team/">The Team</a>
+        <a class="{% if page.category == 'contact' %} selected {% endif %} contact" href="{{ site.baseurl }}/contact/">Contact</a>
+        <a class="{% if page.category == 'documentation' %} selected {% endif %}" href="{{ site.baseurl }}/documentation/">Documentation</a>
         <a href="https://github.com/GPS-Robotic/Motorization">Github</a>
       </nav>
       <div class="pull-right right logo">
         <div class="name">
-          <a href="/">GPS on wheels</a><br />
+          <a href="{{ site.baseurl }}/">GPS on wheels</a><br />
           <small>
             <em>
               Project homepage
             </em>
           </small>
         </div>
-        <img class="avatar" src="/images/car.jpg" alt="Our profile picture" />
+        <img class="avatar" src="{{ site.baseurl }}/images/car.jpg" alt="Our profile picture" />
       </div>
       <div class="clear"></div>
     </header>

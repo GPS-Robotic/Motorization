@@ -9,7 +9,7 @@
   </title>
   <link rel="stylesheet" href="/css/site.css">
   <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Asap:400,700,400italic">
-  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link href="/RC_icon.png" rel="shortcut icon" type="image/x-icon" />
   
   <link rel="alternate" type="application/atom+xml" title="RSS Feed for Sébastien Saunier's blog" href="/feed.xml" />
 
@@ -55,7 +55,41 @@
     <title>Sébastien Saunier - Blog</title>
     <description>On Software Engineering, Lean Startup, Agile and Productivity</description>
     <link>http://sebastien.saunier.me</link>
-    <atom:link href="http://gps-robotic.github.io/Motorization/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Welcome to our page!</title>
+      <description>&lt;p&gt;Just a short welcome to our page&lt;/p&gt;
+
+&lt;h1 id=&quot;current-status-of-the-project:&quot;&gt;Current status of the project:&lt;/h1&gt;
+
+&lt;h2 id=&quot;hardware&quot;&gt;Hardware&lt;/h2&gt;
+
+&lt;p&gt;Our Reely Blaze RC car finally arrived and we started assembling it.
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;/images/documentation/assembly.jpg&quot; alt=&quot;Our model car assembly.&quot; width=&quot;80%&quot;&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Current status: We finished the assembly and are now able to drive! This was great fun :-)&lt;/p&gt;
+
+&lt;h2 id=&quot;software&quot;&gt;Software&lt;/h2&gt;
+
+&lt;p&gt;We tried using the Raspberry&amp;#39;s PWM to controll the steering Servo and the cruise controll.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/documentation/pi.jpg&quot; alt=&quot;Our raspberry.&quot; align=&quot;middle&quot; width=&quot;50%&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;And by now we are ready for attaching the Raspberry to the car and start driving!&lt;/p&gt;
+
+&lt;h4 id=&quot;so&quot;&gt;So&lt;/h4&gt;
+
+&lt;h3 id=&quot;let&amp;#39;s&quot;&gt;let&amp;#39;s&lt;/h3&gt;
+
+&lt;h2 id=&quot;have&quot;&gt;have&lt;/h2&gt;
+
+&lt;h1 id=&quot;fun&quot;&gt;fun&lt;/h1&gt;
+</description>
+      <pubDate>Wed, 21 Jan 2015 00:00:00 +0100</pubDate>
+      <link>/documentation/2015/01/21/Welcome.html</link>
+      <guid isPermaLink="true">/documentation/2015/01/21/Welcome.html</guid>
+    </item>
     
     <item>
       <title>Default documentation entry</title>
@@ -82,8 +116,8 @@
 &lt;h1 id=&quot;work&quot;&gt;Work&lt;/h1&gt;
 </description>
       <pubDate>Tue, 20 Jan 2015 00:00:00 +0100</pubDate>
-      <link>http://gps-robotic.github.io/Motorization/documentation/2015/01/20/how-to-make-an-entry.html</link>
-      <guid isPermaLink="true">http://gps-robotic.github.io/Motorization/documentation/2015/01/20/how-to-make-an-entry.html</guid>
+      <link>/documentation/2015/01/20/how-to-make-an-entry.html</link>
+      <guid isPermaLink="true">/documentation/2015/01/20/how-to-make-an-entry.html</guid>
     </item>
     
   </channel>

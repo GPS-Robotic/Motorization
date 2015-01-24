@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.1">
   <meta name="google-site-verification" content="aexITLS38FdIRzwj25OVWxm87rpa9l-UV0URTyC9cTs" />
   <title>
-    Tobi
+    Welcome to our page!
   </title>
   <link rel="stylesheet" href="/css/site.css">
   <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Asap:400,700,400italic">
-  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-  <meta name="description" content="Tobi is passionate about astronomy and making wierd inquieries with women." />
+  <link href="/RC_icon.png" rel="shortcut icon" type="image/x-icon" />
+  <meta name="description" content="Hi Fans!" />
   <link rel="alternate" type="application/atom+xml" title="RSS Feed for Sébastien Saunier's blog" href="/feed.xml" />
 
   
@@ -28,9 +28,9 @@
       <nav>
         <a class="" href="/">Home</a>
         <a class="" href="/project/">The Project</a>
-        <a class=" selected " href="/team/">The Team</a>
+        <a class="" href="/team/">The Team</a>
         <a class=" contact" href="/contact/">Contact</a>
-        <a class="" href="/documentation/">Documentation</a>
+        <a class=" selected " href="/documentation/">Documentation</a>
         <a href="https://github.com/GPS-Robotic/Motorization">Github</a>
       </nav>
       <div class="pull-right right logo">
@@ -49,35 +49,80 @@
     <div class="clear"></div>
   </div>
 
-  <div class="inner">
+  
 
-  <h1>The Team</h1>
+<article>
+  <h1 class="inner">
+    Welcome to our page!
+  </h1>
 
-  <p class="fancy">
-    This is the more general description of the team. Next we include everyone.
-  </p>
+  <p class="meta">Wednesday 21 January 2015</p>
 
-  <ul class="team-nav">
-    <li >
-      <a href="/team/">Max</a>
-    </li><li >
-      <a href="/team/philipp.html">Philipp</a>
-    </li><li >
-      <a href="/team/tobi.html">Tobi</a>
-    </li>
-  </ul>
+  
 
-  <section> Look! Stars, how pretty! </section>
+  <div class="post">
+    <p>Just a short welcome to our page</p>
 
+<h1 id="current-status-of-the-project:">Current status of the project:</h1>
 
-  <div class="fancy center convinced">
-    <!-- <a class="btn btn-lg" href="http://freelancebooking.pro/en/users/ssaunier">Book me</a>
+<h2 id="hardware">Hardware</h2>
 
-    <br /><br /> -->
+<p>Our Reely Blaze RC car finally arrived and we started assembling it.
+<p align="center"><img src="/images/documentation/assembly.jpg" alt="Our model car assembly." width="80%"></p></p>
+
+<p>Current status: We finished the assembly and are now able to drive! This was great fun :-)</p>
+
+<h2 id="software">Software</h2>
+
+<p>We tried using the Raspberry&#39;s PWM to controll the steering Servo and the cruise controll.</p>
+
+<p><img src="/images/documentation/pi.jpg" alt="Our raspberry." align="middle" width="50%"></p>
+
+<p>And by now we are ready for attaching the Raspberry to the car and start driving!</p>
+
+<h4 id="so">So</h4>
+
+<h3 id="let&#39;s">let&#39;s</h3>
+
+<h2 id="have">have</h2>
+
+<h1 id="fun">fun</h1>
 
   </div>
+</article>
 
-</div>
+<div class="separator"></div>
+
+<section class="comments inner">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'GPS'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+<script>
+  function resizeSlideshares() {
+    var elements = document.getElementsByClassName("slideshare");
+    for (var i in elements) {
+      var element = elements[i];
+      if (element.style) {
+        element.style.height = (element.offsetWidth * 0.805) + 'px';
+      }
+    }
+  }
+  window.addEventListener("resize", resizeSlideshares);
+  window.addEventListener('load', resizeSlideshares);
+</script>
 
   <div class="separator"></div>
 

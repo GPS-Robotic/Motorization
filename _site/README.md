@@ -1,8 +1,13 @@
-Jekyll website serving [Sébastien Saunier](http://sebastien.saunier.me) homepage, blog and portfolio. He is a [startup executive technical coach](http://sebastien.saunier.me) based in Paris, France
+Motorization
+============
+
+Code for Raspberry Car Interface
+
+Jekyll website for the robotics internship [GPS on wheels](http://gps-robotic.github.io/Motorization/) to serve as a documentation platform. Come and check out what we do by combining a modell car, a Raspberry Pi and a GPS module.
 
 --
 
-Page de [Sébastien Saunier](http://sebastien.saunier.me), réalisée avec Jekyll pour
-héberger son blog et son portfolio. Il est [coach technique pour startup](http://sebastien.saunier.me/fr) à Paris.
+Mit Jekyll erstellte Dokumentations-Website des Robotik Praktikums [GPS auf Rädern](http://gps-robotic.github.io/Motorization/). Finde heraus, was passiert, wenn man ein Modellbau Auto mit einem Paspberry Pi und einem GPS Modul ausstattet.
 
-[![Sébastien Saunier](https://raw.github.com/ssaunier/ssaunier.github.io/master/images/sebastien_saunier.jpg)](http://sebastien.saunier.me)
+
+[![GPS on wheels](https://github.com/GPS-Robotic/Motorization/raw/gh-pages/images/ReelyBlaze.jpg)](http://gps-robotic.github.io/Motorization/de/)
