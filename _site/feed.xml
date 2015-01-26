@@ -27,8 +27,8 @@
     <header class="inner">
       <nav>
         <a class="" href="/">Home</a>
-        <a class="" href="/project/">The Project</a>
-        <a class="" href="/team/">The Team</a>
+        <a class="" href="/project/">Project</a>
+        <a class="" href="/team/">Team</a>
         <a class=" contact" href="/contact/">Contact</a>
         <a class="" href="/documentation/">Documentation</a>
         <a href="https://github.com/GPS-Robotic/Motorization">Github</a>
@@ -56,6 +56,33 @@
     <description>On Software Engineering, Lean Startup, Agile and Productivity</description>
     <link>http://sebastien.saunier.me</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>To the next level!</title>
+      <description>&lt;p&gt;Up to now we have not made any changes on the RC cars appearance, which is about to change. Of course it looks good as it is, but we need to introduce modifications, because we need more space! For the RasPi, the GPS module, sensors... we even plan on putting a small speaker on there.&lt;/p&gt;
+
+&lt;p&gt;But that is not all. We think part of the project is also artistic and we have in vision the &lt;/p&gt;
+
+&lt;h1 id=&quot;transparent-car!&quot;&gt;transparent car!&lt;/h1&gt;
+
+&lt;p&gt;Besides making the chassis more lucent and permitting a view on the insides of it, we just designed the mounting plate for all the necessary components out of plexiglas.&lt;/p&gt;
+
+&lt;p&gt;Have a look on it:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;/images/documentation/plexiglas.png&quot; alt=&quot;The next assembly level.&quot; width=&quot;70%&quot;&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;working-together&quot;&gt;Working together&lt;/h2&gt;
+
+&lt;p&gt;We also found out that it is quiet fun to work together as a team. Maybe one can get an impression of our working atmosphere from the following picture.
+&lt;p&gt;&lt;img src=&quot;/images/documentation/workingtogether.png&quot; alt=&quot;Working together.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Last week Gero joint us and took the car out on the hallway for a test ride.
+&lt;p&gt;&lt;img src=&quot;/images/documentation/hallway.png&quot; alt=&quot;Hallway driving.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;&lt;/p&gt;&lt;/p&gt;
+</description>
+      <pubDate>Mon, 26 Jan 2015 00:00:00 +0100</pubDate>
+      <link>/documentation/2015/01/26/next-level.html</link>
+      <guid isPermaLink="true">/documentation/2015/01/26/next-level.html</guid>
+    </item>
     
     <item>
       <title>Welcome to our page!</title>
