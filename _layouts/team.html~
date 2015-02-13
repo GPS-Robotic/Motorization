@@ -7,16 +7,20 @@ layout: default
   <h1>The Team</h1>
 
   <p class="fancy">
-    This is the more general description of the team. Next we include everyone.
+    Developing the GPS car is just one of our hobbies. Actually we all study physics and even though the project is part of the informatics faculty's internship we still got it. None of us is originally from Heidelberg, we all moved here from different parts in Germany and met during our Bachelor studies. Right now we are doing our Masters and toying with the car is a fun way to develop our problem solving skills further. 
+  </p>
+
+  <p class="fancy">
+    But let us introduce ourselves:
   </p>
 
   <ul class="team-nav">
     <li {% if page.url == '/team/index.html' %}class="active"{% endif %}>
-      <a href="/team/">Max</a>
-    </li><li {% if page.url == '/team/code.html' %}class="active"{% endif %}>
-      <a href="/team/philipp.html">Philipp</a>
-    </li><li {% if page.url == '/team/courses.html' %}class="active"{% endif %}>
-      <a href="/team/tobi.html">Tobi</a>
+      <a href="{{ site.baseurl }}/team/">Max</a>
+    </li><li {% if page.url == '/team/philipp.html' %}class="active"{% endif %}>
+      <a href="{{ site.baseurl }}/team/philipp.html">Philipp</a>
+    </li><li {% if page.url == '/team/tobi.html' %}class="active"{% endif %}>
+      <a href="{{ site.baseurl }}/team/tobi.html">Tobi</a>
     </li>
   </ul>
 
