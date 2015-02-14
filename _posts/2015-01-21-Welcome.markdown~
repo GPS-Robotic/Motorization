@@ -1,0 +1,32 @@
+---
+layout: post
+title: "Welcome to our page!"
+description: "Hi Fans!"
+category: documentation
+---
+
+Just a short welcome to our page
+
+# Current status of the project:
+
+## Hardware
+
+Our Reely Blaze RC car finally arrived and we started assembling it.
+<p align="center"><img src="{{ site.baseurl }}/images/documentation/assembly.jpg" alt="Our model car assembly." width="80%"></p>
+
+Current status: We finished the assembly and are now able to drive! This was great fun :-)
+
+## Software
+
+We tried using the Raspberry's PWM to controll the steering Servo and the cruise controll.
+
+<table border="0"><td align="center">
+<img src="{{ site.baseurl }}/images/documentation/pi.jpg" alt="Our raspberry." align="middle" width="50%">
+</td></table>
+
+And by now we are ready for attaching the Raspberry to the car and start driving!
+
+#### So
+### let's
+## have
+# fun
