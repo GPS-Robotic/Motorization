@@ -34,10 +34,6 @@ if __name__ == '__main__':
       #print gpsd.fix.latitude,', ',gpsd.fix.longitude,'  Time: ',gpsd.utc
  
       os.system('clear')
-
-      # edit by Max: don't know if this works in order to get the output as data
-      # track = heading in degrees
-      return gpsd.fix.latitude, gpsd.fix.longitude, gpsd.fix.altitude, gpsd.fix.track, gpsd.fix.satellites
  
       print
       print ' GPS reading'
@@ -52,7 +48,7 @@ if __name__ == '__main__':
       print 'ept         ' , gpsd.fix.ept
       print 'speed (m/s) ' , gpsd.fix.speed
       print 'climb       ' , gpsd.fix.climb
-      print 'track       ' , gpsd.fix.track     
+      print 'track       ' , gpsd.fix.track     # heading
       print 'mode        ' , gpsd.fix.mode
       print
       print 'sats        ' , gpsd.satellites
