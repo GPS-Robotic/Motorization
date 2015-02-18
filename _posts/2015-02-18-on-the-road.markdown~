@@ -1,0 +1,33 @@
+---
+layout: post
+title: "Reely finds it's wheels!"
+description: "First time on the road!"
+category: documentation
+---
+
+After learning how to steer and how to accelerate or break it is time to see wether our car is actually able to drive. This means putting together all components (GPS, steering servo, battery, motor and raspberry), fix them onto our cool looking transparency board. Unfortunately until now we do not have any sensors on board and we have to control our car via wireless-LAN. Nevertheless, let's go and 
+
+# drive like crazy!
+
+<table border="2"><td align="center">
+<img src="{{ site.baseurl }}/images/documentation/road.png" alt="Out on the road." width="70%">
+</td></table>
+
+But as for everyone the first steps are the hardest. After 1m of fun our car stopped and fun was over. Wireless-LAN connection lost and raspberry was rebooting. Checking everything led to diagnosis voltage fluctuations. Our approach using only one battery for motor and raspberry seemed not to work. So working around this issue led to two batteries, one for the motor and one for the raspberry. So we put together everything and start all over again.
+
+<table border="2"><td align="center">
+<img src="{{ site.baseurl }}/images/documentation/road2.png" alt="Second time on the road." width="70%">
+</td></table>
+
+## Working together
+
+We also found out that it is quiet fun to work together as a team. Maybe one can get an impression of our working atmosphere from the following picture.
+<table border="0"><td align="center">
+<img src="{{ site.baseurl }}/images/documentation/workingtogether.png" alt="Working together." align="middle" width="70%">
+</td></table>
+
+
+Last week Gero joint us and took the car out on the hallway for a test ride.
+<table border="0"><td align="center">
+<img src="{{ site.baseurl }}/images/documentation/hallway.png" alt="Hallway driving." align="middle" width="70%">
+</td></table>
