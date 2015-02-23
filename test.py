@@ -62,7 +62,7 @@ drive.driving(current_status,desired_status)
 time.sleep(waiting_time)
 
 #hr slow fow
-desired_status[2]='half-right'
+desired_status[2]='straight'
 desired_status[0]='forward'
 desired_status[1]='slow'
 print 'current:'
@@ -70,15 +70,35 @@ drive.print_status(current_status)
 print 'desired:'
 drive.print_status(desired_status)
 drive.driving(current_status,desired_status)
-time.sleep(2*waiting_time)
+time.sleep(waiting_time)
 
 #hr
-desired_status[2]='half-left'
+desired_status[2]='straight'
 desired_status[0]='backward'
 print 'current:'
 drive.print_status(current_status)
 print 'desired:'
 drive.print_status(desired_status)
 drive.driving(current_status,desired_status)
-time.sleep(waiting_time)
+time.sleep(2*waiting_time)
 
+
+desired_status[0]='break'
+drive.driving(current_status,desired_status)
+
+
+while(True):
+	desired_status[0]=raw_input('direction?')
+	desired_status[1]=raw_input('velocity?')
+	desired_status[2]=raw_input('steering?')
+	delay=raw_input('delay time before stopping?')
+	print 'current:'
+	drive.print_status(current_status)
+	print 'desired:'
+	drive.print_status(desired_status)
+	drive.driving(current_status,desired_status)
+	time.sleep(int(delay))
+	raw_input('hit enter')	
+	desired_status[0]='break'
+	desired_status[2]='straight'
+	drive.driving(current_status,desired_status)

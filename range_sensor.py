@@ -14,22 +14,32 @@ GPIO.output(Trig, False)        # Initialize Sensor
 print "Waiting For Sensor To Settle"
 time.sleep(2)
 
-GPIO.output(Trig, True)         # Send Trigger
-time.sleep(0.00001)
-GPIO.output(Trig, False)
 
-while GPIO.input(Echo)==0:      # Receive Signal
-    pulse_start = time.time()
+while True:
+	GPIO.output(Trig, True)         # Send Trigger
+	time.sleep(0.00001)
+	GPIO.output(Trig, False)
 
-while GPIO.input(Echo)==1:
-    pulse_end = time.time()
+	print "GO"
 
-pulse_duration = pulse_end - pulse_start    # Calculate Distance
+	while GPIO.input(Echo)==0:      # Receive Signal
+    		pulse_start = time.time()
 
-distance = pulse_duration * 17150
+	print "HEY"
 
-distance = round(distance, 2)
+	while GPIO.input(Echo)==1:
+    		pulse_end = time.time()
 
-print "Distance:",distance,"cm"
+	print "HO"
+
+	pulse_duration = pulse_end - pulse_start    # Calculate Distance
+
+	distance = pulse_duration * 17150
+
+	distance = round(distance, 2)
+
+	print "Distance:",distance,"cm"
+
+	time.sleep(0.5)
 
 GPIO.cleanup()
