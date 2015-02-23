@@ -11,7 +11,8 @@ category: contact
 
   <p>
     We all live in Heidelberg and study physics (*YEAH*). The code for this project is all on GitHub
-    <a href="https://github.com/GPS-Robotic"><i class="icon-github"></i>/GPS on wheels</a>. By the way:
+    <a href="https://github.com/GPS-Robotic"><i class="icon-github"></i>/GPS on wheels</a>.
+<br>By the way:
   </p>
 
   <h1>Founding requests are welcome!</h1> No need for monetary values, beer is enough :)
@@ -41,7 +42,7 @@ category: contact
     <div>
       <input type="hidden" name="_next" value="//http://gps-robotic.github.io/Motorization/thanks.html">
       <input type="submit" class="btn btn-lg" value="GO!">
-      or <a href="mailto:GPS-Robotic@gmx.de">drop a simple email</a>
+      or <a href="mailto:GPS_Robotic@gmx.de">drop a simple email</a>
     </div>
   </form>
 </section>

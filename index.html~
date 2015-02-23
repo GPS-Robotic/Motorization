@@ -14,21 +14,22 @@ description: Providing information about us and the ongoing robotics internship.
     </div>
     <span class="hello">
       Welcome to GPS-Robotic,
-      <small><em>wir sprechen auch <a href="{{ site.baseurl }}/de/" rel="alternate" hreflang="de">deutsch</a> !</em></small>
+      <small><em>wir sprechen auch <a href="{{ site.baseurl }}/de/" rel="alternate" hreflang="de">deutsch</a>!</em></small>
     </span>
   </h1>
 
-  <p>
+  <p align=justify>
     This page belongs to the advanced internship "GPS on wheels" of the 
 	<a href="http://joanna.iwr.uni-heidelberg.de/rlab/de/home">Robotics lab Heidelberg</a>
 	at the Interdisciplinary Center for Scientific Computing (IWR). The aim of this internship 
 	is the construction of an autonomous model car controlled by an 
-	<a href="http://www.raspberrypi.org/">Raspberry Pi</a> and guided by GPS data.
-	The internship involves the construction of the hardware parts like the car, the steering via 
-	Raspberry as well as the development of appropriate algorithms.
+	<a href="http://www.raspberrypi.org/">Raspberry Pi</a> and guided by GPS data.<br>
+	It involves the construction of the hardware parts like the car, the steering via 
+	Raspberry, as well as the development of appropriate algorithms.<br>
+A short description of the project and our time management as .pdf file can be found <a href="{{ site.baseurl }}/images/Steckbrief/Steckbrief.pdf">here</a>, unfortunately only in german. The corresponding .tex file can be found <a href="{{ site.baseurl }}/images/Steckbrief/Steckbrief.tex">here</a>.
   </p>
 
-  <p><img src="{{ site.baseurl }}/images/ReelyBlaze.jpg" alt="Our model car." title="Our model car: The Reely Blaze"></p>	
+  <table border=0><td align=center><img src="{{ site.baseurl }}/images/galery/transparent_side.png" alt="Our model car." title="Our model car: The Reely Blaze"></td></table>
 
   <h3>
     Authors and Contributors
