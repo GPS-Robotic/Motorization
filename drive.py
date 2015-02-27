@@ -141,7 +141,7 @@ def accelerate(current_status, desired_status):
 				servo.set_servo(GPIO_Motor, (Null-Middle))
 			elif desired_status[1]=='slow':
 				# Set motor on GPIO_Motor to slow backwards
-				servo.set_servo(GPIO_Motor, (Null-Fast)) #break
+				servo.set_servo(GPIO_Motor, (Null)) #break
 				sleep(Sleeping_Time)
 				servo.set_servo(GPIO_Motor, (Null-Slow))
 			else:
@@ -158,7 +158,7 @@ def accelerate(current_status, desired_status):
 #			sleep(Sleeping_Time)
 			servo.set_servo(GPIO_Motor, Null)
 
-		if desired_status[0]=='backward':
+		elif desired_status[0]=='backward':
 			if desired_status[1]=='fast':
 				# Set motor on GPIO_Motor to fast
 				servo.set_servo(GPIO_Motor, (Null-Fast))

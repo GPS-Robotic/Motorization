@@ -82,3 +82,24 @@ drive.print_status(desired_status)
 drive.driving(current_status,desired_status)
 time.sleep(waiting_time)
 
+desired_status[0]='break'
+drive.driving(current_status,desired_status)
+time.sleep(waiting_time)
+
+while(True):
+	desired_status[0]=str(raw_input('direction?'))
+	desired_status[1]=str(raw_input('velocity?'))
+	desired_status[2]=str(raw_input('steering?'))
+	delay=raw_input('delay time before stopping?')
+	print 'current:'
+	drive.print_status(current_status)
+	print 'desired:'
+	drive.print_status(desired_status)
+	drive.driving(current_status,desired_status)
+	time.sleep(int(delay))	
+
+	desired_status[0]='break'
+	desired_status[2]='straight'
+	drive.driving(current_status,desired_status)
+	time.sleep(waiting_time)
+
