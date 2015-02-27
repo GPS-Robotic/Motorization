@@ -25,21 +25,22 @@ GPIO_Motor=4
 
 #define Servopositions for steering
 #	values adjusted to incrementer 10us (micro-seconds)
-Left = 1900
-Half_Left = 1700 #needed?
-Straight = 1500
-Half_Right = 1300 #needed?
-Right = 1100
+Offset=50	#for fine-adjusting the steering
+Left = 1900 + Offset
+Half_Left = 1700 + Offset #needed?
+Straight = 1500 + Offset
+Half_Right = 1300 + Offset #needed?
+Right = 1100 + Offset
 
 #define Servopositions for steering
 #	values adjusted to incrementer 10us (micro-seconds)
 Null = 1500
-Slow = 100	#check these values!!! starts from 1550
+Slow = 70	#check these values!!! starts from 1550
 Middle = 200
 Fast = 300
 
 #define waiting time between stop and steer in seconds
-Sleeping_Time=1
+Sleeping_Time=.5
 
 #define time needed for 90-degrees-turn (ADJUST!)
 Sleeping_Time_90=1
@@ -62,7 +63,7 @@ def steer(current_status, desired_status):
 			# Set steering servo on GPIO_Servo to left
 			servo.set_servo(GPIO_Servo, Left)
 		elif desired_status[2]=='half-left':
-			# Set steering servo on GPIO_Servo to half right
+			# Set steering servo on GPIO_Servo to half left
 			servo.set_servo(GPIO_Servo, Half_Left)
 		elif desired_status[2]=='right':
 			# Set steering servo on GPIO_Servo to right
@@ -71,6 +72,7 @@ def steer(current_status, desired_status):
 			# Set steering servo on GPIO_Servo to half right
 			servo.set_servo(GPIO_Servo, Half_Right)
 		elif desired_status[2]=='straight':
+			# Set steering servo on GPIO_Servo to straight
 			servo.set_servo(GPIO_Servo, Straight)
 		else:
 			steering_error=1
@@ -78,18 +80,19 @@ def steer(current_status, desired_status):
 
 	elif current_status[0]=='backward':
 		if desired_status[2]=='left':
-			# Set steering servo on GPIO_Servo to left
+			# Set steering servo on GPIO_Servo to left (backw.)
 			servo.set_servo(GPIO_Servo, Right)
 		elif desired_status[2]=='half-left':
-			# Set steering servo on GPIO_Servo to half right
+			# Set steering servo on GPIO_Servo to half left (backw.)
 			servo.set_servo(GPIO_Servo, Half_Right)
 		elif desired_status[2]=='right':
-			# Set steering servo on GPIO_Servo to right
+			# Set steering servo on GPIO_Servo to right (backw.)
 			servo.set_servo(GPIO_Servo, Left)
 		elif desired_status[2]=='half-right':
-			# Set steering servo on GPIO_Servo to half right
+			# Set steering servo on GPIO_Servo to half right (backw.)
 			servo.set_servo(GPIO_Servo, Half_Left)
 		elif desired_status[2]=='straight':
+			# Set steering servo on GPIO_Servo to straight (backw.)
 			servo.set_servo(GPIO_Servo, Straight)
 		else:
 			steering_error=1
@@ -109,20 +112,20 @@ def accelerate(current_status, desired_status):
 	acceleration_error=0
 	if current_status[0]=='forward':
 		if desired_status[0]=='break':
-			# Set motor on GPIO_Motor to fast backward
+			# Set motor on GPIO_Motor to fast backward in order to break
 			servo.set_servo(GPIO_Motor, (Null-Fast)) #break
 			sleep(Sleeping_Time)
 			servo.set_servo(GPIO_Motor, Null) #stop
 
-		if desired_status[0]=='forward':
+		elif desired_status[0]=='forward':
 			if desired_status[1]=='fast':
-				# Set motor on GPIO_Motor to fast
+				# Set motor on GPIO_Motor to fast forward
 				servo.set_servo(GPIO_Motor, (Null+Fast))
 			elif desired_status[1]=='middle':
-				# Set motor on GPIO_Motor to middle
+				# Set motor on GPIO_Motor to middle forward
 				servo.set_servo(GPIO_Motor, (Null+Middle))
 			elif desired_status[1]=='slow':
-				# Set motor on GPIO_Motor to slow
+				# Set motor on GPIO_Motor to slow forward
 				servo.set_servo(GPIO_Motor, (Null+Slow))
 			else:
 				acceleration_error=1
@@ -130,20 +133,31 @@ def accelerate(current_status, desired_status):
 
 		elif desired_status[0]=='backward':
 			if desired_status[1]=='fast':
-				# Set motor on GPIO_Motor to fast backwards
+				# Break and then set motor on GPIO_Motor to fast backwards 
 				servo.set_servo(GPIO_Motor, (Null-Fast)) #break
 				sleep(Sleeping_Time)
-				servo.set_servo(GPIO_Motor, (Null-Fast))
+				servo.set_servo(GPIO_Motor, (Null)) #stop
+				sleep(Sleeping_Time)
+				servo.set_servo(GPIO_Motor, (Null-Fast)) #fast backward
 			elif desired_status[1]=='middle':
-				# Set motor on GPIO_Motor to middle backwards
+				# Break and then set motor on GPIO_Motor to middle backwards
 				servo.set_servo(GPIO_Motor, (Null-Fast)) #break
 				sleep(Sleeping_Time)
-				servo.set_servo(GPIO_Motor, (Null-Middle))
+				servo.set_servo(GPIO_Motor, (Null)) #stop
+				sleep(Sleeping_Time)
+				servo.set_servo(GPIO_Motor, (Null-Middle)) #middle backward
 			elif desired_status[1]=='slow':
+<<<<<<< HEAD
 				# Set motor on GPIO_Motor to slow backwards
 				servo.set_servo(GPIO_Motor, (Null)) #break
+=======
+				# Break and then set motor on GPIO_Motor to slow backward
+				servo.set_servo(GPIO_Motor, (Null-Fast)) #break
+>>>>>>> f18d8b621dc608f1ffec46bba051a6594ab3a1f3
 				sleep(Sleeping_Time)
-				servo.set_servo(GPIO_Motor, (Null-Slow))
+				servo.set_servo(GPIO_Motor, (Null)) #stop
+				sleep(Sleeping_Time)
+				servo.set_servo(GPIO_Motor, (Null-Slow)) #slow backward
 			else:
 				acceleration_error=1
 				print 'ERROR: Non speed information passed to accelerate function: current_status[0]=forward, desired_status[0]=backward, desired_status[1]=' + desired_status[1] + ' is unknown!'
@@ -153,20 +167,18 @@ def accelerate(current_status, desired_status):
 
 	elif current_status[0]=='backward':
 		if desired_status[0]=='break':
-			# Set motor on GPIO_Motor to break
-#			servo.set_servo(GPIO_Motor, (Null+Fast))
-#			sleep(Sleeping_Time)
+			# Set motor on GPIO_Motor to null
 			servo.set_servo(GPIO_Motor, Null)
 
 		elif desired_status[0]=='backward':
 			if desired_status[1]=='fast':
-				# Set motor on GPIO_Motor to fast
+				# Set motor on GPIO_Motor to fast backward
 				servo.set_servo(GPIO_Motor, (Null-Fast))
 			elif desired_status[1]=='middle':
-				# Set motor on GPIO_Motor to middle
+				# Set motor on GPIO_Motor to middle backward
 				servo.set_servo(GPIO_Motor, (Null-Middle))
 			elif desired_status[1]=='slow':
-				# Set motor on GPIO_Motor to slow
+				# Set motor on GPIO_Motor to slow backward
 				servo.set_servo(GPIO_Motor, (Null-Slow))
 			else:
 				acceleration_error=1
@@ -174,19 +186,19 @@ def accelerate(current_status, desired_status):
 
 		elif desired_status[0]=='forward':
 			if desired_status[1]=='fast':
-				# Set motor on GPIO_Motor to fast backwards
-				servo.set_servo(GPIO_Motor, Null)
-				sleep(Sleeping_Time)
+				# Set motor on GPIO_Motor to fast forward
+#				servo.set_servo(GPIO_Motor, Null)
+#				sleep(Sleeping_Time)
 				servo.set_servo(GPIO_Motor, (Null+Fast))
 			elif desired_status[2]=='middle':
-				# Set motor on GPIO_Motor to middle backwards
-				servo.set_servo(GPIO_Motor, Null)
-				sleep(Sleeping_Time)
+				# Set motor on GPIO_Motor to middle forward
+#				servo.set_servo(GPIO_Motor, Null)
+#				sleep(Sleeping_Time)
 				servo.set_servo(GPIO_Motor, (Null+Middle))
 			elif desired_status[2]=='slow':
-				# Set motor on GPIO_Motor to slow backwards
-				servo.set_servo(GPIO_Motor, Null)
-				sleep(Sleeping_Time)
+				# Set motor on GPIO_Motor to slow forward
+#				servo.set_servo(GPIO_Motor, Null)
+#				sleep(Sleeping_Time)
 				servo.set_servo(GPIO_Motor, (Null+Slow))
 			else:
 				acceleration_error=1
