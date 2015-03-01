@@ -55,5 +55,6 @@ def calc_direction(reference_direction,narrow,medium,wide,segment_width):		#calc
 		else:
 			return -1 						#-1 for turn around/ go backwards.
 
-
+def steering_radius():
+	#do something
 
