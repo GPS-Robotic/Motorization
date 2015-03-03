@@ -15,13 +15,13 @@ Unfortunately until now we do not have any sensors on board and we have to contr
 
 # drive like crazy!
 
-<table border="2"><td align="center">
+<table border="0"><td align="center">
 <img src="{{ site.baseurl }}/images/documentation/road.jpg" alt="Out on the road." width="70%">
 </td></table>
 
 But as for everyone the first steps are the hardest. After 1m of fun our car stopped and fun was over. Wireless-LAN connection lost and raspberry was rebooting. Checking everything led to diagnosis voltage fluctuations. Our approach using only one battery for motor and raspberry seemed not to work. So working around this issue led to two batteries, one for the motor and one for the raspberry. So we put together everything and start all over again.
 
-<table border="2"><td align="center">
+<table border="0"><td align="center">
 <img src="{{ site.baseurl }}/images/documentation/road2.jpg" alt="Second time on the road." width="70%">
 </td></table>
 
