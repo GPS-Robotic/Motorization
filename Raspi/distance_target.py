@@ -1,4 +1,4 @@
-# this function shall calculate the distance between to points on a sphere given the longitudes and latitudes.
+# this function shall calculate the distance between to points on a sphere given the longitudes and latitudes. (in meter)
 # from http://www.johndcook.com/blog/python_longitude_latitude/
 #
 # mean earth-radius: 6371km (from http://www.movable-type.co.uk/scripts/latlong.html)

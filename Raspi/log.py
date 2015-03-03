@@ -8,7 +8,7 @@
 #	GPS_data = [gpsd.fix.latitude, gpsd.fix.longitude, gpsd.fix.altitude, gpsd.fix.track, gpsd.fix.satellites, fix_time]
 #
 # The data written & returned is:
-#	time year month hour minute second latitude longitude altitude track satellites GPS_time steering_direction steering_velocity steering_position
+#	time year month day hour minute second latitude longitude altitude track satellites GPS_time steering_direction steering_velocity steering_position
 #	(seperated by spaces)
 #
 # NOTE: track = heading = degree between north and direction (clockwise)
@@ -16,27 +16,26 @@
 
 import time	# maybe needs to be in add_log??
 
-def add_log(current_status, GPS_data):
-	gps_log = ''
-	for entry in GPS_data:
-		gps_log = gps_log + ' ' + str(entry) # concentrate GPS-data to string with spaces as separation
+class log:
+	def __init__(self, log_file_name):
+		self.log_file=open(log_file_name, 'a')
+		self.opened=True
 
-	status_log = ''
-	for entry in current_status:
-		status_log = status_log + ' ' + entry # concentrate current status to string with spaces as separation
+	def add_log(self, current_status, GPS_data):
+		gps_log = ''
+		for entry in GPS_data:
+			gps_log = gps_log + ' ' + str(entry) # concentrate GPS-data to string with spaces as separation
 
-	lt = time.localtime() # get local time information
-	current_time = time.strftime("%Y %m %d %H %M %S", lt) # concentrate local time to string
+		status_log = ''
+		for entry in current_status:
+			status_log = status_log + ' ' + entry # concentrate current status to string with spaces as separation
 
-	log_entry = str(time.time()) + ' ' + current_time + gps_log + status_log # generate output string with all data (spaces for seperation)
-	log_file.write(log_entry+ '\n') # write output
-	return log_entry # return output
+		lt = time.localtime() # get local time information
+		current_time = time.strftime("%Y %m %d %H %M %S", lt) # concentrate local time to string
 
-# Just for tests:
+		log_entry = str(time.time()) + ' ' + current_time + gps_log + status_log # generate output string with all data (spaces for seperation)
+		self.log_file.write(log_entry + '\n') # write output
+		return log_entry # return output
 
-#log_file_name='log/RC_log'+str(time.time())+'.txt'
-#log_file=open(log_file_name, 'a')
-#print add_log(["forward", "nope", "yes"],["lat", "long", "alt", "track", "sattelites", time.time()])
-#time.sleep(2)
-#print add_log(["backward", "yeah!", "no"],["lat", "long", "alt", "track", "sattelites", time.time()])
-#log_file.close()
+	def stop(self):
+		self.log_file.close()

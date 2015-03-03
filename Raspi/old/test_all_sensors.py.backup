@@ -1,0 +1,30 @@
+from range_sensor import get_distance
+import time
+from RPIO import PWM
+
+servo = PWM.Servo()
+SERVO = 6 # for moving sensor 2 (GPIO-Numbering, NOT BOARD-Numbering)
+
+NULL = 1490
+MAX = 2000
+MIN = 1000
+STEP = 50
+
+servo.set_servo(SERVO, NULL)
+
+raw_input("Press anything to continue!")
+
+while True:
+	for value in range(MIN, MAX-STEP, STEP):
+		servo.set_servo(SERVO, value)
+		dist=""
+		for i in [0,1,2]:
+			dist=dist + str(round(get_distance(i),2)) + "\t "
+		print "Servo= " + str(value) + ", Distances[cm]= " + str(dist)
+
+	for value in range(MAX, MIN-STEP, -STEP):
+		servo.set_servo(SERVO, value)
+		dist=""
+		for i in [0,1,2]:
+			dist=dist + str(round(get_distance(i),2)) + "\t "
+		print "Servo= " + str(value) + ", Distances[cm]= " + str(dist)

@@ -1,23 +1,29 @@
-import time
-import drive
-from log import add_log
-from gpsdData_TEST2 import *
-#import direction
-import distance_target
+# NOTE! sometimes you have to delete all *.pyc for changes to become valid!!!!!
 
-global GPS_data
-GPS_data = [0, 0, 0, 0, 0, 0]
-	# [gpsd.fix.latitude, gpsd.fix.longitude, gpsd.fix.altitude, gpsd.fix.track, gpsd.fix.satellites, gps.fixing.time]
+import time
+from drive import *
+from log import log
+from direction import get_direction
+from distance_target import *
+import math	# for checking whether GPS is a number
+
+print "[01] start GPS"
+import gpsdData as GPS
+
 global GPS_destination
 GPS_destination = [49.418045, 8.669307] 
 	# [latitude, longitude]; [49.418045, 8.669307] is near the entrance of the Otto-Meyerhofer-Center
 global current_status
 current_status = ['break', 'slow', 'straight'] # actually one has to initialize to that!
-global desired_status
+global desired_status 
+desired_status = current_status
 # status = [direction,velocity,steer position] with:
 #	direction = break, forward or backward
 #	velocity = fast, middle or slow
 #	steer position = left, half-left, straight, half-right or right
+
+gps_waiting_time = 0.5 # time in seconds in while-loop for waiting for valid GPS
+update_time = 1 # time in seconds in while-loop for updating gps, current_status & desired_status
 
 global accuracy
 accuracy = 7 # when is the target reached?? accuracy in meter
@@ -27,74 +33,47 @@ current_distance = accuracy * 10 # dummy value for current distance in meter
 # NOTE: better init() is needed!
 
 log_file_name='log/RC_log'+str(time.time())+'.txt'
-log_file=open(log_file_name, 'a')
+log_file = log(log_file_name)
 
-print "[01] file opened: " + log_file_name
+print "[02] file opened: " + log_file_name
 
-#get_gps(GPS_data) # start continous GPS-Input-Stream (background-thread, hopefully...)
+print "[03] Waiting for valid GPS-information:"
+print GPS.gpsp.data
 
-gpsp = GpsPoller() # create the thread
-try:
-  gpsp.start() # start it up
-  while True:
-    #It may take a second or two to get good data
-    #print gpsd.fix.latitude,', ',gpsd.fix.longitude,'  Time: ',gpsd.utc
-#    os.system('clear')
-    # edit by Max: don't know if this works in order to get the output as data
-    # track = heading in degrees
-#      return gpsd.fix.latitude, gpsd.fix.longitude, gpsd.fix.altitude, gpsd.fix.track, gpsd.fix.satellites
-    # edit by Phil: lists can be produced by list=[...., ..., ...]
-    #		      return ... terminates the function, so that is no option
-    # 	      I renamed this file to gpsdData.py.backup and implemented a new one...
- 
-    print
-    print ' GPS reading'
-    print '----------------------------------------'
-    print 'latitude    ' , gpsd.fix.latitude
-    print 'longitude   ' , gpsd.fix.longitude
-    print 'time utc    ' , gpsd.utc,' + ', gpsd.fix.time
-    print 'altitude (m)' , gpsd.fix.altitude
-    print 'eps         ' , gpsd.fix.eps
-    print 'epx         ' , gpsd.fix.epx
-    print 'epv         ' , gpsd.fix.epv
-    print 'ept         ' , gpsd.fix.ept
-    print 'speed (m/s) ' , gpsd.fix.speed
-    print 'climb       ' , gpsd.fix.climb
-    print 'track       ' , gpsd.fix.track     
-    print 'mode        ' , gpsd.fix.mode
-    print
-    print 'sats        ' , gpsd.satellites
- 
-    time.sleep(1) #set to whatever
- 
-except (KeyboardInterrupt, SystemExit): #when you press ctrl+c
-  print "\nKilling Thread..."
-  gpsp.running = False
-  gpsp.join() # wait for the thread to finish what it's doing
-print "Done.\nExiting."
+while (math.isnan(GPS.gpsp.data[0])):
+	time.sleep(gps_waiting_time)
+	print "still waiting... "
+	print GPS.gpsp.data
 
+print "[04] got valid GPS-data:"
+print GPS.gpsp.data
 
-print "[02] GPS-Input-Stream started, waiting for correct information..."
-
-while GPS_data[0] == 0:
-	time.sleep(0.5)
-	print "still waiting... " + str(GPS_data[0])
-
-print "[03] got GPS-data:\n"
-
-for entry in GPS_data:
-	print entry
-
-print "[04] start routine"
+print "[05] start routine"
 
 while current_distance > accuracy:
-	add_log(current_status, GPS_data)
-	#get_direction(GPS_destination, GPS_data, desired_status)
-	#driving(current_status, desired_status)
-	#current_distance = get_target_distance(GPS_destination[0], GPS_destination[1], GPS_data[0], GPS_data[1]) # current_distance needs to be calculated more acurate, i.e. with altitude...
-	print "[05] updated desired_status (time: " + str(time.time()) + "), new distance: " + str(current_distance) + "m"
-	time.sleep(2)
+	print "wrote log-entry:"
+	print log_file.add_log(current_status, GPS.gpsp.data)
+	desired_status = get_direction(GPS_destination, GPS.gpsp.data)
+	current_distance = get_target_distance(GPS_destination[0], GPS_destination[1], GPS.gpsp.data[0], GPS.gpsp.data[1]) # current_distance needs to be calculated more acurate, i.e. with altitude...
+	print "[06] updated desired_status (time: " + str(time.time()) + "), new distance: " + str(current_distance) + "m"
 
-print "[06] destination reached. stop."
+	# Pause if GPS-Position is lost:
+	if (math.isnan(GPS.gpsp.data[1])):
+		print "GPS position lost! Stopping car and waiting for valid GPS-information:"
+		driving(current_status, ['break', 'slow', 'straight'])
+		print GPS.gpsp.data
+		while (math.isnan(GPS.gpsp.data[0])):
+			time.sleep(gps_waiting_time)
+			print "still waiting... "
+			print GPS.gpsp.data
 
-log_file.close()
+		print "[04] got valid GPS-data, continue driving:"
+		print GPS.gpsp.data
+
+	driving(current_status, desired_status)
+	print desired_status
+	time.sleep(update_time)
+
+print "[07] destination reached. stop."
+
+log_file.stop()
