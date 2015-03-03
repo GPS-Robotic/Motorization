@@ -103,7 +103,7 @@
       <description>&lt;p&gt;After learning how to steer and how to accelerate or break it is time to see wether our car is actually able to drive. This means putting together all components (GPS, steering servo, battery, motor and raspberry), fix them onto our cool looking transparency board. &lt;/p&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/appearance.jpg&quot; alt=&quot;Current appearance of our car.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/appearance.JPG&quot; alt=&quot;Current appearance of our car.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;p&gt;Unfortunately until now we do not have any sensors on board and we have to control our car via wireless-LAN. Nevertheless, let&amp;#39;s go and &lt;/p&gt;
@@ -111,13 +111,13 @@
 &lt;h1 id=&quot;drive-like-crazy!&quot;&gt;drive like crazy!&lt;/h1&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/road.jpg&quot; alt=&quot;Out on the road.&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/road.JPG&quot; alt=&quot;Out on the road.&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;p&gt;But as for everyone the first steps are the hardest. After 1m of fun our car stopped and fun was over. Wireless-LAN connection lost and raspberry was rebooting. Checking everything led to diagnosis voltage fluctuations. Our approach using only one battery for motor and raspberry seemed not to work. So working around this issue led to two batteries, one for the motor and one for the raspberry. So we put together everything and start all over again.&lt;/p&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/road2.jpg&quot; alt=&quot;Second time on the road.&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/road2.JPG&quot; alt=&quot;Second time on the road.&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;h2 id=&quot;test-bench&quot;&gt;Test bench&lt;/h2&gt;
@@ -125,7 +125,7 @@
 &lt;p&gt;For testing minor edits on the appearance or major edits on the software we always go back to our test bench. In our case a monitor, keyboard, mouse and just a small box on a table to get the wheels up from the ground.&lt;/p&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/test_bench.jpg&quot; alt=&quot;Test bench.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/test_bench.JPG&quot; alt=&quot;Test bench.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
