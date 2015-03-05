@@ -6,10 +6,14 @@ from log import log
 from direction import get_direction
 from distance_target import *
 import math	# for checking whether GPS is a number
+<<<<<<< HEAD
+import gpsdData as GPS
+=======
 import sensors
+>>>>>>> 6f604b9b332af57c6e3510ec5d9f539d8714eab2
 
 print "[01] start GPS"
-import gpsdData as GPS
+gpsp=GPS.GpsPoller()
 
 global GPS_destination
 GPS_destination = [49.418045, 8.669307] 
@@ -39,15 +43,15 @@ log_file = log(log_file_name)
 print "[02] file opened: " + log_file_name
 
 print "[03] Waiting for valid GPS-information:"
-print GPS.gpsp.data
+print gpsp.data
 
-while (math.isnan(GPS.gpsp.data[0])):
+while (math.isnan(gpsp.data[0])):
 	time.sleep(gps_waiting_time)
 	print "still waiting... "
-	print GPS.gpsp.data
+	print gpsp.data
 
 print "[04] got valid GPS-data:"
-print GPS.gpsp.data
+print gpsp.data
 
 
 sensor = sensors.sensors() # start sensor thread
@@ -72,24 +76,32 @@ GPS_memory[0] = GPS.gpsp.data[0:2]
 print "[06] start routine"
 
 while current_distance > accuracy:
+<<<<<<< HEAD
+	print "wrote log-entry:"
+	print log_file.add_log(current_status, gpsp.data)
+	desired_status = get_direction(GPS_destination, gpsp.data)
+	current_distance = get_target_distance(GPS_destination[0], GPS_destination[1], gpsp.data[0], gpsp.data[1]) # current_distance needs to be calculated more acurate, i.e. with altitude...
+	print "[06] updated desired_status (time: " + str(time.time()) + "), new distance: " + str(current_distance) + "m"
+=======
 	print "write log-entry:"
 	print log_file.add_log(current_status, GPS.gpsp.data)
 	desired_status = get_direction(GPS_destination, GPS.gpsp.data)
 	current_distance = get_target_distance(GPS_destination[0], GPS_destination[1], GPS.gpsp.data[0], GPS.gpsp.data[1]) # current_distance needs to be calculated more acurate, i.e. with altitude...
 	print "[07] updated desired_status (time: " + str(time.time()) + "), new distance: " + str(current_distance) + "m"
+>>>>>>> 6f604b9b332af57c6e3510ec5d9f539d8714eab2
 
 	# Pause if GPS-Position is lost:
-	if (math.isnan(GPS.gpsp.data[1])):
+	if (math.isnan(gpsp.data[1])):
 		print "GPS position lost! Stopping car and waiting for valid GPS-information:"
 		driving(current_status, ['break', 'slow', 'straight'])
-		print GPS.gpsp.data
-		while (math.isnan(GPS.gpsp.data[0])):
+		print gpsp.data
+		while (math.isnan(gpsp.data[0])):
 			time.sleep(gps_waiting_time)
 			print "still waiting... "
-			print GPS.gpsp.data
+			print gpsp.data
 
 		print "[04] got valid GPS-data, continue driving:"
-		print GPS.gpsp.data
+		print gpsp.data
 
 	driving(current_status, desired_status)
 	print desired_status

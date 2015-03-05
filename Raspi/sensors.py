@@ -4,9 +4,9 @@
 import time
 import threading
 import RPi.GPIO as GPIO
-from RPIO import PWM.Servo as servo
+from RPIO import PWM
 
-
+servo = PWM.Servo()
 
 class sensors(threading.Thread):
 	def __init__(self, mode=0, start=False):
@@ -36,11 +36,19 @@ class sensors(threading.Thread):
 		self.is_at_measure = False
 
 		# constants for single distance-measurements
-		self.out_of_sight_time = 0.05 # max. waiting-time in seconds for echo-signal to be recieved
+		self.out_of_sight_time = 0.05 # max. waiting-time in seconds for echo-signal-duration
+#		self.ECHO_in_timeout = 0.5 # max. waiting-time in seconds for echo-signal to come in
 		self.out_of_sight_value = 10000000.0 # return value of distance measurement after out_of_sight_time
 		self.relaxation_time_before = 0.04 # waiting time before measurement: to ensure sensor to be at rest
 		self.dt_to_distance = 17000.0 # constant to convert time-difference to distance (standart: 17000cm/s; speed of sound/2)
 #		self.relaxation_time_after = 0.04 # waiting time after measurement: to ensure no sensor overlap??
+		self.queue_waiting_time = 0.00001 # time for waiting loop, if system is measuring and new measuring is waiting
+		self.scan_relaxation_time = 0.3 # time between single scannings in scanning-mode
+
+		# what are the most current distance values of the sensors and there measurement times?
+		# [[first_sensor, time], [[first_segment, time], [second_segment, time], ...], [third_sensor, time]]
+		# if you want to change servo_segment_size: update via update_segments(servo_segment_size)
+		self.measurements = [[0, 0], [[0, 0]], [0, 0]]
 
 		# constants for servo-positions
 		# CAUTION: HAS TO BE MULTIPLE OF 10!
@@ -53,21 +61,16 @@ class sensors(threading.Thread):
 		#    current position
 		self.servo_position = self.servo_NULL
 		#    overall number of segments in scanning-mode & segment-size (in servo-values)
-		#    if you want to change servo_segment_size: update via update_segment_size(servo_segment_size)
-		self.servo_segments = 10
-		self.servo_segment_size = round((self.servo_MAX - self.servo_MIN)/self.servo_segments, -1)
-		self.update_segment_size(0, new_segment_number=self.servo_segments):
+		#    if you want to change servo_segment_size: update via update_segments(servo_segment_size)
+		self.servo_segments = 10 # NOTE: There is one more measurement than segments!
+		self.servo_segment_size = 0
+		self.servo_segment_values = []
+		self.update_segments(0, new_segment_number=self.servo_segments)
 		# set servo to zero-position
 		servo.set_servo(self.SERVO, self.servo_NULL)
 
-		# what is the current systems-status?
-		# [mode, is_at_measure, servo_position]
-		self.status = [self.mode, self.is_at_measure, self.servo_position]
-
-		# what are the most current distance values of the sensors and there measurement times?
-		# [[first_sensor, time], [[first_segment, time], [second_segment, time], ...], [third_sensor, time]]
-		# if you want to change servo_segment_size: update via update_segment_size(servo_segment_size)
-		self.measurements = [[0, 0], [[0, 0]], [0, 0]]
+		# initialize PINS
+		self.set_PINS()
 
 		# relax servos in beginning
 		for trig in self.TRIG:
@@ -85,7 +88,7 @@ class sensors(threading.Thread):
 		#    else: change values
 		if (TRIG!=[-1,-1,-1]):
 			self.TRIG = TRIG
-		if (new_ECHO!=[-1,-1,-1]):
+		if (ECHO!=[-1,-1,-1]):
 			self.ECHO = ECHO
 		if (SERVO!=-1):
 			self.SERVO = SERVO
@@ -102,11 +105,10 @@ class sensors(threading.Thread):
 
 
 	def get_sensor(self, sensor_number):
-
 		# wait, if there is a measure at the moment
 
 		while(self.is_at_measure==True):
-			time.sleep()
+			time.sleep(self.queue_waiting_time)
 
 		# tell, that there is measure now
 
@@ -131,17 +133,20 @@ class sensors(threading.Thread):
 		GPIO.output(self.TRIG[sensor_number], False)
 	
 		# WAIT FOR ECHO
-		while (GPIO.input(self.ECHO[sensor_number])!=1):
+		echo_start = time.time()
+#		start_time = 2*time.time() # debug! check loops
+		while ( (GPIO.input(self.ECHO[sensor_number])!=1) ):#and (time.time()-echo_start < self.ECHO_in_timeout)):
 			start_time = time.time()
 	
 		# MEASURE ECHO-DURATION
+		dt = -1.0 # debug! check loops
 		while (GPIO.input(self.ECHO[sensor_number])==1):
 			dt = time.time() - start_time
 			if(dt>self.out_of_sight_time):		## CHECK THIS!!!!
+				self.is_at_measure = False
 				return [self.out_of_sight_value, time.time()]
 
 		# save measurement time
-
 		time_stamp = time.time()
 
 		# RETURN DISTANCE
@@ -153,16 +158,18 @@ class sensors(threading.Thread):
 		self.is_at_measure = False
 
 		# save the result
-
 		result = [dist, time_stamp]
 		if (sensor_number == 1):
-			current_segment=(self.servo_position-self.servo_MIN)/self.servo_segment_size
-			(self.measurements[1])[current_segment]=result
+			current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
+			try:
+				(self.measurements[1])[current_segment]=result
+			except:
+				print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
+				print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
 		else:
 			self.measurements[sensor_number] = result
 
 		# return distance (in cm) & measure-time in time.time()-format
-
 		return result
 		
 
@@ -180,26 +187,37 @@ class sensors(threading.Thread):
 			servo.set_servo(self.SERVO, self.servo_position)
 
 
-	def update_segment_size(self, new_segment_size, new_segment_number=-1):
+	def update_segments(self, new_segment_size, new_segment_number=-1):
 		# update servo's segment-size (in servo-values) & -number
 		# CAUTION: ALL VALUES OF SENSOR 2 WILL BE DELETED HEREBY!
+		# CAUTION: size must be multiple of 10 and number must be integer.
+		#          also (number * size == MAX-MIN) must be true!
 
 		# ether via segment-size
 		if (new_segment_number == -1):
-			self.servo_segment_size = new_segment_size
-			self.servo_segments = (self.servo_MAX - self.servo_MIN) / self.servo_segment_size
+			self.servo_segment_size = round(new_segment_size, -1)
+			self.servo_segments = int( (self.servo_MAX - self.servo_MIN) / self.servo_segment_size )
 
 		# or via segment_number
 		else:
-			self.servo_segments = new_segment_number
-			self.servo_segment_size = round((self.servo_MAX - self.servo_MIN)/self.servo_segment_number, -1)
+			self.servo_segments = int(new_segment_number)
+			self.servo_segment_size = round((self.servo_MAX - self.servo_MIN)/self.servo_segments, -1)
 
-		# initialize measurement-list
-		self.measurements[1] = []
-		for i in range(self.servo_segments):
-			self.measurements[1].append[0,0]
+		if (self.servo_segments*self.servo_segment_size!=self.servo_MAX-self.servo_MIN):
+			print "ERROR: Servo-Segment configuration not correct! Stop."
+			quit()
+
+		# update segment-servo-values & initialize measurement-list
+		# NOTE: There is one more measurement than segments!
+		self.servo_segment_values = []
+		(self.measurements)[1] = []
+
+		for i in range(0,self.servo_segments+1,1):
+			self.servo_segment_values.append(self.servo_MIN + (i*self.servo_segment_size) )
+			self.measurements[1].append([0,0])
 		
-	def set_mode(self, new_mode)
+		
+	def set_mode(self, new_mode):
 		self.running = False
 		mode = new_mode
 
@@ -211,9 +229,15 @@ class sensors(threading.Thread):
 
 		# define cycle-variable:
 		i = 0 # position in scanning cycle: which sensor will be evaluated next?
+		j = int(self.servo_segments/2) # position in segment cycle: which segment will be evaluated next?
 		servo_direction = +1 # for scanning: which direction? +1 -> moves to right-hand-side -1 -> moves to left-hand-side
 
+		# once more, check for correct segment-configuration; just for safety
+		self.update_segments(0, new_segment_number=self.servo_segments)
+
 		while (self.running == True):
+
+			time.sleep(self.scan_relaxation_time)
 
 			# mode 0 = update all sensors in cycle 0-1-2-1-0-1-2-1-0-..., servo not moved
 			if (self.mode == 0):
@@ -224,52 +248,43 @@ class sensors(threading.Thread):
 
 				i=i+1 # count to next cycle-entry
 				if (i>=len(cycle)): # jump to cycle-beginning
-					i=0
+					i=0				
 
-				
-
-			# mode 1 = scanning all sensors in cycle 0-1-2-1-0-1-2-1-0-..., servo scans: from left to right to left to right...
+			# mode 1 = scanning all sensors in cycle 0-1-2-1-0-1-2-1-0-...,
+			#          servo scans: from left to right to left to right... starting at center
 			elif (self.mode == 1):
 				cycle=[0,1,2,1] # define cycle for current mode
 				self.get_sensor(cycle[i]) # update next sensor
 				
 				if (cycle[i] == 1): # move servo to next position
-					if( (servo_direction > 0) and (self.servo_position < self.servo_MAX) ): # currently: move right and not be at end
-						self.move_servo(self.servo_position + self.servo_segment_size) # move further!
 
-					elif( (servo_direction > 0) and (self.servo_position >= self.servo_MAX) ): # currently: move right and be at end
-						self.move_servo(self.servo_position - self.servo_segment_size) # move back!
-						servo_direction = -1 # change direction!
+					if ( (j == 0) and (servo_direction == -1) ): # servo is at left end and wants to move further left
+						servo_direction = +1 # from now: move right!
+					elif ( (j == self.servo_segments) and (servo_direction == +1) ) : # servo is at right end and wants to move further right
+						servo_direction = -1 # from now: move left!
 
-					elif ( (servo_direction < 0) and (self.servo_position > self.servo_MIN) ): # move left and not be at end
-						self.move_servo(self.servo_position - self.servo_segment_size) # move further!
-
-					elif ( (servo_direction < 0) and (self.servo_position <= self.servo_MIN) ): # currently: move left and be at end
-						self.move_servo(self.servo_position + self.servo_segment_size) # move back!
-						servo_direction = +1 # change direction!
-
-					else:
-						print "ERROR: unknown servo-directive passed in mode " + std(self.mode) + ". Nothing done."
+					# move servo to next position
+					j = j + servo_direction
+					self.move_servo(self.servo_segment_values[j])
 
 				i=i+1 # count to next cycle-entry
 				if (i>=len(cycle)): # jump to cycle-beginning
 					i=0
 				
 
-			# mode 2 = scanning all sensors in cycle 0-1-2-1-0-1-2-1-0-..., servo scans: from left to right jump, form left to right, ...
+			# mode 2 = scanning all sensors in cycle 0-1-2-1-0-1-2-1-0-...,
+ 			#          servo scans: from left to right jump, form left to right, ... starting at center
 			elif (self.mode == 2):
 				cycle=[0,1,2,1] # define cycle for current mode
 				self.get_sensor(cycle[i]) # update next sensor
 				
 				if (cycle[i] == 1): # move servo to next position
-					if( (servo_direction > 0) and (self.servo_position < self.servo_MAX) ): # currently: move right and not be at end
-						self.move_servo(self.servo_position + self.servo_segment_size) # move further!
+					if (j == self.servo_segments) : # servo is at right end and wants to move further right
+						j = -1 # jump to left end
 
-					elif( (servo_direction > 0) and (self.servo_position >= self.servo_MAX) ): # currently: move right and be at end
-						self.move_servo(self.MIN) # jump to left!
-
-					else:
-						print "ERROR: unknown servo-directive passed in mode " + std(self.mode) + ". Nothing done."
+					# move servo to next position
+					j = j + servo_direction
+					self.move_servo(self.servo_segment_values[j])
 
 				i=i+1 # count to next cycle-entry
 				if (i>=len(cycle)): # jump to cycle-beginning
@@ -277,9 +292,6 @@ class sensors(threading.Thread):
 				
 			else:
 				print "Unknown mode set to sensor-scanning-thread! Waiting for corrent mode..."
-
-
-		# bla CODE
 		
 
 
