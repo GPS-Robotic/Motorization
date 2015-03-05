@@ -6,6 +6,7 @@ from log import log
 from direction import get_direction
 from distance_target import *
 import math	# for checking whether GPS is a number
+import sensors
 
 print "[01] start GPS"
 import gpsdData as GPS
@@ -48,14 +49,34 @@ while (math.isnan(GPS.gpsp.data[0])):
 print "[04] got valid GPS-data:"
 print GPS.gpsp.data
 
-print "[05] start routine"
+
+sensor = sensors.sensors() # start sensor thread
+sensor.start()
+
+print "[05] drive straight to find heading"
+GPS_memory = [0, 0]      # [newest data, second latest data]
+start_go = time.time()
+wait_go = 4.
+
+GPS_memory[1] = GPS.gpsp.data[0:2]
+
+driving(current_status, ['forward', 'slow', 'straight'])
+while ((((sensor.measurements[0])[0] > 70.) and 
+        ((sensor.measurements[2])[0] > 70.)) and 
+        (time.time() - start_go < wait_go)):
+    time.sleep(0.1)
+driving(current_status, ['break', 'slow', 'straight']
+
+GPS_memory[0] = GPS.gpsp.data[0:2]
+
+print "[06] start routine"
 
 while current_distance > accuracy:
-	print "wrote log-entry:"
+	print "write log-entry:"
 	print log_file.add_log(current_status, GPS.gpsp.data)
 	desired_status = get_direction(GPS_destination, GPS.gpsp.data)
 	current_distance = get_target_distance(GPS_destination[0], GPS_destination[1], GPS.gpsp.data[0], GPS.gpsp.data[1]) # current_distance needs to be calculated more acurate, i.e. with altitude...
-	print "[06] updated desired_status (time: " + str(time.time()) + "), new distance: " + str(current_distance) + "m"
+	print "[07] updated desired_status (time: " + str(time.time()) + "), new distance: " + str(current_distance) + "m"
 
 	# Pause if GPS-Position is lost:
 	if (math.isnan(GPS.gpsp.data[1])):
@@ -74,6 +95,6 @@ while current_distance > accuracy:
 	print desired_status
 	time.sleep(update_time)
 
-print "[07] destination reached. stop."
+print "[08] destination reached. stop."
 
 log_file.stop()
