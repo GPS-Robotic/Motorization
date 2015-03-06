@@ -6,11 +6,15 @@
 #	sudo python make_maps.py filename	--> converts only ./log/filename and opens map in browser
 #	sudo python make_maps.py filename -o	--> converts only ./log/filename, but doesn't open map in browser
 #
-# NOTE: It is important to keep the file __init__.py in the directory route_printing
+# NOTE: It is important to keep the file __init__.py in the directory log
+# NOTE: This script is designed for a specific log/path-configuration:
+#		create_route_log.py & create_map.py & __init__.py & the old log-files must be in the log-directory
+#		the new log-files will be saved in the log/GPS_route_log -directory
+#		and the final html-files will be saved in log/htmls
 
 import sys
-from route_printing.create_route_log import *
-from route_printing.create_map import *
+from log.create_route_log import *
+from log.create_map import *
 
 file_name = ""
 
@@ -38,21 +42,32 @@ else:
 # Do the work:
 
 if(file_name==""):
-	make_route_LOG(input_path="./log", output_path="./route_printing/GPS_route_log")
+	pass
+	make_route_LOG(input_path="./log", output_path="./log/GPS_route_log")
 else:
-	make_route_LOG(file_name, input_path="./log", output_path="./route_printing/GPS_route_log")
+	make_route_LOG(file_name, input_path="./log", output_path="./log/GPS_route_log")
 
 print "GPS-data-log(s) created.\n"
 
 if(file_name==""):
 	mypath = "log"
-	for file_name in [ f for f in listdir(mypath) if isfile(join(mypath,f)) ]:
-		make_route_HTML(input_file_name=file_name, open_at_finish=open_at_finish, input_path="./route_printing/GPS_route_log", output_path="./route_htmls")
+	# exclude the python files:
+	for file_name in [ f for f in listdir(mypath) if (isfile(join(mypath,f)) and ( ( (f[len(f)-3:] != ".py") and (f[len(f)-4:] != ".py~") ) and (f[len(f)-4:] != ".pyc") ) ) ]:
+		try:
+			pass
+			make_route_HTML(input_file_name=file_name, open_at_finish=open_at_finish, input_path="./log/GPS_route_log", output_path="./log/htmls")
+		except:
+			print "ERROR at file " + file_name
 else:
-	make_route_HTML(input_file_name=file_name, open_at_finish=open_at_finish, input_path="./route_printing/GPS_route_log", output_path="./route_htmls")
+	try:
+		make_route_HTML(input_file_name=file_name, open_at_finish=open_at_finish, input_path="./log/GPS_route_log", output_path="./log/htmls")
+	except:
+		print "ERROR at file " + file_name
 
 print "Done."
 
-#make_route_LOG(input_file="", input_path="../log", output_path="./GPS_route_log", output_file="", data_seperator="\t", new_data_seperator=",", auto_all=True, data_format=['time', 'year', 'month', 'day', 'hour', 'minute', 'second', 'latitude', 'longitude', 'altitude', 'track', 'satellites', 'GPS_time', 'steering_direction', 'steering_velocity', 'steering_position'], prefix = 'RC_log', suffix = '.txt')
+# not entirely up-to-date:
 
-#make_route_HTML(input_file_name, output_file_name="", input_path="./GPS_route_log", output_path="../route_htmls", data_seperator=",", open_at_finish=False)
+#make_route_LOG(input_file="", input_path="../log", output_path="./GPS_route_log", output_file="", data_separator="\t", new_data_separator=",", auto_all=True, data_format=['time', 'year', 'month', 'day', 'hour', 'minute', 'second', 'latitude', 'longitude', 'altitude', 'track', 'satellites', 'GPS_time', 'steering_direction', 'steering_velocity', 'steering_position'], prefix = 'RC_log', suffix = '.txt')
+
+#make_route_HTML(input_file_name, output_file_name="", input_path="./GPS_route_log", output_path="../route_htmls", data_separator=",", open_at_finish=False)

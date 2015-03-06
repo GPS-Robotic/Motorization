@@ -1,4 +1,5 @@
 # Program for remote-controlling the RC-car via cell-phone
+# call "sudo python ~/Robotic/handy.py command" to run command. see commands below
 
 import sys
 from RPIO import PWM
@@ -91,4 +92,4 @@ else:
 	else:
 		print "unknown argument, exit program...."
 sleep(1)
-print
+print ""
