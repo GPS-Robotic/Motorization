@@ -1,4 +1,109 @@
 # This modul shall start a background instance of advanced sensor-control
+#
+# After "import sensors" the module can be started by
+#	mysensors = sensors.sensors()	<-- mode = 0, background thread not running yet (start=False)
+#	or
+#	mysensors = sensors.sensors(mode = mymode, start=mystart)
+#		(both parameters are optional are only important for the background-thread)
+#
+# There are two possiblities to use the background-module:
+#	1) single-measurements
+#		via 
+#			mysensors.get_sensor(sensor_number)
+#		(sensor_number is 0, 1 or 2) one can take a single measurement of one sensor.
+#		The result will be returned in a list, containing the result and the time of the measurement: [result, time],
+#		where the result is by default in cm (can be adjusted).
+#		Also the result will be saved in mysensors.measurements (see below)
+#	
+#		via 
+#			mysensors.move_servo(value, percentage=-1)
+#		one can move the servo of sensor 1
+#		the parameter percentage is optional, by default it is -1.
+#		If percentage is set, it MUST be between 0 and 1, defining the position: value = MIN + percentage*(MAX-MIN)
+#		IMPORTANT: Nevertheless, also value must be set, but will be overwritten, if percentage is not -1!!!
+#		If percentage is not set or set to -1, value will be the value to which the servo will be adjusted.
+#		Currently the Null-Position is at 1500, MAX at 2000 and MIN at 1000. This is set in
+#		mysensors.servo_MIN / _MAX / _NULL and can be adjusted
+#		
+#		even when background mode is running (start=True), one can make single-measurements.
+#		ALWAYS the module is waiting for one measurement to be finished before starting another!! (To avoid interference)
+#
+#		NOTE: There are some constants, which are given back as result for invalid measurements. Check them to avoid errors!
+#			(They may need to be adjusted, also get_sensor() may need to be adjusted....)
+#
+#	2) background-thread:
+#		If start=True at initialization, the background-measurement-mode is started immediately.
+#		The background-measurement can also be started afterwards by mysensors.start()
+#		The background-thread will steadily measure values from the sensors and save the update as a list in mysensors.measurements,
+#		the design of the list depends on the various settings and will be explained as follows...
+#
+#		At the moment it is possible to set one of three background modes, they are:
+#			mode = 0:
+#				the servo won't be moved, but can be adjusted by mysensors.move_servo(value) (see above)
+#				the measurements will be done in the following cycle: 0-1-2-1-0-1-2-1-...,
+#				meaning that sensor 0 will be called first, then sensor 1, then sensor 2, then sensor 1 again, ...
+#				the measurements will be saved in mysensors.measurements as:
+#					[[dist0, time0], [[dist1, time1]], [dist2, time2]]
+#				(disti = distance, measured from sensor i; timei = time-stamp of that measurement...)
+#				CAUTION: The entry for sensor1 ALWAYS is a double list!
+#				         In this case, it is a list with only one entry. In the other cases there are more entries: 
+#				         One for each border between the segments (=segments+1 entries), see below
+#			mode = 1:
+#				the measurement-cycle for the sensors is the same as at mode = 0:
+#				the measurements will be done in the following cycle: 0-1-2-1-0-1-2-1-...,
+#				meaning that sensor 0 will be called first, then sensor 1, then sensor 2, then sensor 1 again, ...
+#				This time the sensor moves after each measurement of sensor 1, thus resulting in a scanning of the area
+#				(roughly 180 degrees)
+#				Therefore the servo-settings must have been done before (can be adjusted always also)
+#				mysensors.servo_MIN / _MAX / _NULL define the valid range
+#				mysensors.servo_segments define the number of segments
+#				mysensors.servo_segment_size defines the size of each segment
+#				mysensors.servo_segment_values defines the positions at which the measurements are done
+#				CAUTION: to change these segment-settings, please use 
+#						mysensors.update_segments(new_segment_size, new_segment_number=-1)
+#					 where new_segment_number is optional.
+#					 If new_segment_number is set to -1 or no set, new_segment_size defines the size of the new segments
+#					 If new_segment_number is set, the new segment size will be (MAX - MIN) / new_segment_number,
+#					 nevertheless, in this case ANY value for new_segment_size must be given as parameter, but isn't used.
+#				IMPORTANT: to avoid errors: the following equation must hold!
+#					servo_MAX - servo_MIN = servo_segments * servo_segment_size
+#				servo_MAX / _MIN / _NULL & _OFFSET can be adjusted simply by reassignment....
+#
+#				NOTE: The number of measurements in this mode is equal to (servo_segment_number + 1),
+#				      because the measurements are done BETWEEN the segments....
+#
+#				In mode = 1 the servo moves from left to right to left to right to left .....
+#
+#				mysensors.measurements will be designed as follows:
+#					[[dist0, time0], [ [meas0, time1_0], [meas1, time1_1], [meas2, time1_2], ... ], [dist2, time2]]
+#				where measi & time1_i are the result of the measurement of sensor 1 at position i and its time
+#
+#			mode = 2:
+#				This is essentially the same as mode = 1 (see description above).
+#				The only difference is, that the servo moves from left to right and then jumps back to left
+#
+#			Maybe there will be implemented further modes later on, see at def run(self) or in initilization-section for details...
+#			to change the mode, use
+#				mysensors.set_mode(new_mode)
+#
+# The PIN-Settings of the boar are saved in mysensors.ECHO & mysensors.TRIG & mysensors.SERVO (the first one are lists for sensors 0, 1 & 2)
+# To change these settings and activate in a valid way, use
+#	mysensors.set_PINS(TRIG=new_TRIG, ECHO=new_ECHO, SERVO=new_SERVO)
+# each parameter is optional here, but the lists must be complete
+#
+# The pre-definition can be seen in the __init__ section
+#
+#
+# For questions, write to PhilippGernandt@web.de
+#
+#
+# NOTE: SOME ERRORS MIGHT STILL COME FROM mysensors.get_sensor()
+# ESPECIALLY: SOME ABBORT-CRITERIA ARE DIFFICULT....
+#
+# NOTE: No-Echo-In-Result will be returned, but not saved,
+#	Out-Of-Sight-Result will be returned & saved
+#	Wrong-Sensor-Number-Error will be returned, but not saved
+
 
 
 import time
@@ -36,8 +141,9 @@ class sensors(threading.Thread):
 		self.is_at_measure = False
 
 		# constants for single distance-measurements
+		self.ECHO_in_timeout = 0.5 # max. waiting-time in seconds for echo-signal to come in
+		self.no_echo_in_value = 20000000.0 # return value if no echo is received after ECHO_in_timeout
 		self.out_of_sight_time = 0.05 # max. waiting-time in seconds for echo-signal-duration
-#		self.ECHO_in_timeout = 0.5 # max. waiting-time in seconds for echo-signal to come in
 		self.out_of_sight_value = 10000000.0 # return value of distance measurement after out_of_sight_time
 		self.relaxation_time_before = 0.04 # waiting time before measurement: to ensure sensor to be at rest
 		self.dt_to_distance = 17000.0 # constant to convert time-difference to distance (standart: 17000cm/s; speed of sound/2)
@@ -105,23 +211,20 @@ class sensors(threading.Thread):
 
 
 	def get_sensor(self, sensor_number):
-		# wait, if there is a measure at the moment
 
+		# wait, if there is a measure at the moment
 		while(self.is_at_measure==True):
 			time.sleep(self.queue_waiting_time)
 
 		# tell, that there is measure now
-
 		self.is_at_measure = True
 
 		# check for valid sensor-number
-
 		if ( (sensor_number<0) or (sensor_number>2) ):
 			print "Error! Sensor-Number must be between 0 and 2! Abort"
-			return
+			return [-1, time.time()]
 
 		# check for pins to be initialized
-
 		if (self.pins_set == False):
 			self.set_PINS()
 
@@ -134,17 +237,34 @@ class sensors(threading.Thread):
 	
 		# WAIT FOR ECHO
 		echo_start = time.time()
-#		start_time = 2*time.time() # debug! check loops
-		while ( (GPIO.input(self.ECHO[sensor_number])!=1) ):#and (time.time()-echo_start < self.ECHO_in_timeout)):
+		while ( (GPIO.input(self.ECHO[sensor_number])!=1) ):
 			start_time = time.time()
+			if (time.time-echo_start>self.ECHO_in_timeout):	## CHECK THIS!!!
+				self.is_at_measure = False
+				return [self.no_echo_in_value, time.time()]
 	
 		# MEASURE ECHO-DURATION
-		dt = -1.0 # debug! check loops
 		while (GPIO.input(self.ECHO[sensor_number])==1):
 			dt = time.time() - start_time
 			if(dt>self.out_of_sight_time):		## CHECK THIS!!!!
 				self.is_at_measure = False
-				return [self.out_of_sight_value, time.time()]
+				result = [self.out_of_sight_value, time.time()]
+
+				# save the Out-Of-Sight-Result result
+				if (sensor_number == 1):
+					if (mode != 0):
+						current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
+						try:
+							(self.measurements[1])[current_segment]=result
+						except:
+							print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
+							print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
+					else:
+						self.measurements[1]=[result]
+				else:
+					self.measurements[sensor_number] = result
+
+				return result
 
 		# save measurement time
 		time_stamp = time.time()
@@ -160,12 +280,15 @@ class sensors(threading.Thread):
 		# save the result
 		result = [dist, time_stamp]
 		if (sensor_number == 1):
-			current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
-			try:
-				(self.measurements[1])[current_segment]=result
-			except:
-				print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
-				print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
+			if (mode != 0):
+				current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
+				try:
+					(self.measurements[1])[current_segment]=result
+				except:
+					print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
+					print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
+			else:
+				self.measurements[1]=[result]
 		else:
 			self.measurements[sensor_number] = result
 
@@ -220,6 +343,7 @@ class sensors(threading.Thread):
 	def set_mode(self, new_mode):
 		self.running = False
 		mode = new_mode
+		self.start()
 
 	def run(self):
 		if (self.running==False):
