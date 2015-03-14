@@ -3,7 +3,7 @@
 # this is a first, very simple approach. basically the function shall only determine wheter it is needed to turn left, right or to accelerate....
 # in this first approach we only use slow speed (for turning) and medium speed (for straight driving) and no backward driving
 
-# also we assume that (because of small distances), the longitude and latitude basically are equal to normal coordinates (ortothogonal)
+# also we assume that (because of small distances), the longitude and latitude basically are equal to normal coordinates (orthogonal)
 #	=> latitude = y-coord. longitude = x-coord.
 
 # status = [direction,velocity,steer position] with:
@@ -15,33 +15,35 @@
 
 import math
 
-# Note: atan returns only values between -90 and 90 degrees, even if target is behind car (i.e. phi=180 degrees)
-#       to fix this, we will check, whether y is negative!
+# Note: use atan2 to circumvent any trouble with atan :)
 
-# Caution: GPS-heading is delivered in degrees, not in radiant!
+# Note: since GPS-heading is not working properly we calculate the heading between the last two GPS points we got.
 
-def get_direction(GPS_destination, GPS_data):
-	tolerance = 10*math.pi/180 # define tolarance in angle for straight-assumption (in radiant)
-	# transform origin into current position:
-	coord = [GPS_destination[1]-GPS_data[1], GPS_destination[0]-GPS_data[0]] # [x, y] of target -> current_position: origin [0, 0]
+def heading(GPS_from, GPS_goingto):
+    "calculate heading, based on two GPS-points"
+    
+    # latitude = y-coord. longitude = x-coord.
+    # coord = [x-coord, y-coord] in the reference frame of the car -> current_position: origin [0, 0] 
+    coord = [0., 0.]
+    coord[0] = GPS_goingto[1] - GPS_from[1]
+    coord[1] = GPS_goingto[0] - GPS_from[0]
 
-	# phi is the target's angle, between -pi and pi
-	if ( coord[1] == 0.0 ): # if y == 0
-		coord[1] = 0.00000000001
-	phi = math.atan(coord[0]/coord[1]) # angle phi of target position (NOT polar-angle; angle between y-axis and vector) (in radiant)
+    phi = math.atan2(coord[1], coord[0])
 
-	if ( coord[1] < 0.0 ): # check whether target is behind us and correct angle phi
-		phi = phi + math.pi
-		phi = phi % (2*math.pi)
-	if (phi > math.pi): # we want phi to be between -pi and pi
-		phi = phi - 2*math.pi
+    return phi
+
+
+def get_direction(GPS_destination, GPS_data, GPS_memory):
+	
+    tolerance = 10*math.pi/180 # define tolarance in angle for straight-assumption (in radiant)
+	
+    # phi is the angle between the car's position and the destination
+    phi = heading(GPS_destination, GPS_data)
 
 	# head is the car's angle, between -pi and pi
-	head = math.pi*GPS_data[3]/180 # transform GPS-heading into radiant
-	if (head > math.pi):
-		head = head - 2*math.pi # we want head to be between -pi and pi
+	head = heading(GPS_memory[0],GPS_memory[1])	
 
-	if (abs( phi - (math.pi*GPS_data[3]/180) ) < tolerance): # if we (nearly) head on target: drive straight, medium pace
+	if (abs( phi - head ) < tolerance): # if we (nearly) head on target: drive straight, medium pace
 		desired_status=['forward', 'middle', 'straight']
 	elif ( ( phi - head) > 0): # current angle is less than target-angle -> turn right
 		desired_status=['forward', 'slow', 'right']

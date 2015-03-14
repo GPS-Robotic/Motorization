@@ -62,7 +62,7 @@ GPS_memory = [0, 0]      # [newest data, second latest data]
 start_go = time.time()
 wait_go = 4.
 
-GPS_memory[1] = GPS.gpsp.data[0:2]
+GPS_memory[0] = GPS.gpsp.data[0:2]
 
 driving(current_status, ['forward', 'slow', 'straight'])
 while ((((sensor.measurements[0])[0] > 70.) and 
@@ -71,7 +71,7 @@ while ((((sensor.measurements[0])[0] > 70.) and
     time.sleep(0.1)
 driving(current_status, ['break', 'slow', 'straight']
 
-GPS_memory[0] = GPS.gpsp.data[0:2]
+GPS_memory[1] = GPS.gpsp.data[0:2]
 
 print "[06] start routine"
 
@@ -85,7 +85,7 @@ while current_distance > accuracy:
 =======
 	print "write log-entry:"
 	print log_file.add_log(current_status, GPS.gpsp.data)
-	desired_status = get_direction(GPS_destination, GPS.gpsp.data)
+	desired_status = get_direction(GPS_destination, GPS.gpsp.data,GPS_memory)
 	current_distance = get_target_distance(GPS_destination[0], GPS_destination[1], GPS.gpsp.data[0], GPS.gpsp.data[1]) # current_distance needs to be calculated more acurate, i.e. with altitude...
 	print "[07] updated desired_status (time: " + str(time.time()) + "), new distance: " + str(current_distance) + "m"
 >>>>>>> 6f604b9b332af57c6e3510ec5d9f539d8714eab2
@@ -106,6 +106,9 @@ while current_distance > accuracy:
 	driving(current_status, desired_status)
 	print desired_status
 	time.sleep(update_time)
+
+    GPS_memory[0] = GPS_memory[1]
+    GPS_memory[1] = GPS.gpsp.data[0:2]
 
 print "[08] destination reached. stop."
 
