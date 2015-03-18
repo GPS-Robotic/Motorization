@@ -27,7 +27,7 @@ time.sleep(1)
 
 while True:
 	scan = sens.measurements[1]
-	if sens.measurements[0][0] < obstacle/2.:
+	if sens.measurements[0][0] < obstacle/2. or sens.measurements[2][0] < obstacle/2.:
 		desired_status = ['break', 'slow', 'straight']
 		driving(current_status,desired_status) #put this here to make reaction to obstacles faster
 		time.sleep(1)
