@@ -24,6 +24,9 @@ desired_status = current_status
 #	velocity = fast, middle or slow
 #	steer position = left, half-left, straight, half-right or right
 
+#initialize Fahrtregler:
+driving(current_status,desired_status)
+
 gps_waiting_time = 0.5 # time in seconds in while-loop for waiting for valid GPS
 update_time = 1 # time in seconds in while-loop for updating gps, current_status & desired_status
 

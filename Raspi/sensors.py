@@ -86,7 +86,7 @@
 #			to change the mode, use
 #				mysensors.set_mode(new_mode)
 #
-# The PIN-Settings of the boar are saved in mysensors.ECHO & mysensors.TRIG & mysensors.SERVO (the first one are lists for sensors 0, 1 & 2)
+# The PIN-Settings of the board are saved in mysensors.ECHO & mysensors.TRIG & mysensors.SERVO (the first one are lists for sensors 0, 1 & 2)
 # To change these settings and activate in a valid way, use
 #	mysensors.set_PINS(TRIG=new_TRIG, ECHO=new_ECHO, SERVO=new_SERVO)
 # each parameter is optional here, but the lists must be complete
