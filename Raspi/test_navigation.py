@@ -35,6 +35,7 @@ while True:
 		time.sleep(1)
 		#for proper u-turn implement something like second best choice last time a direction adjustment was made.
 		desired_status = ['backward', 'slow', 'left']
+		time.sleep(1)
 	else:
 		steering_direction = navigate(scan,obstacle,reference_direction)
 		#if steering_direction == reference_direction: #do nothing?
