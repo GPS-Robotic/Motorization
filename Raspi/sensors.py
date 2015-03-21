@@ -86,7 +86,7 @@
 #			to change the mode, use
 #				mysensors.set_mode(new_mode)
 #
-# The PIN-Settings of the board are saved in mysensors.ECHO & mysensors.TRIG & mysensors.SERVO (the first one are lists for sensors 0, 1 & 2)
+# The PIN-Settings of the boar are saved in mysensors.ECHO & mysensors.TRIG & mysensors.SERVO (the first one are lists for sensors 0, 1 & 2)
 # To change these settings and activate in a valid way, use
 #	mysensors.set_PINS(TRIG=new_TRIG, ECHO=new_ECHO, SERVO=new_SERVO)
 # each parameter is optional here, but the lists must be complete
@@ -129,7 +129,7 @@ class sensors(threading.Thread):
 		# USE GPIO-NUMBERING, NOT BOARD-NUMBERING!
 		self.TRIG = [16, 20, 21]
 		self.ECHO = [13, 19, 26]
-		self.SERVO = 6
+		self.SERVO = 12
 
 		# are the pins initialized to the GPIO-Module?
 		self.pins_set = False
@@ -141,15 +141,15 @@ class sensors(threading.Thread):
 		self.is_at_measure = False
 
 		# constants for single distance-measurements
-		self.ECHO_in_timeout = 0.5 # max. waiting-time in seconds for echo-signal to come in
+		self.ECHO_in_timeout = 0.05 # max. waiting-time in seconds for echo-signal to come in
 		self.no_echo_in_value = 20000000.0 # return value if no echo is received after ECHO_in_timeout
 		self.out_of_sight_time = 0.05 # max. waiting-time in seconds for echo-signal-duration
 		self.out_of_sight_value = 10000000.0 # return value of distance measurement after out_of_sight_time
-		self.relaxation_time_before = 0.04 # waiting time before measurement: to ensure sensor to be at rest
+		self.relaxation_time_before = 0.1 # waiting time before measurement: to ensure sensor to be at rest
 		self.dt_to_distance = 17000.0 # constant to convert time-difference to distance (standart: 17000cm/s; speed of sound/2)
 #		self.relaxation_time_after = 0.04 # waiting time after measurement: to ensure no sensor overlap??
 		self.queue_waiting_time = 0.00001 # time for waiting loop, if system is measuring and new measuring is waiting
-		self.scan_relaxation_time = 0.3 # time between single scannings in scanning-mode
+		self.scan_relaxation_time = 0.05 # time between single scannings in scanning-mode
 
 		# what are the most current distance values of the sensors and there measurement times?
 		# [[first_sensor, time], [[first_segment, time], [second_segment, time], ...], [third_sensor, time]]
@@ -222,7 +222,7 @@ class sensors(threading.Thread):
 		# check for valid sensor-number
 		if ( (sensor_number<0) or (sensor_number>2) ):
 			print "Error! Sensor-Number must be between 0 and 2! Abort"
-			return [-1, time.time()]
+			return [-2, time.time()]
 
 		# check for pins to be initialized
 		if (self.pins_set == False):
@@ -239,7 +239,7 @@ class sensors(threading.Thread):
 		echo_start = time.time()
 		while ( (GPIO.input(self.ECHO[sensor_number])!=1) ):
 			start_time = time.time()
-			if (time.time-echo_start>self.ECHO_in_timeout):	## CHECK THIS!!!
+			if (time.time()-echo_start>self.ECHO_in_timeout):	## CHECK THIS!!!
 				self.is_at_measure = False
 				return [self.no_echo_in_value, time.time()]
 	
@@ -252,7 +252,7 @@ class sensors(threading.Thread):
 
 				# save the Out-Of-Sight-Result result
 				if (sensor_number == 1):
-					if (mode != 0):
+					if (self.mode != 0):
 						current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
 						try:
 							(self.measurements[1])[current_segment]=result
@@ -280,7 +280,7 @@ class sensors(threading.Thread):
 		# save the result
 		result = [dist, time_stamp]
 		if (sensor_number == 1):
-			if (mode != 0):
+			if (self.mode != 0):
 				current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
 				try:
 					(self.measurements[1])[current_segment]=result

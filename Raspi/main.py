@@ -85,7 +85,9 @@ while current_distance > accuracy:
 	print "write log-entry:"
 	print log_file.add_log(current_status, GPS.gpsp.data)
 	desired_status = get_direction(GPS_destination, GPS.gpsp.data,GPS_memory)
-	current_distance = get_target_distance(GPS_destination[0], GPS_destination[1], GPS.gpsp.data[0], GPS.gpsp.data[1]) # current_distance needs to be calculated more acurate, i.e. with altitude...
+	current_distance = get_target_distance(GPS_destination[0], GPS_destination[1], 
+											GPS.gpsp.data[0], GPS.gpsp.data[1]) 
+	# current_distance needs to be calculated more acurate, i.e. with altitude...
 	print "[07] updated desired_status (time: " + str(time.time()) + "), new distance: " + str(current_distance) + "m"
 
 	# Pause if GPS-Position is lost:

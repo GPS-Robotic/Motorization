@@ -126,7 +126,10 @@ def accelerate(current_status, desired_status):
 				servo.set_servo(GPIO_Motor, (Null+Middle))
 			elif desired_status[1]=='slow':
 				# Set motor on GPIO_Motor to slow forward
-				servo.set_servo(GPIO_Motor, (Null+Slow))
+				servo.set_servo(GPIO_Motor, (Null+Slow+Slow_Offset))
+			elif desired_status[1]=='null':
+				# Set motor on GPIO_Motor to null position #Leerlauf
+				servo.set_servo(GPIO_Motor, (Null))
 			else:
 				acceleration_error=1
 				print 'ERROR: Non speed information passed to accelerate function: current_status[0]=forward, desired_status[0]=forward, desired_status[1]=' + desired_status[1] + ' is unknown!'
@@ -152,7 +155,10 @@ def accelerate(current_status, desired_status):
 				sleep(Sleeping_Time)
 				servo.set_servo(GPIO_Motor, (Null)) #stop
 				sleep(Sleeping_Time)
-				servo.set_servo(GPIO_Motor, (Null-Slow)) #slow backward
+				servo.set_servo(GPIO_Motor, (Null-Slow-Slow_Offset)) #slow backward
+			elif desired_status[1]=='null':
+				# Set motor on GPIO_Motor to null position #Leerlauf
+				servo.set_servo(GPIO_Motor, (Null))
 			else:
 				acceleration_error=1
 				print 'ERROR: Non speed information passed to accelerate function: current_status[0]=forward, desired_status[0]=backward, desired_status[1]=' + desired_status[1] + ' is unknown!'
@@ -174,7 +180,10 @@ def accelerate(current_status, desired_status):
 				servo.set_servo(GPIO_Motor, (Null-Middle))
 			elif desired_status[1]=='slow':
 				# Set motor on GPIO_Motor to slow backward
-				servo.set_servo(GPIO_Motor, (Null-Slow))
+				servo.set_servo(GPIO_Motor, (Null-Slow-Slow_Offset))
+			elif desired_status[1]=='null':
+				# Set motor on GPIO_Motor to null position #Leerlauf
+				servo.set_servo(GPIO_Motor, (Null))
 			else:
 				acceleration_error=1
 				print 'ERROR: Non speed information passed to accelerate function: current_status[0]=backward, desired_status[0]=backward, desired_status[1]=' + desired_status[1] + ' is unknown!'
@@ -182,19 +191,16 @@ def accelerate(current_status, desired_status):
 		elif desired_status[0]=='forward':
 			if desired_status[1]=='fast':
 				# Set motor on GPIO_Motor to fast forward
-#				servo.set_servo(GPIO_Motor, Null)
-#				sleep(Sleeping_Time)
 				servo.set_servo(GPIO_Motor, (Null+Fast))
 			elif desired_status[2]=='middle':
 				# Set motor on GPIO_Motor to middle forward
-#				servo.set_servo(GPIO_Motor, Null)
-#				sleep(Sleeping_Time)
 				servo.set_servo(GPIO_Motor, (Null+Middle))
 			elif desired_status[2]=='slow':
 				# Set motor on GPIO_Motor to slow forward
-#				servo.set_servo(GPIO_Motor, Null)
-#				sleep(Sleeping_Time)
-				servo.set_servo(GPIO_Motor, (Null+Slow))
+				servo.set_servo(GPIO_Motor, (Null+Slow+Slow_Offset))
+			elif desired_status[1]=='null':
+				# Set motor on GPIO_Motor to null position #Leerlauf
+				servo.set_servo(GPIO_Motor, (Null))
 			else:
 				acceleration_error=1
 				print 'ERROR: Non speed information passed to accelerate function: current_status[0]=backward, desired_status[0]=forward, desired_status[1]=' + desired_status[1] + ' is unknown!'
@@ -215,7 +221,10 @@ def accelerate(current_status, desired_status):
 				servo.set_servo(GPIO_Motor, (Null+Middle))
 			elif desired_status[1]=='slow':
 				# Set motor on GPIO_Motor to slow forward
-				servo.set_servo(GPIO_Motor, (Null+Slow))
+				servo.set_servo(GPIO_Motor, (Null+Slow+Slow_Offset))
+			elif desired_status[1]=='null':
+				# Set motor on GPIO_Motor to null position #Leerlauf
+				servo.set_servo(GPIO_Motor, (Null))
 			else:
 				acceleration_error=1
 				print 'ERROR: Non speed information passed to accelerate function: current_status[0]=break, desired_status[0]=forward, desired_status[1]=' + desired_status[1] + ' is unknown!'
@@ -229,7 +238,10 @@ def accelerate(current_status, desired_status):
 				servo.set_servo(GPIO_Motor, (Null-Middle))
 			elif desired_status[1]=='slow':
 				# Set motor on GPIO_Motor to slow backward
-				servo.set_servo(GPIO_Motor, (Null-Slow))
+				servo.set_servo(GPIO_Motor, (Null-Slow-Slow_Offset))
+			elif desired_status[1]=='null':
+				# Set motor on GPIO_Motor to null position #Leerlauf
+				servo.set_servo(GPIO_Motor, (Null))
 			else:
 				acceleration_error=1
 				print 'ERROR: Non speed information passed to accelerate function: current_status[0]=break, desired_status[0]=backward, desired_status[1]=' + desired_status[1] + ' is unknown!'
