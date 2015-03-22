@@ -17,8 +17,6 @@ time.sleep(5)
 obstacle = 100 #cm
 #direction to goal in degree
 reference_direction=0 #means straight, negative left, positive right!
-segment_number = sens.servo_segments
-segment_width = 180./float(segment_number) #we defined our servo to scan 180 degrees
 
 raw_input("Press enter to start")
 
@@ -37,7 +35,7 @@ while True:
 		else:
 			desired_status = ['forward', 'slow', 'straight']
 	else:
-		steering_direction = navigate(sens.measurements[1],obstacle,reference_direction,segment_width,segment_number)
+		steering_direction = navigate(sens.measurements[1],obstacle,reference_direction) #steering direction in degree.
 		#if steering_direction == reference_direction: #do nothing?
 		if steering_direction == -1:
 			desired_status = ['forward', 'slow', 'straight']

@@ -1,9 +1,22 @@
+# This Module provides routines and functions for navigating and avoiding obstacles
+#
+# Main function pf this module is navigate(Scan,obstacle=100.,reference_direction,segment_width=18.,segment_number=10)
+# This function take a list <Scan> of environment scans from the sensor on the servo, a distance <obstacle> to decide how near
+# obstacles can minimal be, a <refernce_direction> in degree to the goal, where 0 degree is traight ahead. 
+# The function then returns a steering direction in
+# degree between -90 and 90, such that 0 degree is centered directly straight on.
+#
+# The basic algorithm is adopted from these two papers:
+#	http://www.academia.edu/757737/Reactive_Navigation_Algorithm_for_Wheeled_Mobile_Robots_under_Non-Holonomic_Constraints
+#	http://cdn.intechopen.com/pdfs-wm/6321.pdf
+#	
+#
+#
+#
+#
 #constants
 c_1 = .7 		#constants for cost function from paper to experiment with
 c_2 = .3
-
-#desired_direction				#direction for steering could also be break and turn around
-#reference_direction			#direction to target
 
 def gap_finding(Scan,obstacle,narrow, medium, wide):	#take sensor data, obstacle distance and list for gaps
 	N_free = 0											#and give back the indices for free gaps ordered as wide, medium, narrow
@@ -44,18 +57,20 @@ def calc_direction(reference_direction,narrow,medium,wide,segment_width,segment_
 		elif narrow != []:
 			return (minimum_cost(narrow,reference_direction,segment_number,2)-segment_number/2.)*segment_width
 		else:
-			return -1 						#-1 for turn around/ go backwards.
+			return -1 		#-1 for turn around/ go backwards.
 
-def navigate(Scan,obstacle=100.,reference_direction,segment_width=18.,segment_number=10):
+def navigate(Scan,obstacle=100.,reference_direction,):
 	#list for narrow, medium and wide gaps
 	wide = []
 	medium = []
 	narrow = []
 	scan = [x[0] for x in Scan] #from sensors you get a list [[measurement,time],[measurement,time],....]
+	segment_number = len(Scan)-1
+	segment_width = 180./float(segment_number)
 
 	gap_finding(scan,obstacle,narrow,medium,wide)
 	steering_direction = calc_direction(reference_direction,narrow,medium,wide,segment_width,segment_number)
-	return steering_direction #index of segment to go through
+	return steering_direction
 
 #def steering_radius():
 	#do something
