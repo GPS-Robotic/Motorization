@@ -9,7 +9,7 @@
   </title>
   <link rel="stylesheet" href="{{ site.baseurl }}/css/site.css">
   <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Asap:400,700,400italic">
-  <link href="{{ site.baseurl }}/buggy_icon.jpg" rel="shortcut icon" type="image/x-icon" />
+  <link href="{{ site.baseurl }}/RC_icon.png" rel="shortcut icon" type="image/x-icon" />
   {% if page.description %}<meta name="description" content="{{page.description}}" />{% endif %}
   <link rel="alternate" type="application/atom+xml" title="RSS Feed for Sébastien Saunier's blog" href="{{ site.baseurl }}/feed.xml" />
 
@@ -35,8 +35,8 @@
     <header class="inner">
       <nav>
         <a class="{% if page.category == 'about' %} selected {% endif %}" href="{{ site.baseurl }}/">Home</a>
-        <a class="{% if page.category == 'project' %} selected {% endif %}" href="{{ site.baseurl }}/project/">The Project</a>
-        <a class="{% if page.category == 'team' %} selected {% endif %}" href="{{ site.baseurl }}/team/">The Team</a>
+        <a class="{% if page.category == 'project' %} selected {% endif %}" href="{{ site.baseurl }}/project/">Project</a>
+        <a class="{% if page.category == 'team' %} selected {% endif %}" href="{{ site.baseurl }}/team/">Team</a>
         <a class="{% if page.category == 'contact' %} selected {% endif %} contact" href="{{ site.baseurl }}/contact/">Contact</a>
         <a class="{% if page.category == 'documentation' %} selected {% endif %}" href="{{ site.baseurl }}/documentation/">Documentation</a>
         <a href="https://github.com/GPS-Robotic/Motorization">Github</a>
