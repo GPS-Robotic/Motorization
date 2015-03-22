@@ -7,11 +7,11 @@
   <title>
     
   </title>
-  <link rel="stylesheet" href="http://gps-robotic.github.io/Motorization/css/site.css">
+  <link rel="stylesheet" href="/css/site.css">
   <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Asap:400,700,400italic">
-  <link href="http://gps-robotic.github.io/Motorization/RC_icon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="/RC_icon.png" rel="shortcut icon" type="image/x-icon" />
   
-  <link rel="alternate" type="application/atom+xml" title="RSS Feed for Sébastien Saunier's blog" href="http://gps-robotic.github.io/Motorization/feed.xml" />
+  <link rel="alternate" type="application/atom+xml" title="RSS Feed for Sébastien Saunier's blog" href="/feed.xml" />
 
   
 
@@ -26,23 +26,23 @@
   <div class="header-container">
     <header class="inner">
       <nav>
-        <a class="" href="http://gps-robotic.github.io/Motorization/">Home</a>
-        <a class="" href="http://gps-robotic.github.io/Motorization/project/">Project</a>
-        <a class="" href="http://gps-robotic.github.io/Motorization/team/">Team</a>
-        <a class=" contact" href="http://gps-robotic.github.io/Motorization/contact/">Contact</a>
-        <a class="" href="http://gps-robotic.github.io/Motorization/documentation/">Documentation</a>
+        <a class="" href="/">Home</a>
+        <a class="" href="/project/">Project</a>
+        <a class="" href="/team/">Team</a>
+        <a class=" contact" href="/contact/">Contact</a>
+        <a class="" href="/documentation/">Documentation</a>
         <a href="https://github.com/GPS-Robotic/Motorization">Github</a>
       </nav>
       <div class="pull-right right logo">
         <div class="name">
-          <a href="http://gps-robotic.github.io/Motorization/">GPS on wheels</a><br />
+          <a href="/">GPS on wheels</a><br />
           <small>
             <em>
               Project homepage
             </em>
           </small>
         </div>
-        <img class="avatar" src="http://gps-robotic.github.io/Motorization/images/car.jpg" alt="Our profile picture" />
+        <img class="avatar" src="/images/car.jpg" alt="Our profile picture" />
       </div>
       <div class="clear"></div>
     </header>
@@ -62,23 +62,23 @@
       <description>&lt;p&gt;It&amp;#39;s time to open the eyes! We provide our car, meanwhile named MARVIN, with a set of three ultrasonic sensors. Now the robot is aware of obstacles and prepared to find its way through unknown environments. We decided to put two static sensors in front of the car searching for obstacles directly in front of the robot. One sensor was mounted on a servo scanning the environment around the car to build a map.&lt;/p&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/eyes.jpg&quot; alt=&quot;Current appearance of our eyed car.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/eyes.jpg&quot; alt=&quot;Current appearance of our eyed car.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/eyes2.jpg&quot; alt=&quot;Current appearance of our eyed car.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/eyes2.jpg&quot; alt=&quot;Current appearance of our eyed car.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;p&gt;After many sensorical tests and writing of code to extract the distance to obstacles a first tests of a quickly written programm to test the design worked nicely. Also a piece of code for reading in GPS data is in place and a quick check of functionality brought good results. E.g. we are able to overplot Google Maps with our track. See this picture!&lt;/p&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/map.png&quot; alt=&quot;Out on the road.&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/map.png&quot; alt=&quot;Out on the road.&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;p&gt;Furthermore we decided to build or own shell for the robot to protect it from wetness. Therefore we went to a local construction market and bought Plexi glas and plaster. We took a plaster copy of the normal shell, put it into our oven togehter with the Plexi glas and formed it to a new transparent shell. This has two advantages. First we have more space for the electronics and second the transparency gives the opportunity to see what &amp;quot;happens inside&amp;quot;.&lt;/p&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/shell.jpg&quot; alt=&quot;Second time on the road.&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/shell.jpg&quot; alt=&quot;Second time on the road.&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;h1 id=&quot;status-report&quot;&gt;Status report&lt;/h1&gt;
@@ -103,7 +103,7 @@
       <description>&lt;p&gt;After learning how to steer and how to accelerate or break it is time to see wether our car is actually able to drive. This means putting together all components (GPS, steering servo, battery, motor and raspberry), fix them onto our cool looking transparency board. &lt;/p&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/appearance.JPG&quot; alt=&quot;Current appearance of our car.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/appearance.JPG&quot; alt=&quot;Current appearance of our car.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;p&gt;Unfortunately until now we do not have any sensors on board and we have to control our car via wireless-LAN. Nevertheless, let&amp;#39;s go and &lt;/p&gt;
@@ -111,13 +111,13 @@
 &lt;h1 id=&quot;drive-like-crazy!&quot;&gt;drive like crazy!&lt;/h1&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/road.JPG&quot; alt=&quot;Out on the road.&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/road.JPG&quot; alt=&quot;Out on the road.&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;p&gt;But as for everyone the first steps are the hardest. After 1m of fun our car stopped and fun was over. Wireless-LAN connection lost and raspberry was rebooting. Checking everything led to diagnosis voltage fluctuations. Our approach using only one battery for motor and raspberry seemed not to work. So working around this issue led to two batteries, one for the motor and one for the raspberry. So we put together everything and start all over again.&lt;/p&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/road2.JPG&quot; alt=&quot;Second time on the road.&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/road2.JPG&quot; alt=&quot;Second time on the road.&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;h2 id=&quot;test-bench&quot;&gt;Test bench&lt;/h2&gt;
@@ -125,11 +125,11 @@
 &lt;p&gt;For testing minor edits on the appearance or major edits on the software we always go back to our test bench. In our case a monitor, keyboard, mouse and just a small box on a table to get the wheels up from the ground.&lt;/p&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/test_bench.JPG&quot; alt=&quot;Test bench.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/test_bench.JPG&quot; alt=&quot;Test bench.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/test-bench_2.jpg&quot; alt=&quot;Test bench.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/test-bench_2.jpg&quot; alt=&quot;Test bench.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;p&gt;As you might have noticed, our GPS module has arrived and we are able to read in the data. So, our&lt;/p&gt;
@@ -139,13 +139,13 @@
 &lt;p&gt;will be to implement the naviagtion algorithm and test the accuracy of the GPS module.&lt;/p&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/GPS.jpg&quot; alt=&quot;The GPS modul.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/GPS.jpg&quot; alt=&quot;The GPS modul.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;p&gt;Furthermore we like to add the ultrasonic sensors (untill now only 3) and test some algorithms to avoid obstacles. &lt;/p&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/sensors.jpg&quot; alt=&quot;The supersonic sensors.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/sensors.jpg&quot; alt=&quot;The supersonic sensors.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;p&gt;Then our goal of an autonomous car guided by GPS comes closer... &lt;/p&gt;
@@ -181,19 +181,19 @@ First, we thought, we simply could plug some WLAN-module into the Raspi and conn
 &lt;p&gt;Have a look on it:&lt;/p&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/plexiglas.png&quot; alt=&quot;The next assembly level.&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/plexiglas.png&quot; alt=&quot;The next assembly level.&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;h2 id=&quot;working-together&quot;&gt;Working together&lt;/h2&gt;
 
 &lt;p&gt;We also found out that it is quiet fun to work together as a team. Maybe one can get an impression of our working atmosphere from the following picture.
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/workingtogether.png&quot; alt=&quot;Working together.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/workingtogether.png&quot; alt=&quot;Working together.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;&lt;/p&gt;
 
 &lt;p&gt;Last week Gero joint us and took the car out on the hallway for a test ride.
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/hallway.png&quot; alt=&quot;Hallway driving.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
+&lt;img src=&quot;/images/documentation/hallway.png&quot; alt=&quot;Hallway driving.&quot; align=&quot;middle&quot; width=&quot;70%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;&lt;/p&gt;
 </description>
       <pubDate>Mon, 26 Jan 2015 00:00:00 +0100</pubDate>
@@ -211,7 +211,7 @@ First, we thought, we simply could plug some WLAN-module into the Raspi and conn
 
 &lt;p&gt;Our Reely Blaze RC car finally arrived and we started assembling it.
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/assembly.jpg&quot; alt=&quot;Our model car assembly.&quot; width=&quot;80%&quot;&gt;&lt;/p&gt;
+&lt;img src=&quot;/images/documentation/assembly.jpg&quot; alt=&quot;Our model car assembly.&quot; width=&quot;80%&quot;&gt;&lt;/p&gt;
 &lt;/td&gt;&lt;/table&gt;&lt;/p&gt;
 
 &lt;p&gt;Current status: We finished the assembly and are now able to drive! This was great fun :-)&lt;/p&gt;
@@ -221,7 +221,7 @@ First, we thought, we simply could plug some WLAN-module into the Raspi and conn
 &lt;p&gt;We tried using the Raspberry&amp;#39;s PWM to controll the steering Servo and the cruise controll.&lt;/p&gt;
 
 &lt;table border=&quot;0&quot;&gt;&lt;td align=&quot;center&quot;&gt;
-&lt;img src=&quot;http://gps-robotic.github.io/Motorization/images/documentation/pi.jpg&quot; alt=&quot;Our raspberry.&quot; align=&quot;middle&quot; width=&quot;50%&quot;&gt;
+&lt;img src=&quot;/images/documentation/pi.jpg&quot; alt=&quot;Our raspberry.&quot; align=&quot;middle&quot; width=&quot;50%&quot;&gt;
 &lt;/td&gt;&lt;/table&gt;
 
 &lt;p&gt;And by now we are ready for attaching the Raspberry to the car and start driving!&lt;/p&gt;
