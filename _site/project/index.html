@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.1">
+  <meta name="google-site-verification" content="aexITLS38FdIRzwj25OVWxm87rpa9l-UV0URTyC9cTs" />
+  <title>
+    The GPS on wheels project
+  </title>
+  <link rel="stylesheet" href="/css/site.css">
+  <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Asap:400,700,400italic">
+  <link href="/RC_icon.png" rel="shortcut icon" type="image/x-icon" />
+  <meta name="description" content="Description of our goals, resources and so on." />
+  <link rel="alternate" type="application/atom+xml" title="RSS Feed for Sébastien Saunier's blog" href="/feed.xml" />
+
+  
+
+  
+
+  
+</head>
+<body>
+  <!-- <div class="top-bar">
+  </div> -->
+
+  <div class="header-container">
+    <header class="inner">
+      <nav>
+        <a class="" href="/">Home</a>
+        <a class=" selected " href="/project/">Project</a>
+        <a class="" href="/team/">Team</a>
+        <a class=" contact" href="/contact/">Contact</a>
+        <a class=" contact" href="/links/">Links</a>
+        <a class="" href="/documentation/">Documentation</a>
+        <a href="https://github.com/GPS-Robotic/Motorization">Github</a>
+      </nav>
+      <div class="pull-right right logo">
+        <div class="name">
+          <a href="/">GPS on wheels</a><br />
+          <small>
+            <em>
+              Project homepage
+            </em>
+          </small>
+        </div>
+        <img class="avatar" src="/images/car.jpg" alt="Our profile picture" />
+      </div>
+      <div class="clear"></div>
+    </header>
+    <div class="clear"></div>
+  </div>
+
+  <div class="inner">
+<h1 align="center">
+GPS on Wheels - A Robotics-Project at the IWR in Heidelberg
+</h1>
+<p class="fancy" align="justify">
+This winter term we're doing an interesting internship at our university: We're constructing a robotic RC-car, supplied with a Rasperry Pi-Computer and a GPS-module in order to be able to drive autonomously. <br>
+The internship started in October 2014 already and lasts until the end of March approximately.
+</p>
+
+<br>
+<div  style="border-bottom: 1px solid #ddd"></div>
+
+<h2 align="center">
+The university
+</h2>
+<p class="fancy" align="justify">
+The internship takes place at the <a href="http://www.uni-heidelberg.de/">University of Heidelberg</a>, located in a small, but famous and beautiful town in the south of Germany. The university can proudly call itself the oldest one in Germany.<br>
+Altough all of us are studying physics, the project is part of the <a href="http://www.iwr.uni-heidelberg.de/">IWR (interdisciplinary research center for scientific computing)</a> at the <a href="http://www.mathinf.uni-heidelberg.de/">Informatics Faculty</a>, which illustrates the flexibility in our studies and also gives a hint of what we're mainly doing here: programming.<br>
+As we are not the only ones working in a robotic internship, here is a <a href="http://joanna.iwr.uni-heidelberg.de/rlab/en/projects_list+sid=21">list of all current robotic-projects</a> at the <a href="http://joanna.iwr.uni-heidelberg.de/rlab/en/home">Robotics Lab</a>.
+</p>
+
+<br>
+<div  style="border-bottom: 1px solid #ddd"></div>
+
+<h2 align="center">
+The goals
+</h2>
+<p class="fancy" align="justify">
+The main goal is to construct and configure an autonomous RC-car, which should be able to reach a given GPS-Position somewhere nearby, avoiding small obstacles.<br>
+Thus it is part of the project to supply a RC-car with a small computer (Raspberry-Pi), a GPS-module and some sensors to detect obstacles. Of course, also the programming of the components -as they need to work together- makes a great part of it.<br>
+Some milestones can be summarized as follows:
+
+<ul>
+<li> choosing appropriate components (RC-car construction-kit, batteries, motor, Raspberry Pi, ultra-sonic sensors, GPS-module, servos ...)
+<li> constructing the RC-car out of the construction-kit, attach batteries, motor & cruise control
+<li> modifying the car by attaching the Raspberry Pi, as well as the sensors & the GPS-module;<br>herefore: adding a platform onto which the components can be put
+<li> connecting all components in a safe way
+<li> constructing some cover for the electronics to be safe from dirt, moisture etc.
+<li> developing some algorithm of how everything works together
+<li> programming a lot of routines for the different needs (getting GPS-position, calculating target-position & direction, getting sensor-data, recognizing obstacles, driving the car, avoiding obstacles, finding a good way, handling errors...)
+<li> testing, impoving, testing, improving....
+</ul>
+
+<br>
+Besides these practicle things, of course it is a declared goal to improve our skills and to learn about informatics during this internship. Apart from programming (mainly python here), the project also involves a lot of (electronical) handicraft. We therefore get in touch with electric circuits, information processing, mechanics and the interplay of hard- and software.
+
+<br>
+<br>
+
+As we will have to face many problems, we will have to learn to react and find solutions flexibly.
+</p>
+
+<br>
+<div  style="border-bottom: 1px solid #ddd"></div>
+
+<h2 align="center">
+The resources & components
+</h2>
+<p class="fancy" align="justify">
+Except our knowledge, the ressources we are using are either provided by the informatics faculty (thanks, guys ;) ) or are open-source (source-code & information from the internet).<br>
+As there are <a href="http://joanna.iwr.uni-heidelberg.de/rlab/en/projects_list+sid=21">many other groups</a> working on different robotic-projects at the IWR, there is a small room available to all internship-students at the university, equipped with computers, internet and a lot of hardware-stuff (cables, connectors, electronic components, wood, metal, screws, ...). Also any tools needed, such as screw-drivers, drilling machines, saws, soldering irons, voltage and ampere meters, voltage suppliers and many more things, can be found and used there.<br>
+<br>
+Besides some cables, switches, diodes, connectors, screws and plexiglas, the components we are using, are
+<ul>
+<li> a RC-car construction-kit <a href="http://www.conrad.de/ce/de/product/236747/Reely-Blaze-110-RC-Modellauto-Elektro-Truggy-4WD-Bausatz?ref=searchDetail">"Reely Blaze"</a> from <a href="http://www.conrad.de">Conrad Electronics</a> (<a href="/images/project/components/reely_kit.jpg">image1</a>, <a href="/images/project/components/reely_blaze.jpg" target="_blank">image2</a>)
+<li> a 7.2V 7700mAh NiMh <a href="http://www.conrad.de/ce/de/product/206030/Modellbau-Akkupack-NiMh-72-V-3700-mAh-Conrad-energy-Stick-Tamiya-Stecker?ref=searchDetail">rechargeable battery pack</a> for RC-cars from <a href="www.conrad.de">Conrad Electronics</a> for the motor and peripheral devices (<a href="/images/project/components/battery_pack.jpg">image</a>)
+<li> a V mAh NiMh <a href="">rechargeable battery pack</a> from <a href="www.conrad.de">Conrad Electronics</a> only for the Raspberry's power supply
+<li> a cruise control (<a href="/images/project/components/cruise_control.jpg">image</a>)
+<li> a motor (<a href="/images/project/components/motor1.jpg">image1</a>, <a href="/images/project/components/motor2.jpg">image2</a>)
+<li> a servo auto (<a href="/images/project/components/servo_car.jpg">image</a>)
+<li> a mini computer <a href="http://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Raspberry Pi Model B+</a> (<a href="/images/project/components/raspi1.jpg">image1</a>, <a href="/images/project/components/raspi2.jpg">image2</a>)
+<li> a <a href="">4GB micro SD-card</a>
+<li> a servo sensor
+<li> three ultrasonic-sensor (<a href="/images/project/components/ultra_sonic.jpg">image</a>)
+<li> a GPS-module (including an electronic compass) (<a href="/images/project/components/gps.jpg">image</a>)
+<li> a wlan-module (<a href="/images/project/components/wlan.jpg">image</a>) and
+<li> a self-made 7V to 5V voltage-regulator (<a href="/images/project/components/voltage_regulator.jpg">image</a>)
+</ul>
+</p>
+
+<br>
+<div  style="border-bottom: 1px solid #ddd"></div>
+<br>
+
+<p align=center>
+Actually the project can be summarized shortly:
+</p>
+<table border="0"><td align="center" valign="middle">
+<img src="/images/project/car.jpg" alt=" A RC-car " width="9%">
+<img src="/images/project/plus.jpg" alt=" plus " width="7%">
+<img src="/images/project/pi.png" alt=" a Raspberry Pi " width="7%">
+<img src="/images/project/plus.jpg" alt=" plus " width="7%">
+<img src="/images/project/gps.jpg" alt=" GPS-supported driving " width="7%">
+<img src="/images/project/plus.jpg" alt=" plus " width="7%">
+<img src="/images/project/brain.gif" alt=" plus " width="7%">
+<img src="/images/project/equal.gif" alt=" gives " width="7%">
+<img src="/images/project/transparent_side.png" alt=" an awesome robot-car! " width="15%"
+</td></table>
+
+</div>
+
+  <div class="separator"></div>
+
+  <div  style="border-bottom: 1px solid #ddd"></div>
+  <footer>
+    <p>
+      Made with <a href="http://jekyllrb.com/">Jekyll</a>,
+      hosted on <a href="https://github.com/GPS-Robotic/Motorization/tree/gh-pages">Github Pages</a>. Theme inspired by <a href="http://sebastien.saunier.me/">sebastien.saunier.me</a>.
+    </p>
+  </footer>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-40867989-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    /*!
+     * http://github.com/ssaunier/track-outbound-links
+     * Copyright 2013 Sébastien Saunier
+     * @license MIT
+     */
+    !function(e,t){function n(){for(var n=t.getElementsByTagName("a"),a=[],r=0;r<n.length;++r){var o=n[r];o.host!=e.location.host&&a.push(o)}return a}function a(n){for(var a=n.srcElement||n.target;a&&("undefined"==typeof a.tagName||"a"!=a.tagName.toLowerCase()||!a.href);)a=a.parentNode;a&&a.href&&(e._gaq&&_gaq.push(["_trackEvent","Outbound link","Click",a.href]),(!a.target||a.target.match(/^_(self|parent|top)$/i))&&(setTimeout(function(){t.location.href=a.href},150),n.preventDefault?n.preventDefault():n.returnValue=!1))}e.addEventListener("load",function(){var e=n();for(var t in e)e[t].addEventListener("click",a)})}(window,document);
+    var links = document.links;
+    for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+       if (links[i].hostname != window.location.hostname) { links[i].target = '_blank'; }
+    }
+
+    /*
+     * Detect if we are included in an iframe => move.
+     */
+    if (window.top !== window.self
+        && !window.self.location.href.match(/headsha\.re/))
+    {
+      window.top.location.replace(window.self.location.href);
+    }
+  </script>
+
+  <!--
+  <script id="_webengage_script_tag" type="text/javascript">
+    // var _weq = _weq || {};
+    // _weq['webengage.licenseCode'] = '11b563c38';
+    // _weq['webengage.widgetVersion'] = "4.0";
+
+    // (function(d){
+    //   var _we = d.createElement('script');
+    //   _we.type = 'text/javascript';
+    //   _we.async = true;
+    //   _we.src = (d.location.protocol == 'https:' ? "https://ssl.widgets.webengage.com" : "http://cdn.widgets.webengage.com") + "/js/widget/webengage-min-v-4.0.js";
+    //   var _sNode = d.getElementById('_webengage_script_tag');
+    //   _sNode.parentNode.insertBefore(_we, _sNode);
+    // })(document);
+  </script>
+  -->
+
+</body>
+</html>
