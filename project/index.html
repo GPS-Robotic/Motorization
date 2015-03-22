@@ -21,8 +21,9 @@ The internship started in October 2014 already and lasts until the end of March 
 The university
 </h2>
 <p class="fancy" align="justify">
-The internship takes place at the <a href="http://www.uni-heidelberg.de/">University of Heidelberg</a>, a small, but famous and beautiful town in the south of Germany. The university can proudly call itself the oldest one in Germany.<br>
-Altough all of us are studying physics, the project is part of the <a href="http://www.mathinf.uni-heidelberg.de/">Informatics Faculty</a>, which illustrates the flexibility in our studies and also gives a hint of what we're mainly doing here: programming.
+The internship takes place at the <a href="http://www.uni-heidelberg.de/">University of Heidelberg</a>, located in a small, but famous and beautiful town in the south of Germany. The university can proudly call itself the oldest one in Germany.<br>
+Altough all of us are studying physics, the project is part of the <a href="http://www.iwr.uni-heidelberg.de/">IWR (interdisciplinary research center for scientific computing)</a> at the <a href="http://www.mathinf.uni-heidelberg.de/">Informatics Faculty</a>, which illustrates the flexibility in our studies and also gives a hint of what we're mainly doing here: programming.<br>
+As we are not the only ones working in a robotic internship, here is a <a href="http://joanna.iwr.uni-heidelberg.de/rlab/en/projects_list+sid=21">list of all current robotic-projects</a> at the <a href="http://joanna.iwr.uni-heidelberg.de/rlab/en/home">Robotics Lab</a>.
 </p>
 
 <br>
@@ -37,7 +38,7 @@ Thus it is part of the project to supply a RC-car with a small computer (Raspber
 Some milestones can be summarized as follows:
 
 <ul>
-<li> choosing appropriate components (RC-car construction-kit, batteries, motor, Raspberry Pi, ultra-sonic sensors, GPS-module ...)
+<li> choosing appropriate components (RC-car construction-kit, batteries, motor, Raspberry Pi, ultra-sonic sensors, GPS-module, servos ...)
 <li> constructing the RC-car out of the construction-kit, attach batteries, motor & cruise control
 <li> modifying the car by attaching the Raspberry Pi, as well as the sensors & the GPS-module;<br>herefore: adding a platform onto which the components can be put
 <li> connecting all components in a safe way
@@ -48,7 +49,7 @@ Some milestones can be summarized as follows:
 </ul>
 
 <br>
-Besides these practicle things, of course it is a declared goal to improve our skills and to learn about informatics during this internship. Apart from programming, the project also involves a lot of (electronical) handicraft. We therefore get in touch with electric circuits, information processing, mechanics and the interplay of hard- and software.
+Besides these practicle things, of course it is a declared goal to improve our skills and to learn about informatics during this internship. Apart from programming (mainly python here), the project also involves a lot of (electronical) handicraft. We therefore get in touch with electric circuits, information processing, mechanics and the interplay of hard- and software.
 
 <br>
 <br>
@@ -60,10 +61,28 @@ As we will have to face many problems, we will have to learn to react and find s
 <div  style="border-bottom: 1px solid #ddd"></div>
 
 <h2 align="center">
-The resources
+The resources & components
 </h2>
 <p class="fancy" align="justify">
-
+Except our knowledge, the ressources we are using are either provided by the informatics faculty (thanks, guys ;) ) or are open-source (source-code & information from the internet).<br>
+As there are <a href="http://joanna.iwr.uni-heidelberg.de/rlab/en/projects_list+sid=21">many other groups</a> working on different robotic-projects at the IWR, there is a small room available to all internship-students at the university, equipped with computers, internet and a lot of hardware-stuff (cables, connectors, electronic components, wood, metal, screws, ...). Also any tools needed, such as screw-drivers, drilling machines, saws, soldering irons, voltage and ampere meters, voltage suppliers and many more things, can be found and used there.<br>
+<br>
+Besides some cables, switches, diodes and connectors, the components we are using, are
+<ul>
+<li> a RC-car construction-kit <a href="http://www.conrad.de/ce/de/product/236747/Reely-Blaze-110-RC-Modellauto-Elektro-Truggy-4WD-Bausatz?ref=searchDetail">"Reely Blaze"</a> from <a href="www.conrad.de">Conrad Electronics</a> (<a href="">image</a>)
+<li> a 7.2V 7700mAh NiMh <a href="http://www.conrad.de/ce/de/product/206030/Modellbau-Akkupack-NiMh-72-V-3700-mAh-Conrad-energy-Stick-Tamiya-Stecker?ref=searchDetail">rechargeable battery pack</a> for RC-cars from <a href="www.conrad.de">Conrad Electronics</a> for the motor and peripheral devices (<a href="">image</a>)
+<li> a V mAh NiMh <a href="">rechargeable battery pack</a> from <a href="www.conrad.de">Conrad Electronics</a> only for the Raspberry's power supply (<a href="">image</a>)
+<li> a cruise control
+<li> a motor
+<li> a servo auto
+<li> a mini computer <a href="http://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Raspberry Pi Model B+</a>
+<li> a micro SD-card
+<li> a servo sensor
+<li> three ultrasonic-sensor
+<li> a GPS-module (including an electronic compass)
+<li> a wlan-module and
+<li> a spannungs-abwärts-regler
+</ul>
 </p>
 
 <br>
@@ -74,13 +93,15 @@ The resources
 Actually the project can be summarized shortly:
 </p>
 <table border="0"><td align="center" valign="middle">
-<img src="{{ site.baseurl }}/images/project/car.jpg" alt=" A RC-car " width="13%">
-<img src="{{ site.baseurl }}/images/project/plus.jpg" alt=" plus " width="10%">
-<img src="{{ site.baseurl }}/images/project/pi.png" alt=" a Raspberry Pi " width="10%">
-<img src="{{ site.baseurl }}/images/project/plus.jpg" alt=" plus " width="10%">
-<img src="{{ site.baseurl }}/images/project/gps.jpg" alt=" GPS-supported driving " width="10%">
-<img src="{{ site.baseurl }}/images/project/equal.gif" alt=" gives " width="10%">
-<img src="{{ site.baseurl }}/images/project/transparent_side.png" alt=" an awesome robot-car! " width="22%"
+<img src="{{ site.baseurl }}/images/project/car.jpg" alt=" A RC-car " width="9%">
+<img src="{{ site.baseurl }}/images/project/plus.jpg" alt=" plus " width="7%">
+<img src="{{ site.baseurl }}/images/project/pi.png" alt=" a Raspberry Pi " width="7%">
+<img src="{{ site.baseurl }}/images/project/plus.jpg" alt=" plus " width="7%">
+<img src="{{ site.baseurl }}/images/project/gps.jpg" alt=" GPS-supported driving " width="7%">
+<img src="{{ site.baseurl }}/images/project/plus.jpg" alt=" plus " width="7%">
+<img src="{{ site.baseurl }}/images/project/brain.gif" alt=" plus " width="7%">
+<img src="{{ site.baseurl }}/images/project/equal.gif" alt=" gives " width="7%">
+<img src="{{ site.baseurl }}/images/project/transparent_side.png" alt=" an awesome robot-car! " width="15%"
 </td></table>
 
 </div>
