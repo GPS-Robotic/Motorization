@@ -9,53 +9,78 @@ category: project
 <h1 align="center">
 GPS on Wheels - A Robotics-Project at the IWR in Heidelberg
 </h1>
-<br>
-
-<p class="fancy">
+<p class="fancy" align="justify">
 This winter term we're doing an interesting internship at our university: We're constructing a robotic RC-car, supplied with a Rasperry Pi-Computer and a GPS-module in order to be able to drive autonomously. <br>
-The internship started in October 2014 already and lasts until March approximately.
+The internship started in October 2014 already and lasts until the end of March approximately.
 </p>
 
 <br>
-<br>
-
 <div  style="border-bottom: 1px solid #ddd"></div>
+
 <h2 align="center">
 The university
 </h2>
-<br>
-<br>
+<p class="fancy" align="justify">
+The internship takes place at the <a href="http://www.uni-heidelberg.de/">University of Heidelberg</a>, a small, but famous and beautiful town in the south of Germany. The university can proudly call itself the oldest one in Germany.<br>
+Altough all of us are studying physics, the project is part of the <a href="http://www.mathinf.uni-heidelberg.de/">Informatics Faculty</a>, which illustrates the flexibility in our studies and also gives a hint of what we're mainly doing here: programming.
+</p>
 
-
+<br>
 <div  style="border-bottom: 1px solid #ddd"></div>
+
 <h2 align="center">
 The goals
 </h2>
+<p class="fancy" align="justify">
+The main goal is to construct and configure an autonomous RC-car, which should be able to reach a given GPS-Position somewhere nearby, avoiding small obstacles.<br>
+Thus it is part of the project to supply a RC-car with a small computer (Raspberry-Pi), a GPS-module and some sensors to detect obstacles. Of course, also the programming of the components -as they need to work together- makes a great part of it.<br>
+Some milestones can be summarized as follows:
+
+<ul>
+<li> choosing appropriate components (RC-car construction-kit, batteries, motor, Raspberry Pi, ultra-sonic sensors, GPS-module ...)
+<li> constructing the RC-car out of the construction-kit, attach batteries, motor & cruise control
+<li> modifying the car by attaching the Raspberry Pi, as well as the sensors & the GPS-module;<br>herefore: adding a platform onto which the components can be put
+<li> connecting all components in a safe way
+<li> constructing some cover for the electronics to be safe from dirt, moisture etc.
+<li> developing some algorithm of how everything works together
+<li> programming a lot of routines for the different needs (getting GPS-position, calculating target-position & direction, getting sensor-data, recognizing obstacles, driving the car, avoiding obstacles, finding a good way, handling errors...)
+<li> testing, impoving, testing, improving....
+</ul>
+
+<br>
+Besides these practicle things, of course it is a declared goal to improve our skills and to learn about informatics during this internship. Apart from programming, the project also involves a lot of (electronical) handicraft. We therefore get in touch with electric circuits, information processing, mechanics and the interplay of hard- and software.
+
 <br>
 <br>
 
+As we will have to face many problems, we will have to learn to react and find solutions flexibly.
+</p>
+
+<br>
 <div  style="border-bottom: 1px solid #ddd"></div>
+
 <h2 align="center">
 The resources
 </h2>
-<br>
-<br>
+<p class="fancy" align="justify">
 
+</p>
 
-<br>
 <br>
 <div  style="border-bottom: 1px solid #ddd"></div>
+<br>
+
 <p align=center>
 Actually the project can be summarized shortly:
 </p>
-<table border="0"><td align=center>
-<img src="{{ site.baseurl }}/images/project/car.jpg" alt=" A RC-car " width="5%">
-<img src="{{ site.baseurl }}/images/project/plus.jpg" alt=" plus " width="5%">
-<img src="{{ site.baseurl }}/images/project/pi.png" alt=" a Raspberry Pi " width="5%">
-<img src="{{ site.baseurl }}/images/project/plus.jpg" alt=" plus " width="5%">
-<img src="{{ site.baseurl }}/images/project/gps.jpg" alt=" GPS-supported driving " width="5%">
-<img src="{{ site.baseurl }}/images/project/equal.gif" alt=" gives " width="5%">
-<img src="{{ site.baseurl }}/images/project/transparent_side.png" alt=" an awesome robot-car! " width="10%"
+<table border="0"><td align="center" valign="middle">
+<img src="{{ site.baseurl }}/images/project/car.jpg" alt=" A RC-car " width="13%">
+<img src="{{ site.baseurl }}/images/project/plus.jpg" alt=" plus " width="10%">
+<img src="{{ site.baseurl }}/images/project/pi.png" alt=" a Raspberry Pi " width="10%">
+<img src="{{ site.baseurl }}/images/project/plus.jpg" alt=" plus " width="10%">
+<img src="{{ site.baseurl }}/images/project/gps.jpg" alt=" GPS-supported driving " width="10%">
+<img src="{{ site.baseurl }}/images/project/equal.gif" alt=" gives " width="10%">
+<img src="{{ site.baseurl }}/images/project/transparent_side.png" alt=" an awesome robot-car! " width="22%"
 </td></table>
 
 </div>
