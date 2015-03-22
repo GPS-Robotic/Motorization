@@ -1,0 +1,71 @@
+---
+layout: default
+title: Link collection
+description: Collection of links to other sites which were really usefull for us
+category: links
+---
+
+<div class="inner">
+<h1 align="center">
+Link collection
+</h1>
+<br>
+
+<p class="fancy" align="justify">
+We started this <a href="{{ site.baseurl }}/project">project</a> without any specific knowledge about model cars, GPS data, etc.
+Thus, we often tackled each new task by searching for information on the internet. Here are the links to the pages we found most usefull:
+</p>
+
+<br>
+<br>
+
+<div  style="border-bottom: 1px solid #ddd"></div>
+<h2>
+Servos and cruise control
+</h2>
+<p class="fancy"><ul>
+<li> The <a href=""></a>
+<li> <a href=""></a>
+</ul></p>
+
+<div  style="border-bottom: 1px solid #ddd"></div>
+<h2>
+Ultrasound sensors
+</h2>
+<p class="fancy"><ul>
+<li> The <a href="http://www.micropik.com/PDF/HCSR04.pdf">data sheet</a> of the HC-SR04 ultrasonic ranging module.
+<li> The more detailed <a href="https://docs.google.com/document/d/1Y-yZnNhMYy7rwhAgyL_pfa39RsB-x2qR4vP8saG73rE/edit">user's manual</a>.
+<li> How to connect it to the <a href="https://www.modmypi.com/blog/hc-sr04-ultrasonic-range-sensor-on-the-raspberry-pi">Raspberry Pi</a>.
+</ul></p>
+
+
+
+<div  style="border-bottom: 1px solid #ddd"></div>
+<h2>
+The GPS module
+</h2>
+<p class="fancy"><ul>
+<li> Connecting the <a href="http://diydrones.com/profiles/blogs/how-to-connect-3dr-gps-ublox-to-raspberry-pi">3DR GPS uBlox</a> and communicating with it.
+<li> Reading the GPS data in a Python thread. Thanks to <a href="http://www.danmandle.com/blog/getting-gpsd-to-work-with-python/">Dan Mandle</a>.
+</ul></p>
+
+
+
+<div  style="border-bottom: 1px solid #ddd"></div>
+<h2>
+Papers for the navigation algorithm
+</h2>
+<p class="fancy"><ul>
+<li> Paper <a href="http://www.academia.edu/757737/Reactive_Navigation_Algorithm_for_Wheeled_Mobile_Robots_under_Non-Holonomic_Constraints">one</a>.
+<li> Paper <a href="http://cdn.intechopen.com/pdfs-wm/6321.pdf">two</a>.
+</ul></p>
+
+<div  style="border-bottom: 1px solid #ddd"></div>
+<h2>
+Voltage regulator
+</h2>
+<p class="fancy"><ul>
+<li> How to build a simple <a href="http://reviseomatic.org/help/e-components/Voltage%20Regulator.php">voltage regulator</a>.
+</ul></p>
+
+
