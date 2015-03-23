@@ -1,7 +1,9 @@
 import sensors
 import time
 
-sens = sensors.sensors(mode=1, start=False)
+mod = int(raw_input("Modus? 0, 1 oder 2? "))
+
+sens = sensors.sensors(mode=mod, start=False)
 
 raw_input("Press enter to start")
 sens.start()

@@ -127,9 +127,16 @@ class sensors(threading.Thread):
 
 		# set standart-Sensor- & Servo- PINS
 		# USE GPIO-NUMBERING, NOT BOARD-NUMBERING!
-		self.TRIG = [16, 20, 21]
-		self.ECHO = [13, 19, 26]
-		self.SERVO = 12
+		model_B=True # which model are we using? 
+			     #    True -> Model B (Check cat /proc/cpuinfo --> Revision 000e), False -> Model B+
+		if model_B==True: # Model B
+			self.TRIG = [25, 8, 7]
+			self.ECHO = [10, 9, 11]
+			self.SERVO = 24
+		else:	# Model B+
+			self.TRIG = [16, 20, 21]
+			self.ECHO = [13, 19, 26]
+			self.SERVO = 12
 
 		# are the pins initialized to the GPIO-Module?
 		self.pins_set = False
@@ -150,6 +157,7 @@ class sensors(threading.Thread):
 #		self.relaxation_time_after = 0.04 # waiting time after measurement: to ensure no sensor overlap??
 		self.queue_waiting_time = 0.00001 # time for waiting loop, if system is measuring and new measuring is waiting
 		self.scan_relaxation_time = 0.05 # time between single scannings in scanning-mode
+		self.unknown_error_value = 30000000.0 # return-value if unknown error occurs in get_sensor()
 
 		# what are the most current distance values of the sensors and there measurement times?
 		# [[first_sensor, time], [[first_segment, time], [second_segment, time], ...], [third_sensor, time]]
@@ -222,6 +230,7 @@ class sensors(threading.Thread):
 		# check for valid sensor-number
 		if ( (sensor_number<0) or (sensor_number>2) ):
 			print "Error! Sensor-Number must be between 0 and 2! Abort"
+			self.is_at_measure = False
 			return [-2, time.time()]
 
 		# check for pins to be initialized
@@ -236,64 +245,68 @@ class sensors(threading.Thread):
 		GPIO.output(self.TRIG[sensor_number], False)
 	
 		# WAIT FOR ECHO
-		echo_start = time.time()
-		while ( (GPIO.input(self.ECHO[sensor_number])!=1) ):
-			start_time = time.time()
-			if (time.time()-echo_start>self.ECHO_in_timeout):	## CHECK THIS!!!
-				self.is_at_measure = False
-				return [self.no_echo_in_value, time.time()]
+		try: # added because of error 'referrenced before assignement'
+
+			echo_start = time.time() # serves also for time-stamp of measurement
+			while ( (GPIO.input(self.ECHO[sensor_number])==0) ):
+				start_time = time.time()
+				if (time.time()-echo_start>self.ECHO_in_timeout):	## CHECK THIS!!!
+					self.is_at_measure = False
+					return [self.no_echo_in_value, echo_start]
 	
-		# MEASURE ECHO-DURATION
-		while (GPIO.input(self.ECHO[sensor_number])==1):
-			dt = time.time() - start_time
-			if(dt>self.out_of_sight_time):		## CHECK THIS!!!!
-				self.is_at_measure = False
-				result = [self.out_of_sight_value, time.time()]
+			# MEASURE ECHO-DURATION
+			while (GPIO.input(self.ECHO[sensor_number])==1):
+				dt = time.time() - start_time
+				if(dt>self.out_of_sight_time):		## CHECK THIS!!!!
+					self.is_at_measure = False
+					result = [self.out_of_sight_value, echo_start]
 
-				# save the Out-Of-Sight-Result result
-				if (sensor_number == 1):
-					if (self.mode != 0):
-						current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
-						try:
-							(self.measurements[1])[current_segment]=result
-						except:
-							print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
-							print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
+					# save the Out-Of-Sight-Result result
+					if (sensor_number == 1):
+						if (self.mode != 0):
+							current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
+							try:
+								(self.measurements[1])[current_segment]=result
+							except:
+								print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
+								print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
+						else:
+							self.measurements[1]=[result]
 					else:
-						self.measurements[1]=[result]
+						self.measurements[sensor_number] = result
+
+					return result
+
+
+			# tell, that there is no measure now
+			self.is_at_measure = False
+
+			# RETURN DISTANCE
+			dist = dt*self.dt_to_distance
+	#		time.sleep(self.relaxation_time_after)
+
+			# save the result
+			result = [dist, echo_start]
+			if (sensor_number == 1):
+				if (self.mode != 0):
+					current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
+					try:
+						(self.measurements[1])[current_segment]=result
+					except:
+						print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
+						print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
 				else:
-					self.measurements[sensor_number] = result
-
-				return result
-
-		# save measurement time
-		time_stamp = time.time()
-
-		# RETURN DISTANCE
-		dist = dt*self.dt_to_distance
-#		time.sleep(self.relaxation_time_after)
-
-		# tell, that there is no measure now
-
-		self.is_at_measure = False
-
-		# save the result
-		result = [dist, time_stamp]
-		if (sensor_number == 1):
-			if (self.mode != 0):
-				current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
-				try:
-					(self.measurements[1])[current_segment]=result
-				except:
-					print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
-					print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
+					self.measurements[1]=[result]
 			else:
-				self.measurements[1]=[result]
-		else:
-			self.measurements[sensor_number] = result
+				self.measurements[sensor_number] = result
 
-		# return distance (in cm) & measure-time in time.time()-format
-		return result
+			# return distance (in cm) & measure-time in time.time()-format
+			return result
+
+		except: # any unknown error
+			self.is_at_measure = False
+			print "exception: unknown error from sensor (probably \'referenced before assignment\')"
+			return [self.unknown_error_value, echo_start]
 		
 
 	def move_servo(self, value, percentage=-1):
@@ -342,7 +355,7 @@ class sensors(threading.Thread):
 		
 	def set_mode(self, new_mode):
 		self.running = False
-		mode = new_mode
+		self.mode = new_mode
 		self.start()
 
 	def run(self):
@@ -409,6 +422,8 @@ class sensors(threading.Thread):
 					# move servo to next position
 					j = j + servo_direction
 					self.move_servo(self.servo_segment_values[j])
+					if (j == 0):
+						time.sleep(.25) # the servo needs time to come from right end to left end
 
 				i=i+1 # count to next cycle-entry
 				if (i>=len(cycle)): # jump to cycle-beginning

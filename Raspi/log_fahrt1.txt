@@ -1,0 +1,489 @@
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=159
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=170
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=180
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=190
+True: 104.331254959, (10000000.0, 10000000.0, 55.2155971527, 451.962947845, 10000000.0, 10000000.0, 701.286315918, 10000000.0, 10000000.0, 500.126123428, 10000000.0, ), 10000000.0
+
+let it roll a bit, for 1 second.
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=200
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=100
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=110
+beginn of loop
+__________________________________
+
+
+error in gap finding!
+error in gap finding!
+berechnete Lenkrichtung: 0
+
+
+steer straight for 1 second
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=159
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=120
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=130
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=140
+True: 10000000.0, (10000000.0, 44.16680336, 48.7589836121, 51.1705875397, 10000000.0, 10000000.0, 701.286315918, 10000000.0, 10000000.0, 498.711585999, 661.164522171, ), 10000000.0
+
+let it roll a bit, for 1 second.
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=150
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=160
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=170
+beginn of loop
+__________________________________
+
+
+potential obstacle found!
+
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=120
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=180
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=190
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=200
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=100
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=110
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=120
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=130
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=140
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=150
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=160
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=170
+real obstacle found!
+
+
+steer left 90 after break!
+
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=180
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=190
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=200
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=139
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=115
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=100
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=110
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=120
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=130
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=140
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=150
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=160
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=170
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=180
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=190
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=200
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=100
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=110
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=120
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=130
+exception: unknown error from sensor (probably 'referenced before assignment')
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=140
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=150
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=160
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=170
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=180
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=190
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=159
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=195
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=200
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=100
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=110
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=120
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=120
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=130
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=140
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=150
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=160
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=170
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=180
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=190
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=200
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=100
+True: 4.67324256897, (10000000.0, 40.8675670624, 48.0577945709, 48.4306812286, 73.1019973755, 10000000.0, 10000000.0, 10000000.0, 242.777585983, 761.973619461, 728.669166565, ), 10000000.0
+
+let it roll a bit, for 1 second.
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=110
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=120
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=130
+beginn of loop
+__________________________________
+
+
+error in gap finding!
+error in gap finding!
+error in gap finding!
+error in gap finding!
+error in gap finding!
+berechnete Lenkrichtung: 0
+
+
+steer straight for 1 second
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=159
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=140
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=150
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=160
+True: 10000000.0, (10000000.0, 36.5307331085, 52.2568225861, 53.0917644501, 10000000.0, 10000000.0, 10000000.0, 10000000.0, 242.777585983, 761.973619461, 728.669166565, ), 10000000.0
+
+let it roll a bit, for 1 second.
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=170
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=180
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=190
+beginn of loop
+__________________________________
+
+
+potential obstacle found!
+
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=120
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=200
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=100
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=110
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=120
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=130
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=140
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=150
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=160
+no real obstacle found!
+
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=159
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=170
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=180
+True: 10000000.0, (10000000.0, 41.0540103912, 48.9778518677, 52.2081851959, 10000000.0, 10000000.0, 10000000.0, 10000000.0, 672.229528427, 10000000.0, 10000000.0, ), 162.489414215
+
+let it roll a bit, for 1 second.
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=190
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=200
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=100
+beginn of loop
+__________________________________
+
+
+error in gap finding!
+error in gap finding!
+berechnete Lenkrichtung: 0
+
+
+steer straight for 1 second
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=159
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=110
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=120
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=130
+True: 10000000.0, (10000000.0, 10000000.0, 45.5935001373, 52.2081851959, 10000000.0, 10000000.0, 10000000.0, 10000000.0, 342.123508453, 10000000.0, 10000000.0, ), 10000000.0
+
+let it roll a bit, for 1 second.
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=140
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=150
+beginn of loop
+__________________________________
+
+
+error in gap finding!
+berechnete Lenkrichtung: 0
+
+
+steer straight for 1 second
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=159
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=160
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=170
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=180
+True: 10000000.0, (10000000.0, 10000000.0, 45.5935001373, 50.5747795105, 10000000.0, 495.396137238, 10000000.0, 10000000.0, 342.123508453, 10000000.0, 10000000.0, ), 10000000.0
+
+let it roll a bit, for 1 second.
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=190
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=200
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=100
+beginn of loop
+__________________________________
+
+
+error in gap finding!
+error in gap finding!
+error in gap finding!
+berechnete Lenkrichtung: -51.0
+
+
+steer left for 1 second
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=159
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=195
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=110
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=120
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=130
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=140
+True: 10000000.0, (126.55043602, 40.4784679413, 44.7423458099, 43.4210300446, 10000000.0, 495.396137238, 10000000.0, 10000000.0, 135.203838348, 129.776716232, 128.179788589, ), 747.252702713
+
+let it roll a bit, for 1 second.
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=150
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=160
+exception: unknown error from sensor (probably 'referenced before assignment')
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=170
+beginn of loop
+__________________________________
+
+
+error in gap finding!
+error in gap finding!
+error in gap finding!
+error in gap finding!
+error in gap finding!
+error in gap finding!
+error in gap finding!
+berechnete Lenkrichtung: 0
+
+
+steer straight for 1 second
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=159
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=180
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=190
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=200
+True: 387.007713318, (126.55043602, 40.4784679413, 44.7423458099, 43.4210300446, 45.4070568085, 10000000.0, 10000000.0, 10000000.0, 10000000.0, 117.876768112, 128.179788589, ), 10000000.0
+
+let it roll a bit, for 1 second.
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=100
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=110
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=120
+beginn of loop
+__________________________________
+
+
+error in gap finding!
+error in gap finding!
+error in gap finding!
+error in gap finding!
+error in gap finding!
+error in gap finding!
+berechnete Lenkrichtung: 0
+
+
+steer straight for 1 second
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=159
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=130
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=140
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=150
+True: 345.268726349, (357.983350754, 338.467597961, 61.8302822113, 71.9954967499, 73.5924243927, 10000000.0, 10000000.0, 10000000.0, 10000000.0, 117.876768112, 650.606155396, ), 10000000.0
+
+let it roll a bit, for 1 second.
+
+clear_channel_gpio: channel=0, gpio=4
+add_channel_pulse: channel=0, gpio=4, start=0, width=150
+clear_channel_gpio: channel=0, gpio=17
+add_channel_pulse: channel=0, gpio=17, start=0, width=155
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=160
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=170
+^Cshutting down dma channel 0
+clear_channel: channel=0
+clear_channel_gpio: channel=0, gpio=24
+add_channel_pulse: channel=0, gpio=24, start=0, width=180
+
