@@ -38,12 +38,12 @@ Null = 1500
 Slow = 100	#check these values!!! starts from 1550
 Middle = 200
 Fast = 300
-
+Slow_Offset = 10
 #define waiting time between stop and steer in seconds
 Sleeping_Time=.5
 
 #define time needed for 90-degrees-turn (ADJUST!)
-Sleeping_Time_90=1
+Sleeping_Time_90={"slow":0.63,"middle":0.2,"fast":0.083}
 
 # Clear servo on GPIO_Servo
 #servo.stop_servo(GPIO_Servo)
@@ -126,7 +126,7 @@ def accelerate(current_status, desired_status):
 				servo.set_servo(GPIO_Motor, (Null+Middle))
 			elif desired_status[1]=='slow':
 				# Set motor on GPIO_Motor to slow forward
-				servo.set_servo(GPIO_Motor, (Null+Slow+Slow_Offset))
+				servo.set_servo(GPIO_Motor, (Null+Slow-Slow_Offset))
 			elif desired_status[1]=='null':
 				# Set motor on GPIO_Motor to null position #Leerlauf
 				servo.set_servo(GPIO_Motor, (Null))
@@ -192,12 +192,12 @@ def accelerate(current_status, desired_status):
 			if desired_status[1]=='fast':
 				# Set motor on GPIO_Motor to fast forward
 				servo.set_servo(GPIO_Motor, (Null+Fast))
-			elif desired_status[2]=='middle':
+			elif desired_status[1]=='middle':
 				# Set motor on GPIO_Motor to middle forward
 				servo.set_servo(GPIO_Motor, (Null+Middle))
-			elif desired_status[2]=='slow':
+			elif desired_status[1]=='slow':
 				# Set motor on GPIO_Motor to slow forward
-				servo.set_servo(GPIO_Motor, (Null+Slow+Slow_Offset))
+				servo.set_servo(GPIO_Motor, (Null+Slow-Slow_Offset))
 			elif desired_status[1]=='null':
 				# Set motor on GPIO_Motor to null position #Leerlauf
 				servo.set_servo(GPIO_Motor, (Null))
@@ -221,7 +221,7 @@ def accelerate(current_status, desired_status):
 				servo.set_servo(GPIO_Motor, (Null+Middle))
 			elif desired_status[1]=='slow':
 				# Set motor on GPIO_Motor to slow forward
-				servo.set_servo(GPIO_Motor, (Null+Slow+Slow_Offset))
+				servo.set_servo(GPIO_Motor, (Null+Slow-Slow_Offset))
 			elif desired_status[1]=='null':
 				# Set motor on GPIO_Motor to null position #Leerlauf
 				servo.set_servo(GPIO_Motor, (Null))
@@ -279,29 +279,42 @@ def driving(current_status, desired_status):
 #function for turning 90 degrees right & continue with desired_status
 #speed=slow, middle, fast (for turning process only)
 #CAUTION: time-delay....
-def right90(current_status, desired_status, speed='middle'):
+def right90(current_status, desired_status, speed='slow'):
 	accelerate(current_status, ['break',speed,'right'])	#break
+	sleep(Sleeping_Time)
 	driving(current_status, ['backward',speed,'right'])	#turn right backwards
-	sleep(Sleeping_Time_90)	#wait X-seconds to turn -> ADJUST!
+	sleep(5.0*Sleeping_Time_90[speed])	#wait X-seconds to turn -> ADJUST!
 	driving(current_status, ['forward',speed,'right'])	#turn right forward
-	sleep(Sleeping_Time_90)
+	sleep(Sleeping_Time_90[speed])
 	driving(current_status, desired_status)
 
 #function for quickly turning 90 degrees right & continue with desired_status
 #speed=slow, middle, fast (for turning process only)
 #CAUTION: time-delay....
-def left90(current_status, desired_status, speed='middle'):
+def left90(current_status, desired_status, speed='slow'):
 	accelerate(current_status, ['break',speed,'left'])	#break
+	sleep(Sleeping_Time)
 	driving(current_status, ['backward',speed,'left'])	#turn right backwards
-	sleep(Sleeping_Time_90)	#wait X-seconds to turn -> ADJUST!
+	sleep(5.0*Sleeping_Time_90[speed])	#wait X-seconds to turn -> ADJUST!
 	driving(current_status, ['forward',speed,'left'])	#turn right forward
-	sleep(Sleeping_Time_90)
+	sleep(Sleeping_Time_90[speed])
 	driving(current_status, desired_status)
+
+def left90test(current_status, desired_status, delay_time, speed='slow'):
+	accelerate(current_status, ['break',speed,'left'])	#break
+	sleep(Sleeping_Time)
+	driving(current_status, ['backward',speed,'left'])	#turn right backwards
+	sleep(5.0*delay_time)	#wait X-seconds to turn -> ADJUST!
+	driving(current_status, ['forward',speed,'left'])	#turn right forward
+	sleep(delay_time)
+	driving(current_status, desired_status)
+
 
 #function for quickly turning 90 degrees right & continue with desired_status
 #speed=slow, middle, fast (for turning process only)
 #CAUTION: time-delay....
-def turn180(current_status, desired_status, speed='middle'):
+def turn180(current_status, desired_status, speed='slow'):
 	right90(current_status, desired_status, speed)
 	right90(current_status, desired_status, speed)
-	driving(current_status, desired_status)
+	#sleep(Sleeping_Time_90[speed])
+	#driving(current_status, desired_status)
