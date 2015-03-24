@@ -12,9 +12,7 @@ Just a short welcome to our page
 ## Hardware
 
 Our Reely Blaze RC car finally arrived and we started assembling it.
-<table border="0"><td align="center">
-<img src="{{ site.baseurl }}/images/documentation/assembly.jpg" alt="Our model car assembly." width="80%"></p>
-</td></table>
+<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/documentation/assembly.jpg" alt="Our model car assembly." width="80%"> </div>
 
 Current status: We finished the assembly and are now able to drive! This was great fun :-)
 
@@ -22,9 +20,7 @@ Current status: We finished the assembly and are now able to drive! This was gre
 
 We tried using the Raspberry's PWM to controll the steering Servo and the cruise controll.
 
-<table border="0"><td align="center">
-<img src="{{ site.baseurl }}/images/documentation/pi.jpg" alt="Our raspberry." align="middle" width="50%">
-</td></table>
+<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/documentation/pi.jpg" alt="Our raspberry." width="50%"> </div>
 
 And by now we are ready for attaching the Raspberry to the car and start driving!
 

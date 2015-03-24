@@ -1,0 +1,28 @@
+---
+layout: post
+title: "To the next level!"
+description: "Promoting the transparency of our car!"
+category: documentation
+---
+
+Up to now we have not made any changes on the RC cars appearance, which is about to change. Of course it looks good as it is, but we need to introduce modifications, because we need more space! For the RasPi, the GPS module, sensors... we even plan on putting a small speaker on there.
+
+But that is not all. We think part of the project is also artistic and we have in vision the 
+
+# transparent car!
+
+Besides making the chassis more lucent and permitting a view on the insides of it, we just designed the mounting plate for all the necessary components out of plexiglas.
+
+Have a look on it:
+
+<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/documentation/plexiglas.png" width="50%"> </div>
+
+## Working together
+
+We also found out that it is quiet fun to work together as a team. Maybe one can get an impression of our working atmosphere from the following picture.
+<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/documentation/workingtogether.png" width="70%"> </div>
+
+
+Last week Gero joint us and took the car out on the hallway for a test ride.
+<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/documentation/hallway.png" alt="Hallway driving." width="45%"> </div>
+

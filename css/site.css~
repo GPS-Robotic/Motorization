@@ -641,3 +641,17 @@ img {
   height: 100%;
 }
 
+
+.rotate90 {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+/* added by gps-robotic-group to center images in markdown*/
+.center-image {
+    margin: 0 auto;
+    display: block;
+}

@@ -14,20 +14,13 @@ But that is not all. We think part of the project is also artistic and we have i
 Besides making the chassis more lucent and permitting a view on the insides of it, we just designed the mounting plate for all the necessary components out of plexiglas.
 
 Have a look on it:
-
-<table border="0"><td align="center">
-<img src="{{ site.baseurl }}/images/documentation/plexiglas.png" alt="The next assembly level." width="70%">
-</td></table>
+<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/documentation/plexiglas.png" width="50%"> </div>
 
 ## Working together
 
 We also found out that it is quiet fun to work together as a team. Maybe one can get an impression of our working atmosphere from the following picture.
-<table border="0"><td align="center">
-<img src="{{ site.baseurl }}/images/documentation/workingtogether.png" alt="Working together." align="middle" width="70%">
-</td></table>
-
+<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/documentation/workingtogether.png" width="70%"> </div>
 
 Last week Gero joint us and took the car out on the hallway for a test ride.
-<table border="0"><td align="center">
-<img src="{{ site.baseurl }}/images/documentation/hallway.png" alt="Hallway driving." align="middle" width="70%">
-</td></table>
+<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/documentation/hallway.png" alt="Hallway driving." width="45%"> </div>
+
