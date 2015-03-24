@@ -5,7 +5,7 @@ description: "Connecting the ultrasonic sensors!"
 category: documentation
 ---
 
-It's time to open the eyes! We provide our car, meanwhile named MARVIN, with a set of three ultrasonic sensors. Now the robot is aware of obstacles and prepared to find its way through unknown environments. We decided to put two static sensors in front of the car searching for obstacles directly in front of the robot. One sensor was mounted on a servo scanning the environment around the car to build a map.
+It's time to open the eyes! We provide our car, meanwhile named MARVON, with a set of three ultrasonic sensors. Now the robot is aware of obstacles and prepared to find its way through unknown environments. We decided to put two static sensors in front of the car searching for obstacles directly in front of the robot. One sensor was mounted on a servo scanning the environment around the car to build a map.
 
 <div style="text-align:center"> <img src ="{{ site.baseurl }}/images/documentation/eyes.jpg" alt="Current appearance of our eyed car." width="60%"> </div>
 
