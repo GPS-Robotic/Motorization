@@ -30,7 +30,7 @@ def heading(GPS_from, GPS_goingto):
 
     phi = math.atan2(coord[1], coord[0])
 
-    return phi
+    return phi*180/math.pi
 
 
 def get_direction(GPS_destination, GPS_data, GPS_memory):
@@ -38,18 +38,15 @@ def get_direction(GPS_destination, GPS_data, GPS_memory):
     tolerance = 10*math.pi/180 # define tolarance in angle for straight-assumption (in radiant)
 	
     # phi is the angle between the car's position and the destination
-    phi = heading(GPS_destination, GPS_data)
+    phi = heading(GPS_data, GPS_destination)
 
 	# head is the car's angle, between -pi and pi
 	head = heading(GPS_memory[0],GPS_memory[1])	
 
-	if (abs( phi - head ) < tolerance): # if we (nearly) head on target: drive straight, medium pace
-		desired_status=['forward', 'middle', 'straight']
-	elif ( ( phi - head) > 0): # current angle is less than target-angle -> turn right
-		desired_status=['forward', 'slow', 'right']
-	elif ( ( phi - head) < 0): # current angle is bigger than target-angle -> turn left
-		desired_status=['forward', 'slow', 'left']
-	else:	# any error
-		desired_status=['break', 'slow', 'straight']
-		print "Error: couldn't calculate direction. There is something deeply wrong in your script! Stopped."
-	return desired_status
+	if (phi - head) > 180: 
+		theta = 360 - (phi - head)
+	elif (phi - head) < -180:
+		theta = -360 - (phi - head)
+	else:
+		theta = -(phi - head)
+	return theta

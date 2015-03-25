@@ -14,6 +14,9 @@
 #
 #
 #
+
+import math
+
 #constants
 c_1 = .7 		#constants for cost function from paper to experiment with
 c_2 = .3
@@ -21,6 +24,48 @@ c_2 = .3
 #viewing angle in degree!
 angle = 170.
 obstacle = 100.
+
+# we assume that (because of small distances), the longitude and latitude basically are equal to normal coordinates (orthogonal)
+#	=> latitude = y-coord. longitude = x-coord.
+#
+# GPS_data = [gpsd.fix.latitude, gpsd.fix.longitude, gpsd.fix.altitude, gpsd.fix.track, gpsd.fix.satellites, gps.fixing.time]
+# GPS_destination = [latitude, longitude]
+
+# Note: use atan2 to circumvent any trouble with atan :)
+
+# Note: since GPS-heading is not working properly we calculate the heading between the last two GPS points we got.
+
+def heading(GPS_from, GPS_goingto):
+    "calculate heading, based on two GPS-points"
+    
+    # latitude = y-coord. longitude = x-coord.
+    # coord = [x-coord, y-coord] in the reference frame of the car -> current_position: origin [0, 0] 
+    coord = [0., 0.]
+    coord[0] = GPS_goingto[1] - GPS_from[1]
+    coord[1] = GPS_goingto[0] - GPS_from[0]
+
+    phi = math.atan2(coord[1], coord[0])
+
+    return phi*180/math.pi  #phi is angle between x-axis and direction to target, between -180 degree and 180 degree 
+
+
+def get_direction(GPS_destination, GPS_data, GPS_memory):
+	
+	tolerance = 10*math.pi/180 # define tolarance in angle for straight-assumption (in radiant)
+	
+    # phi is the angle between the car's position and the destination
+	phi = heading(GPS_data, GPS_destination)
+
+	# head is the car's angle, between -pi and pi
+	head = heading(GPS_memory[0],GPS_memory[1])	#GPS_memory[0] old value, new value in GPS_memory[1]
+
+	if (phi - head) > 180: 				#test for smallest angle to target
+		theta = 360 - (phi - head)		# according to navigate function and sensor design: left negative values, right positive
+	elif (phi - head) < -180:
+		theta = -360 - (phi - head)
+	else:
+		theta = -(phi - head)
+	return theta 						#between -180 degree (left) and 180 degree (right)
 
 def gap_finding(Scan, obstacle, narrow, medium, wide):	#take sensor data, obstacle distance and list for gaps
 	N_free = 0											#and give back the indices for free gaps ordered as wide, medium, narrow
@@ -69,7 +114,7 @@ def calc_direction(reference_direction,narrow,medium,wide,segment_width,segment_
 		else:
 			return -1 		#-1 for turn around/ go backwards.
 
-def navigate(Scan,obstacle,reference_direction):
+def navigate(Scan, obstacle, reference_direction):
 	#list for narrow, medium and wide gaps
 	wide = []
 	medium = []
@@ -77,10 +122,24 @@ def navigate(Scan,obstacle,reference_direction):
 	scan = [x[0] for x in Scan] #from sensors you get a list [[measurement,time],[measurement,time],....]
 	segment_number = len(Scan)-1
 	segment_width = angle/float(segment_number)
-
+	
 	gap_finding(scan,obstacle,narrow,medium,wide)
 	steering_direction = calc_direction(reference_direction,narrow,medium,wide,segment_width,segment_number)
-	return steering_direction #returns steering direction in degree between -90 and 90, where 0 is straight
+	#returns steering direction in degree between -90 and 90, where 0 is straight
+	#if steering_direction == reference_direction: #do nothing?
+	if steering_direction == -1:
+		return -1
+	elif steering_direction > reference_direction: #directons from -90 to 90 degree.
+	#steer right
+		desired_status = ['forward','slow','right']
+	elif steering_direction < reference_direction: #0 is on the left side while 10 is right.
+	#steer left
+		desired_status = ['forward','slow','left']
+	elif steering_direction == reference_direction:
+		desired_status = ['forward', 'slow', 'straight']
+	else:
+		desired_status = ['break', 'slow', 'straight']
+	return desired_status 
 
 #def steering_radius():
 	#do something
