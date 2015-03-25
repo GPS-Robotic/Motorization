@@ -279,7 +279,7 @@ class sensors(threading.Thread):
                         if (self.mode == 3):
                             current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
 							try:
-								(self.measurements[1])[current_segment]=(result + self.temp[current_segment])/2.
+						        (self.measurements[1])[current_segment]= [sum(x)/2. for x in zip(result, self.temp[current_segment])]
                                 self.temp[current_segment] = result				
 							except:
 								print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
@@ -312,7 +312,7 @@ class sensors(threading.Thread):
                 if (self.mode == 3):
                     current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
 					try:
-						(self.measurements[1])[current_segment]=(result + self.temp[current_segment])/2.
+						(self.measurements[1])[current_segment]= [sum(x)/2. for x in zip(result, self.temp[current_segment])]
                         self.temp[current_segment] = result				
 					except:
 						print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
