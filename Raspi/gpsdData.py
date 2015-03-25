@@ -30,6 +30,9 @@ class GpsPoller(threading.Thread):
     global gpsd #bring it in scope
     gpsd = gps(mode=WATCH_ENABLE) #starting the stream of info
     self.data = [float('nan'), float('nan'), float('nan'), float('nan'), [], float('nan')]
+    self.lat_list = [float('nan'), float('nan'), float('nan'), float('nan'),float('nan'), float('nan'), float('nan'), float('nan'),float('nan'), float('nan')]
+    self.long_list = [float('nan'), float('nan'), float('nan'), float('nan'),float('nan'), float('nan'), float('nan'), float('nan'),float('nan'), float('nan')]
+    self.alt_list = [float('nan'), float('nan'), float('nan'), float('nan'),float('nan'), float('nan'), float('nan'), float('nan'),float('nan'), float('nan')]
     	#data = [gpsd.fix.latitude, gpsd.fix.longitude, gpsd.fix.altitude, gpsd.fix.track, gpsd.satellites, time.time()]
     if (start):
     	self.start()
@@ -37,7 +40,11 @@ class GpsPoller(threading.Thread):
   def run(self):
     global gpsd
     self.running = True
+    self.i = 0
     while self.running:
       gpsd.next() #this will continue to loop and grab EACH set of gpsd info to clear the buffer
-      self.data = [gpsd.fix.latitude, gpsd.fix.longitude, gpsd.fix.altitude, gpsd.fix.track, gpsd.satellites, time.time()]
-
+      self.lat_list[i%10] = gpsd.fix.latitude
+      self.long_list[i%10] = gpsd.fix.longitude
+      self.alt_list[i%10] = gpsd.fix.altitude
+      self.data = [sum(self.lat_list) / float(len(self.lat_list)), sum(self.long_list) / float(len(self.long_list)), sum(self.alt_list) / float(len(self.alt_list)), gpsd.fix.track, gpsd.satellites, time.time()]
+      self.i += 1
