@@ -184,7 +184,7 @@ class sensors(threading.Thread):
 		self.update_segments(0, new_segment_number=self.servo_segments)
 		# set servo to zero-position
 		servo.set_servo(self.SERVO, self.servo_NULL)
-        self.temp = [[0, 0]]* (servo_segments + 1)
+		self.temp = [[0, 0]] * (self.servo_segments + 1)
 
 		# initialize PINS
 		self.set_PINS()
@@ -266,29 +266,27 @@ class sensors(threading.Thread):
 
 					# save the Out-Of-Sight-Result result
 					if (sensor_number == 1):
-						if (self.mode != 0 and self.mode != 3):
+						if self.mode != 0 and self.mode != 3:
 							current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
 							try:
 								(self.measurements[1])[current_segment]=result
 							except:
 								print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
 								print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
-						else:
-							self.measurements[1]=[result]
-
-                        if (self.mode == 3):
-                            current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
+						elif (self.mode == 3):
+							current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
 							try:
-						        (self.measurements[1])[current_segment]= [sum(x)/2. for x in zip(result, self.temp[current_segment])]
-                                self.temp[current_segment] = result				
+								(self.measurements[1])[current_segment]= [sum(x)/2. for x in zip(result, self.temp[current_segment])]
+								self.temp[current_segment] = result				
 							except:
 								print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
 								print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
+						else:
+							self.measurements[1]=[result]
 					else:
 						self.measurements[sensor_number] = result
-
+					# return distance (in cm) & measure-time in time.time()-format
 					return result
-
 
 			# tell, that there is no measure now
 			self.is_at_measure = False
@@ -307,17 +305,16 @@ class sensors(threading.Thread):
 					except:
 						print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
 						print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
-				else:
-					self.measurements[1]=[result]
-                if (self.mode == 3):
-                    current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
+				elif (self.mode == 3):
+					current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
 					try:
 						(self.measurements[1])[current_segment]= [sum(x)/2. for x in zip(result, self.temp[current_segment])]
-                        self.temp[current_segment] = result				
+						self.temp[current_segment] = result				
 					except:
 						print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
 						print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
-    
+				else:
+					self.measurements[1]=[result]
 			else:
 				self.measurements[sensor_number] = result
 
@@ -456,7 +453,7 @@ class sensors(threading.Thread):
             #          like mode 2, but averaging over 2 consecutive measurements
 			elif (self.mode == 3):
 				cycle=[0,1,2,1] # define cycle for current mode
-                self.get_sensor(cycle[i]) # update next sensor	
+				self.get_sensor(cycle[i]) # update next sensor	
 				
 				if (cycle[i] == 1): # move servo to next position
 					if (j == self.servo_segments) : # servo is at right end and wants to move further right
@@ -471,7 +468,6 @@ class sensors(threading.Thread):
 				i=i+1 # count to next cycle-entry
 				if (i>=len(cycle)): # jump to cycle-beginning
 					i=0
-				
 			else:
 				print "Unknown mode set to sensor-scanning-thread! Waiting for corrent mode..."
 		

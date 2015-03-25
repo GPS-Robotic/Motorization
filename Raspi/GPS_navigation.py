@@ -22,7 +22,7 @@ global current_status
 global desired_status 
 
 #obstacle distance
-obstacle = 100 #cm
+obstacle = 75.0 #cm
 
 global GPS_destination
 GPS_destination = [49.418045, 8.669307] 
@@ -44,7 +44,7 @@ Turn = False
 #initialization
 
 #start sensors
-sens = sensors.sensors(mode=2, start=True)
+sens = sensors.sensors(mode=3, start=True)
 
 # start GPS
 print "[01] start GPS"
@@ -61,6 +61,7 @@ time.sleep(2)
 print "[02] file opened: " + log_file_name
 
 print "[03] Waiting for valid GPS-information:"
+time.sleep(2)
 print gpsp.data
 
 while (math.isnan(gpsp.data[0])):
@@ -74,7 +75,7 @@ print gpsp.data
 print "[05] drive straight to find heading"
 GPS_memory = [0, 0]      # [newest data, second latest data]
 start_go = time.time()
-wait_go = 15.
+wait_go = 7.5
 
 GPS_memory[0] = gpsp.data[0:2]
 print 'start finding heading/n/n'
@@ -122,6 +123,7 @@ while current_distance > accuracy:
 			desired_status = ['forward', 'slow', 'straight']
 	else:
 		if not Turn:
+			print 'get direction from GPS!'
 			reference_direction = get_direction(GPS_destination, gpsp.data, GPS_memory)
 		
 		#if you have to steer more than 90 degree right or left do it manually in the main function
@@ -138,9 +140,10 @@ while current_distance > accuracy:
 			reference_direction -= 90
 			Turn = True	
 		else:
+			print 'driving towards goal!'
 			Turn = False
 			#steering direction in degree.
-			desired_status = navigate(sens.measurements[1], obstacle, reference_direction)
+			desired_status = navigate(sens.measurements[1], 0*obstacle, reference_direction)
 			if desired_status == -1:					 
 				desired_status = ['break', 'slow', 'straight']
 				left90(current_status,desired_status,speed='middle')
@@ -174,10 +177,12 @@ while current_distance > accuracy:
 					print gpsp.data			
 
 				current_distance = math.sqrt((GPS_destination[0]-gpsp.data[0])*(GPS_destination[0]-gpsp.data[0])+(GPS_destination[1]-gpsp.data[1])*(GPS_destination[1]-gpsp.data[1]))			
-
-				if (gpsp.data[0] - GPS_memory[1][0]) < accuracy/10. or!= (gpsp.data[1] - GPS_memory[1][1]) < accuracy/10.:
+				print 'calculate new distance to target: ' + str(current_distance)
+				if (gpsp.data[0] - GPS_memory[1][0]) < accuracy/10. or (gpsp.data[1] - GPS_memory[1][1]) < accuracy/10.:
 					GPS_memory[0] = GPS_memory[1]
 			    	GPS_memory[1] = gpsp.data[0:2]
+			    
+	print GPS_memory
 
 print "[08] destination reached. stop."
 

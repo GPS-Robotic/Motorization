@@ -23,7 +23,6 @@ c_2 = .3
 
 #viewing angle in degree!
 angle = 170.
-obstacle = 100.
 
 # we assume that (because of small distances), the longitude and latitude basically are equal to normal coordinates (orthogonal)
 #	=> latitude = y-coord. longitude = x-coord.
@@ -70,7 +69,7 @@ def get_direction(GPS_destination, GPS_data, GPS_memory):
 def gap_finding(Scan, obstacle, narrow, medium, wide):	#take sensor data, obstacle distance and list for gaps
 	N_free = 0											#and give back the indices for free gaps ordered as wide, medium, narrow
 	for i in range(len(Scan)):
-		if Scan[i] <= obstacle: #obstacle:
+		if Scan[i] <= obstacle or i == len(Scan)-1: #obstacle:
 			if N_free > 3:
 				for j in range(N_free-1, -1, -1):
 					wide.extend([(i-1-j)])
@@ -120,6 +119,7 @@ def navigate(Scan, obstacle, reference_direction):
 	medium = []
 	narrow = []
 	scan = [x[0] for x in Scan] #from sensors you get a list [[measurement,time],[measurement,time],....]
+	print scan
 	segment_number = len(Scan)-1
 	segment_width = angle/float(segment_number)
 	
