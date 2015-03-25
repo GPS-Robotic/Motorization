@@ -33,7 +33,7 @@ update_time = 1 # time in seconds in while-loop for updating gps, current_status
 log_file_name='log/RC_log'+str(time.time())+'.txt'
 
 # distance to target
-accuracy = 0.0000001 # when is the target reached?? accuracy in meter
+accuracy = 0.000001 # when is the target reached?? accuracy in meter
 current_distance = accuracy * 10 # dummy value for current distance in meter#
 
 #Turn variable to remember turning right or left 
@@ -175,7 +175,7 @@ while current_distance > accuracy:
 
 				current_distance = math.sqrt((GPS_destination[0]-gpsp.data[0])*(GPS_destination[0]-gpsp.data[0])+(GPS_destination[1]-gpsp.data[1])*(GPS_destination[1]-gpsp.data[1]))			
 
-				if GPS_memory[1] != gpsp.data[0:2]:
+				if (gpsp.data[0] - GPS_memory[1][0]) < accuracy/10. or!= (gpsp.data[1] - GPS_memory[1][1]) < accuracy/10.:
 					GPS_memory[0] = GPS_memory[1]
 			    	GPS_memory[1] = gpsp.data[0:2]
 
