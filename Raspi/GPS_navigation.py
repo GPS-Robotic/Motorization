@@ -1,4 +1,4 @@
-#from log import *
+#import log
 import sensors
 import time
 from navigation import * 
@@ -6,6 +6,7 @@ from drive import *
 import math	# for checking whether GPS is a number
 import gpsdData as GPS
 from distance_target import *
+from target_direction import * # to find reference-direction from compass and target-coordinates
 
 #----------------------------------------------------------------------------------------#
 #definitions
@@ -22,10 +23,10 @@ global current_status
 global desired_status 
 
 #obstacle distance
-obstacle = -2 # for test without sensors. 75.0 #cm
+obstacle = -100 # for test without sensors. 75.0 #cm
 
 global GPS_destination
-GPS_destination = [49.418045, 8.669307] 
+GPS_destination = [49.418080, 8.66939] 
 
 gps_waiting_time = 0.5 # time in seconds in while-loop for waiting for valid GPS
 update_time = 1 # time in seconds in while-loop for updating gps, current_status & desired_status
@@ -33,7 +34,7 @@ update_time = 1 # time in seconds in while-loop for updating gps, current_status
 log_file_name='log/RC_log'+str(time.time())+'.txt'
 
 # distance to target
-accuracy = 0.00008 # when is the target reached?? accuracy in meter
+accuracy = 0.00001 # when is the target reached?? accuracy in meter
 current_distance = accuracy * 10 # dummy value for current distance in meter#
 
 #Turn variable to remember turning right or left 
@@ -44,7 +45,7 @@ Turn = False
 #initialization
 
 #start sensors
-sens = sensors.sensors(mode=3, start=True)
+sens = sensors.sensors(mode=2, start=True)
 
 # start GPS
 print "[01] start GPS"
@@ -54,9 +55,9 @@ gpsp=GPS.GpsPoller()
 current_status = ['break', 'slow', 'straight'] # actually one has to initialize to that!
 desired_status = current_status
 driving(current_status,desired_status) #init Fahrtregler
-time.sleep(2)
+time.sleep(4)
 
-#log_file = log_class(log_file_name)
+#log_file = log.log(log_file_name)
 
 print "[02] file opened: " + log_file_name
 
@@ -75,7 +76,7 @@ print gpsp.data
 print "[05] drive straight to find heading"
 GPS_memory = [0, 0]      # [newest data, second latest data]
 start_go = time.time()
-wait_go = 7.5
+wait_go = 2
 
 GPS_memory[0] = gpsp.data[0:2]
 print 'start finding heading/n/n'
@@ -101,7 +102,7 @@ print "[06] start routine"
 #	pass
 
 if output: print_log ( 'While loop starts\n')
-while current_distance > accuracy:
+while abs(current_distance) > accuracy:
 	print "wrote log-entry:"
 	#print log_file.add_log(current_status, gpsp.data)
 	if output: print_log ("beginn of loop\n__________________________________\n\n")
@@ -124,8 +125,9 @@ while current_distance > accuracy:
 	else:
 		if not Turn:
 			print 'get direction from GPS!'
-			reference_direction = get_direction(GPS_destination, gpsp.data, GPS_memory)
-			print "reference-direction: " + str(reference_direction)
+			GPS_reference_direction = get_direction(GPS_destination, gpsp.data,GPS_memory)
+			reference_direction = comp_get_direction(GPS_destination, gpsp.data)
+			print "reference-direction: Compass=" + str(reference_direction) + "; GPS=" + str(GPS_reference_direction)
 		
 		#if you have to steer more than 90 degree right or left do it manually in the main function
 #		if reference_direction <= -90:					 
@@ -181,7 +183,8 @@ while current_distance > accuracy:
 			current_distance = math.sqrt((GPS_destination[0]-gpsp.data[0])*(GPS_destination[0]-gpsp.data[0])+(GPS_destination[1]-gpsp.data[1])*(GPS_destination[1]-gpsp.data[1]))			
 			print 'calculate new distance to target: ' + str(current_distance)
 			print "in meter: " + str(current_distance*6300000./(2.*math.pi)) + "m" # str(get_target_distance(GPS_destination[0], GPS_destination[1], gpsp.data[0], gpsp.data[1]))
-			if (gpsp.data[0] - GPS_memory[0][0]) > accuracy/10. or (gpsp.data[1] - GPS_memory[0][1]) > accuracy/10.:
+			print (gpsp.data[0] - GPS_memory[0][0])
+			if abs(gpsp.data[0] - GPS_memory[0][0]) > accuracy/2. or abs(gpsp.data[1] - GPS_memory[0][1]) > accuracy/2.:
 				GPS_memory[0] = GPS_memory[1]
 		    	GPS_memory[1] = gpsp.data[0:2]
 			    

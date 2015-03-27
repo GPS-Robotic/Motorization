@@ -151,7 +151,7 @@ class sensors(threading.Thread):
 
 		# constants for single distance-measurements
 		self.ECHO_in_timeout = 0.05 # max. waiting-time in seconds for echo-signal to come in
-		self.no_echo_in_value = 600.0 # return value if no echo is received after ECHO_in_timeout
+		self.no_echo_in_value = -1.0 # return value if no echo is received after ECHO_in_timeout
 		self.out_of_sight_time = 0.038 # max. waiting-time in seconds for echo-signal-duration
 					       #   (according to data sheet: max 25ms for obstacle, exact 38ms for no-obstacle)
 		self.out_of_sight_value = 500.0 # return value of distance measurement after out_of_sight_time
@@ -322,7 +322,7 @@ class sensors(threading.Thread):
 					self.measurements[sensor_number] = result
 
 			# return distance (in cm) & measure-time in time.time()-format
-			print "succeded"
+			#print "succeded"
 			return result
 
 		except: # any unknown error
@@ -471,14 +471,14 @@ class sensors(threading.Thread):
 					time.sleep(self.scan_relaxation_time)
 					current_measure = self.get_sensor(cycle[i])
 					num_measurements += 1
-					while current_measure[0] == self.unknown_error_value:
+					while current_measure[0] == self.unknown_error_value or current_measure[0] == self.no_echo_in_value:
 						except_number += 1
 						time.sleep(self.scan_relaxation_time)
 						current_measure = self.get_sensor(cycle[i])
 						if except_number == 3:  # break, if too much errors
 							num_measurements -= 1
 							break
-					if (current_measure[0]!= self.unknown_error_value): av_result += current_measure[0] # sum for average
+					if (current_measure[0]!= self.unknown_error_value and current_measure[0] == self.no_echo_in_value): av_result += current_measure[0] # sum for average
 
 				# calculate average
 				if num_measurements == 0:

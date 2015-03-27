@@ -119,7 +119,7 @@ def navigate(Scan, obstacle, reference_direction):
 	medium = []
 	narrow = []
 	scan = [x[0] for x in Scan] #from sensors you get a list [[measurement,time],[measurement,time],....]
-	print scan
+	#print scan
 	segment_number = len(Scan)-1
 	segment_width = angle/float(segment_number)
 	straight_angle = 3.*segment_width/2. # if steering_direction is between +/-straight_angle: drive straight
