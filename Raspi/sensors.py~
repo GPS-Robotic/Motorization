@@ -467,47 +467,48 @@ class sensors(threading.Thread):
 				num_measurements = 0
 
 				cycle=[0,1,2,1] # define cycle for current mode
-				for num in range(self.averaging_number): # measure often
-					time.sleep(self.scan_relaxation_time)
-					current_measure = self.get_sensor(cycle[i])
-					num_measurements += 1
-					while current_measure[0] == self.unknown_error_value:
-						except_number += 1
+				if i !=1:
+					for num in range(self.averaging_number): # measure often
 						time.sleep(self.scan_relaxation_time)
 						current_measure = self.get_sensor(cycle[i])
-						if except_number == 3:  # break, if too much errors
-							num_measurements -= 1
-							break
-					if (current_measure[0]!= self.unknown_error_value): av_result += current_measure[0] # sum for average
+						num_measurements += 1
+						while current_measure[0] == self.unknown_error_value:
+							except_number += 1
+							time.sleep(self.scan_relaxation_time)
+							current_measure = self.get_sensor(cycle[i])
+							if except_number == 3:  # break, if too much errors
+								num_measurements -= 1
+								break
+						if (current_measure[0]!= self.unknown_error_value): av_result += current_measure[0] # sum for average
 
-				# calculate average
-				if num_measurements == 0:
-					result = [self.unknown_error_value, time.time() ]
-				else:
-					result = [ av_result / num_measurements, time.time() ] 
-
-				#save the averaged result
-				if (cycle[i] == 1):
-					current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
-					try:
-						(self.measurements[1])[current_segment]=result
-					except:
-						print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
-						print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
-				else:
-					self.measurements[cycle[i]] = result
-				
-				if (cycle[i] == 1): # move servo to next position
-					if (j == self.servo_segments) : # servo is at right end and wants to move further right
-						j = -1 # jump to left end
-
-					# move servo to next position
-					j = j + servo_direction
-					self.move_servo(self.servo_segment_values[j])
-					if (j == 0): # the servo needs time to come from right end to left end
-						time.sleep(.25)
+					# calculate average
+					if num_measurements == 0:
+						result = [self.unknown_error_value, time.time() ]
 					else:
-						time.sleep(.1)
+						result = [ av_result / num_measurements, time.time() ] 
+
+					#save the averaged result
+					if (cycle[i] == 1):
+						current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
+						try:
+							(self.measurements[1])[current_segment]=result
+						except:
+							print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
+							print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
+					else:
+						self.measurements[cycle[i]] = result
+				
+					if (cycle[i] == 1): # move servo to next position
+						if (j == self.servo_segments) : # servo is at right end and wants to move further right
+							j = -1 # jump to left end
+
+						# move servo to next position
+						j = j + servo_direction
+						self.move_servo(self.servo_segment_values[j])
+						if (j == 0): # the servo needs time to come from right end to left end
+							time.sleep(.25)
+						else:
+							time.sleep(.1)
 
 				i=i+1 # count to next cycle-entry
 				if (i>=len(cycle)): # jump to cycle-beginning
