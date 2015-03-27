@@ -5,7 +5,7 @@ from navigation import *
 from drive import *
 import math	# for checking whether GPS is a number
 import gpsdData as GPS
-
+from distance_target import *
 
 #----------------------------------------------------------------------------------------#
 #definitions
@@ -22,7 +22,7 @@ global current_status
 global desired_status 
 
 #obstacle distance
-obstacle = 75.0 #cm
+obstacle = -2 # for test without sensors. 75.0 #cm
 
 global GPS_destination
 GPS_destination = [49.418045, 8.669307] 
@@ -33,7 +33,7 @@ update_time = 1 # time in seconds in while-loop for updating gps, current_status
 log_file_name='log/RC_log'+str(time.time())+'.txt'
 
 # distance to target
-accuracy = 0.000001 # when is the target reached?? accuracy in meter
+accuracy = 0.00008 # when is the target reached?? accuracy in meter
 current_distance = accuracy * 10 # dummy value for current distance in meter#
 
 #Turn variable to remember turning right or left 
@@ -125,62 +125,65 @@ while current_distance > accuracy:
 		if not Turn:
 			print 'get direction from GPS!'
 			reference_direction = get_direction(GPS_destination, gpsp.data, GPS_memory)
+			print "reference-direction: " + str(reference_direction)
 		
 		#if you have to steer more than 90 degree right or left do it manually in the main function
-		if reference_direction <= -90:					 
+#		if reference_direction <= -90:					 
+#			desired_status = ['break', 'slow', 'straight']
+#			left90(current_status,desired_status,speed='middle')
+#			time.sleep(1)
+#			reference_direction += 90
+#			Turn = True
+#		elif reference_direction >= 90:
+#			desired_status = ['break', 'slow', 'straight']
+#			right90(current_status,desired_status,speed='middle')
+#			time.sleep(1) 
+#			reference_direction -= 90
+#			Turn = True	
+#		else:
+		print 'driving towards goal!'
+		Turn = False
+		#steering direction in degree.
+		desired_status = navigate(sens.measurements[1], obstacle, reference_direction)
+		print "desired status: " + str(desired_status)
+		if desired_status == -1:					 
 			desired_status = ['break', 'slow', 'straight']
 			left90(current_status,desired_status,speed='middle')
 			time.sleep(1)
 			reference_direction += 90
 			Turn = True
-		elif reference_direction >= 90:
-			desired_status = ['break', 'slow', 'straight']
-			right90(current_status,desired_status,speed='middle')
-			time.sleep(1) 
-			reference_direction -= 90
-			Turn = True	
 		else:
-			print 'driving towards goal!'
-			Turn = False
-			#steering direction in degree.
-			desired_status = navigate(sens.measurements[1], 0*obstacle, reference_direction)
-			if desired_status == -1:					 
-				desired_status = ['break', 'slow', 'straight']
-				left90(current_status,desired_status,speed='middle')
-				time.sleep(1)
-				reference_direction += 90
-				Turn = True
-			else:
-				driving(current_status,desired_status)
-				time.sleep(0.5)
-				out = str(sens.running) + ": " + str(sens.measurements[0][0]) + ", ("
-			        for entry in sens.measurements[1]:
-			                out = out + str(entry[0]) + ", "
-				out = out + "), "  + str(sens.measurements[2][0])
-				if output: print_log ( out + "\n")
-				if output: print_log ( "let it roll a bit, for 1 second.\n")
-				desired_status = ['forward', 'null', 'straight']
-				driving(current_status,desired_status) 
-				time.sleep(0.5)			
+			driving(current_status,desired_status)
+			time.sleep(0.5)
+			out = str(sens.running) + ": " + str(sens.measurements[0][0]) + ", ("
+		        for entry in sens.measurements[1]:
+		                out = out + str(entry[0]) + ", "
+			out = out + "), "  + str(sens.measurements[2][0])
+			#if output: print_log ( out + "\n")
+			if output: print_log ( "let it roll a bit, for 1 second.\n")
+			desired_status = ['forward', 'null', 'straight']
+			driving(current_status,desired_status) 
+			time.sleep(0.5)			
 
-				# Pause if GPS-Position is lost:
-				if (math.isnan(gpsp.data[1])):
-					print "GPS position lost! Stopping car and waiting for valid GPS-information:"
-					driving(current_status, ['break', 'slow', 'straight'])
-					print gpsp.data
-					while (math.isnan(gpsp.data[0])):
-						time.sleep(gps_waiting_time)
-						print "still waiting... "
-						print gpsp.data			
-
-					print "[04] got valid GPS-data, continue driving:"
+			# Pause if GPS-Position is lost:
+			if (math.isnan(gpsp.data[1])):
+				print "GPS position lost! Stopping car and waiting for valid GPS-information:"
+				driving(current_status, ['break', 'slow', 'straight'])
+				print gpsp.data
+				while (math.isnan(gpsp.data[0])):
+					time.sleep(gps_waiting_time)
+					print "still waiting... "
 					print gpsp.data			
 
-				current_distance = math.sqrt((GPS_destination[0]-gpsp.data[0])*(GPS_destination[0]-gpsp.data[0])+(GPS_destination[1]-gpsp.data[1])*(GPS_destination[1]-gpsp.data[1]))			
-				print 'calculate new distance to target: ' + str(current_distance)
-				if (gpsp.data[0] - GPS_memory[1][0]) < accuracy/10. or (gpsp.data[1] - GPS_memory[1][1]) < accuracy/10.:
-					GPS_memory[0] = GPS_memory[1]
-			    	GPS_memory[1] = gpsp.data[0:2]
+				print "[04] got valid GPS-data, continue driving:"
+				print gpsp.data			
+
+			current_distance = math.sqrt((GPS_destination[0]-gpsp.data[0])*(GPS_destination[0]-gpsp.data[0])+(GPS_destination[1]-gpsp.data[1])*(GPS_destination[1]-gpsp.data[1]))			
+			print 'calculate new distance to target: ' + str(current_distance)
+			print "in meter: " + str(current_distance*6300000./(2.*math.pi)) + "m" # str(get_target_distance(GPS_destination[0], GPS_destination[1], gpsp.data[0], gpsp.data[1]))
+			if (gpsp.data[0] - GPS_memory[0][0]) > accuracy/10. or (gpsp.data[1] - GPS_memory[0][1]) > accuracy/10.:
+				GPS_memory[0] = GPS_memory[1]
+		    	GPS_memory[1] = gpsp.data[0:2]
 			    
 	print GPS_memory
 

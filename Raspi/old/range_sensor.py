@@ -4,8 +4,8 @@ import RPi.GPIO as GPIO
 def get_distance(i):
 	GPIO.setmode(GPIO.BCM)
 
-	TRIG = [16, 20, 21]  # 16  20  21
-	ECHO = [13, 19, 26]  # 13  19  26
+	TRIG = [25, 8, 7]  # 16  20  21
+	ECHO = [10, 9, 11]  # 13  19  26
 #	SERVO = 6 # for moving sensor 2
 
 	GPIO.setup(TRIG[i], GPIO.OUT)
@@ -32,3 +32,6 @@ def get_distance(i):
 #	print "Distance (" + str(i) + "): " + str(dist) + "cm"
 	time.sleep(.04)
 	return dist
+
+while True:
+	print str (get_distance(0)) + ", " + str(get_distance(1)) + ", " + str(get_distance(2))

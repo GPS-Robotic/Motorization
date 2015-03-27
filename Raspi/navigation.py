@@ -122,6 +122,7 @@ def navigate(Scan, obstacle, reference_direction):
 	print scan
 	segment_number = len(Scan)-1
 	segment_width = angle/float(segment_number)
+	straight_angle = 3.*segment_width/2. # if steering_direction is between +/-straight_angle: drive straight
 	
 	gap_finding(scan,obstacle,narrow,medium,wide)
 	steering_direction = calc_direction(reference_direction,narrow,medium,wide,segment_width,segment_number)
@@ -129,16 +130,18 @@ def navigate(Scan, obstacle, reference_direction):
 	#if steering_direction == reference_direction: #do nothing?
 	if steering_direction == -1:
 		return -1
-	elif steering_direction > reference_direction: #directons from -90 to 90 degree.
+	elif steering_direction > straight_angle and steering_direction < 2.*straight_angle: #directons from -90 to 90 degree.
 	#steer right
-		desired_status = ['forward','slow','right']
-	elif steering_direction < reference_direction: #0 is on the left side while 10 is right.
+		desired_status = ['forward','slow','half-right']
+	elif steering_direction >= 2.*straight_angle:
+		desired_status = ['forward','slow','half-right']
+	elif steering_direction < -straight_angle and steering_direction > -2.*straight_angle: 
 	#steer left
-		desired_status = ['forward','slow','left']
-	elif steering_direction == reference_direction:
-		desired_status = ['forward', 'slow', 'straight']
+		desired_status = ['forward','slow','half-left']
+	elif steering_direction <= -2.*straight_angle:
+		desired_status = ['forward', 'slow', 'half-left']
 	else:
-		desired_status = ['break', 'slow', 'straight']
+		desired_status = ['forward', 'slow', 'straight']
 	return desired_status 
 
 #def steering_radius():

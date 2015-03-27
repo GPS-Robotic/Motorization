@@ -28,12 +28,13 @@ class GpsPoller(threading.Thread):
   def __init__(self, start=True):
     threading.Thread.__init__(self)
     global gpsd #bring it in scope
-    global i 
+    self.i = 0 # counter for averaging
+    self.average_number = 5 # number of values for average
     gpsd = gps(mode=WATCH_ENABLE) #starting the stream of info
     self.data = [float('nan'), float('nan'), float('nan'), float('nan'), [], float('nan')]
-    self.lat_list = [float('nan'), float('nan'), float('nan'), float('nan'),float('nan'), float('nan'), float('nan'), float('nan'),float('nan'), float('nan')]
-    self.long_list = [float('nan'), float('nan'), float('nan'), float('nan'),float('nan'), float('nan'), float('nan'), float('nan'),float('nan'), float('nan')]
-    self.alt_list = [float('nan'), float('nan'), float('nan'), float('nan'),float('nan'), float('nan'), float('nan'), float('nan'),float('nan'), float('nan')]
+    self.lat_list = [float('nan')] * self.average_number
+    self.long_list = [float('nan')] * self.average_number
+    self.alt_list = [float('nan')] * self.average_number
     	#data = [gpsd.fix.latitude, gpsd.fix.longitude, gpsd.fix.altitude, gpsd.fix.track, gpsd.satellites, time.time()]
     if (start):
     	self.start()
@@ -44,8 +45,8 @@ class GpsPoller(threading.Thread):
     self.i = 0
     while self.running:
       gpsd.next() #this will continue to loop and grab EACH set of gpsd info to clear the buffer
-      self.lat_list[self.i%10] = gpsd.fix.latitude
-      self.long_list[self.i%10] = gpsd.fix.longitude
-      self.alt_list[self.i%10] = gpsd.fix.altitude
+      self.lat_list[self.i%self.average_number] = gpsd.fix.latitude
+      self.long_list[self.i%self.average_number] = gpsd.fix.longitude
+      self.alt_list[self.i%self.average_number] = gpsd.fix.altitude
       self.data = [sum(self.lat_list)/float(len(self.lat_list)), sum(self.long_list)/float(len(self.long_list)), sum(self.alt_list) / float(len(self.alt_list)), gpsd.fix.track, gpsd.satellites, time.time()]
       self.i += 1

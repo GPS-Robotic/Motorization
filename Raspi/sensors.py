@@ -129,7 +129,7 @@ class sensors(threading.Thread):
 
 		# set standart-Sensor- & Servo- PINS
 		# USE GPIO-NUMBERING, NOT BOARD-NUMBERING!
-		model_B=False # which model are we using? 
+		model_B=True # which model are we using? 
 			     #    True -> Model B (Check cat /proc/cpuinfo --> Revision 000e), False -> Model B+
 		if model_B==True: # Model B
 			self.TRIG = [25, 8, 7]
@@ -151,15 +151,17 @@ class sensors(threading.Thread):
 
 		# constants for single distance-measurements
 		self.ECHO_in_timeout = 0.05 # max. waiting-time in seconds for echo-signal to come in
-		self.no_echo_in_value = 20000000.0 # return value if no echo is received after ECHO_in_timeout
+		self.no_echo_in_value = 500.0 # return value if no echo is received after ECHO_in_timeout
 		self.out_of_sight_time = 0.05 # max. waiting-time in seconds for echo-signal-duration
-		self.out_of_sight_value = 10000000.0 # return value of distance measurement after out_of_sight_time
-		self.relaxation_time_before = 0.1 # waiting time before measurement: to ensure sensor to be at rest
+		self.out_of_sight_value = 500.0 # return value of distance measurement after out_of_sight_time
+		self.relaxation_time_before = 0.1 # waiting time before measurement: to ensure sensor to be at rest (only once at startup)
 		self.dt_to_distance = 17000.0 # constant to convert time-difference to distance (standart: 17000cm/s; speed of sound/2)
 #		self.relaxation_time_after = 0.04 # waiting time after measurement: to ensure no sensor overlap??
-		self.queue_waiting_time = 0.00001 # time for waiting loop, if system is measuring and new measuring is waiting
+		self.queue_waiting_time = 0.01 # time for waiting loop, if system is measuring and new measuring is waiting
 		self.scan_relaxation_time = 0.05 # time between single scannings in scanning-mode
 		self.unknown_error_value = 30000000.0 # return-value if unknown error occurs in get_sensor()
+
+		self.averaging_number=2 # number of measurements for averaging in mode 3
 
 		# what are the most current distance values of the sensors and there measurement times?
 		# [[first_sensor, time], [[first_segment, time], [second_segment, time], ...], [third_sensor, time]]
@@ -184,7 +186,7 @@ class sensors(threading.Thread):
 		self.update_segments(0, new_segment_number=self.servo_segments)
 		# set servo to zero-position
 		servo.set_servo(self.SERVO, self.servo_NULL)
-		self.temp = [[0, 0]] * (self.servo_segments + 1)
+#		self.temp = [[0, 0]] * (self.servo_segments + 1)
 
 		# initialize PINS
 		self.set_PINS()
@@ -241,12 +243,12 @@ class sensors(threading.Thread):
 			self.set_PINS()
 
 		# MEASURE
-
+		time.sleep(0.1)
 		# TRIGGER
 		GPIO.output(self.TRIG[sensor_number], True)
 		time.sleep(0.00001)
 		GPIO.output(self.TRIG[sensor_number], False)
-	
+
 		# WAIT FOR ECHO
 		try: # added because of error 'referrenced before assignement'
 
@@ -265,27 +267,20 @@ class sensors(threading.Thread):
 					result = [self.out_of_sight_value, echo_start]
 
 					# save the Out-Of-Sight-Result result
-					if (sensor_number == 1):
-						if self.mode != 0 and self.mode != 3:
-							current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
-							try:
-								(self.measurements[1])[current_segment]=result
-							except:
-								print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
-								print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
-						elif (self.mode == 3):
-							current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
-							try:
-								(self.measurements[1])[current_segment]= [sum(x)/2. for x in zip(result, self.temp[current_segment])]
-								self.temp[current_segment] = result				
-							except:
-								print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
-								print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
+					if (self.mode != 3): # mode 3 required averaging --> is done in function self.run
+						if (sensor_number == 1):
+							if self.mode != 0:
+								current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
+								try:
+									(self.measurements[1])[current_segment]=result
+								except:
+									print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
+									print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
+							else:
+								self.measurements[1]=[result]
 						else:
-							self.measurements[1]=[result]
-					else:
-						self.measurements[sensor_number] = result
-					# return distance (in cm) & measure-time in time.time()-format
+							self.measurements[sensor_number] = result
+						# return distance (in cm) & measure-time in time.time()-format
 					return result
 
 			# tell, that there is no measure now
@@ -297,33 +292,28 @@ class sensors(threading.Thread):
 
 			# save the result
 			result = [dist, echo_start]
-			if (sensor_number == 1):
-				if (self.mode != 0 and self.mode != 3):
-					current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
-					try:
-						(self.measurements[1])[current_segment]=result
-					except:
-						print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
-						print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
-				elif (self.mode == 3):
-					current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
-					try:
-						(self.measurements[1])[current_segment]= [sum(x)/2. for x in zip(result, self.temp[current_segment])]
-						self.temp[current_segment] = result				
-					except:
-						print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
-						print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
+			if (self.mode != 3): # mode 3 required averaging --> is done in function self.run
+				if (sensor_number == 1):
+					if self.mode != 0:
+						current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
+						try:
+							(self.measurements[1])[current_segment]=result
+						except:
+							print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
+							print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
+					else:
+						self.measurements[1]=[result]
 				else:
-					self.measurements[1]=[result]
-			else:
-				self.measurements[sensor_number] = result
+					self.measurements[sensor_number] = result
 
 			# return distance (in cm) & measure-time in time.time()-format
+			print "succeded"
 			return result
 
 		except: # any unknown error
 			self.is_at_measure = False
-			print "exception: unknown error from sensor (probably \'referenced before assignment\')"
+			print "exception from sensor " + str(sensor_number + 1) + " of 3" # + "): unknown error from sensor (probably \'referenced before assignment\')"
+			GPIO.output(self.TRIG[sensor_number], False)
 			return [self.unknown_error_value, echo_start]
 		
 
@@ -448,12 +438,33 @@ class sensors(threading.Thread):
 					i=0
 
 
-            # mode 3 = scanning all sensors in cycle 0-1-2-1-0-1-2-1-0-...,
- 			#          servo scans: from left to right jump, form left to right, ... starting at center
-            #          like mode 2, but averaging over 2 consecutive measurements
+         		# mode 3 = scanning all sensors in cycle 0-1-2-1-0-1-2-1-0-...,
+ 	    		#          servo scans: from left to right jump, form left to right, ... starting at center
+   		        #          like mode 2, but averaging over 2 consecutive measurements
 			elif (self.mode == 3):
+
+				av_result = 0
+
 				cycle=[0,1,2,1] # define cycle for current mode
-				self.get_sensor(cycle[i]) # update next sensor	
+				for num in range(self.averaging_number): # measure often
+					current_measure = self.get_sensor(cycle[i])
+					while current_measure[0] == self.unknown_error_value:
+						current_measure = self.get_sensor(cycle[i])
+					av_result += current_measure[0] # sum for average
+
+				# calculate average
+				result = [ av_result / self.averaging_number, time.time() ] 
+
+				#save the averaged result
+				if (cycle[i] == 1):
+					current_segment=int((self.servo_position-self.servo_MIN)/self.servo_segment_size)
+					try:
+						(self.measurements[1])[current_segment]=result
+					except:
+						print "Error! Not possible to save measurement of servo-sensor in array. Check segment number:"
+						print "current_segment=" + str(current_segment) + " of servo_segments=" + self.servo_segments
+				else:
+					self.measurements[cycle[i]] = result
 				
 				if (cycle[i] == 1): # move servo to next position
 					if (j == self.servo_segments) : # servo is at right end and wants to move further right
