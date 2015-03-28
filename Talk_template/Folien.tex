@@ -1,0 +1,120 @@
+%!TEX root = ./Vortrag.tex
+{ 
+%\setbeamercolor{background canvas}{bg=black}
+\setbeamertemplate{background canvas}{\includegraphics[height=\paperheight]{zoom_halo_11_cut}}
+
+\begin{frame}[plain]{}
+%\tableofcontents
+\titlepage
+\end{frame}
+}
+
+%\setbeamercolor{background canvas}{bg=white}
+\setcounter{framenumber}{0}
+\section{\textcolor{black}{Outline}}
+\begin{frame}{Outline}
+
+\begin{itemize}
+\item Observations: M31
+\vspace{.25cm}
+\item Simulations
+\vspace{.25cm}
+\item Results
+\end{itemize}
+\end{frame}
+
+\section{Section}
+\begin{frame}{Frametitle}
+\begin{columns}
+	\begin{column}{7.25cm}
+\vspace*{-.625cm}
+%\begin{itemize}
+%\item 
+%\end{itemize}
+\begin{figure}
+	\includegraphics[height=.75\textheight]{ibata_nature}
+	\vspace*{-.25cm}
+	%\caption{M31 satellite distribution (Ibata et al. 2013)}
+\end{figure}
+\end{column}
+	\begin{column}{4.75cm}
+3 parameters: 
+\begin{itemize}
+\item$N_{in}$
+\item$N_{corot}$
+\item thickness of plane ($rms$)
+\end{itemize}
+	\end{column}
+	\end{columns}
+\vspace*{.2cm}
+satellite distribution as observed by Ibata et al. (2013)%, \footnotesize{previously investigated by Koch \& Grebel (2006), McConnachie et al. (2006)}
+\end{frame}
+
+
+\begin{frame}[t]{M31 Thin Plane}
+\vspace{-.35cm}
+\only<1->{
+\begin{exampleblock}{Observations (Ibata et al., 2013)}
+\begin{equation}
+N_{tot}=27, N_{in}=15, N_{corot}=13, rms=\SI{12.6}{\kilo\pc}
+\end{equation}
+\end{exampleblock}}
+%\vspace{.15cm}
+\only<2->{\begin{block}{Simulations: Pawlowski et al. (2014), Ibata et al. (2014), see also Bahl et al. (2013)}
+Millenium II simulation + SAM
+\begin{itemize}
+\item high statistics, but low resolution
+\end{itemize}
+\end{block}}
+%\vspace{.25cm}
+\only<3->{
+\begin{block}{Simulations: Gillet et al. (2014)}
+SPH simulation of 2 local group analogues
+\begin{itemize}
+\item high resolution, but only two halos
+\end{itemize}
+\end{block}}
+\vspace{.225cm}
+%\only<4->{\footnotesize{For MW like plane, analysis done by Sawala et al. (2014), Wang et al. (2013), Pawlowski et al. (2012), Lovell et al. (2011), Libeskind et al. (2009)}}
+%Bahl et al. [B] (2013) and 
+%\item [B]: 2\% of all investigated DM halos have $N_{in}\ge N_{in}^{M31}$
+\end{frame}
+
+
+\begin{frame}%{best fitting plane}
+\hspace*{2cm}
+\includemedia[
+  label=some_dice,
+  width=\textheight,height=\textheight,
+  activate=pageopen,
+  addresource=rotate_z3_old.mp4,
+  flashvars={
+    source=rotate_z3_old.mp4
+   %loop=true% loop video
+   %scaleMode=letterbox% preserve aspect ratio while scaling the video
+  }
+]{}{VPlayer.swf}
+\vspace*{-1cm}
+\hspace*{.25cm}
+\mediabutton[
+  mediacommand=some_dice:playPause,
+  overface=\color{blue}{\fbox{\strut Play/Pause}},
+  downface=\color{red}{\fbox{\strut Play/Pause}}
+]{\fbox{\strut Play/Pause}}
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}{Conclusion}
+
+\end{frame}
+\newcounter{finalframe}
+\setcounter{finalframe}{\value{framenumber}}
+
+\begin{frame}{}
+\begin{block}{\centering{Thank you for your attention!}}
+\end{block}
+\end{frame}
+
+%%%-------------------unused slides ----------------------------------
+
+

@@ -1,0 +1,318 @@
+% !TEX root = ./Vortrag.tex
+\usepackage[]{hyperref}
+\usepackage{babel,fontspec,verbatim,microtype}
+\usepackage{xcolor}
+
+%\usepackage{tikz}
+\usepackage[framemethod=tikz]{mdframed}
+\newmdenv[tikzsetting={draw=none,fill=white,fill opacity=0.7, line width=4pt},
+backgroundcolor=none,leftmargin=10,rightmargin=10,innertopmargin=4pt,roundcorner=5pt]
+{titleBox}
+\newmdenv[tikzsetting={draw=none,fill=white,fill opacity=0.7, line width=4pt},
+backgroundcolor=none,leftmargin=80,rightmargin=80,innertopmargin=4pt,roundcorner=5pt]
+{NameBox}
+%\usetikzlibrary{mindmap,shadows,fadings}
+%\usetikzlibrary{positioning,shapes,shadows,arrows}
+%\usepackage{grffile}
+
+%\usepackage{caption}
+%%\DeclareCaptionFont{myblue}{\color{darkred}}
+%\captionsetup{labelformat=empty,labelsep=none}%,labelfontcolor=darkred}
+%\captionsetup[figure]{labelformat=empty,labelsep=none, name=Fig.}
+%%\captionsetup[table]{name=Tab.}
+
+%\setmainfont{Humor-Sans-1.0.ttf}
+
+\setbeamerfont{caption}{size=\scriptsize}
+\setbeamertemplate{caption}{\insertcaption}
+
+
+% suppression de la barre de navigation
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{graphicx}
+\graphicspath{{Plots/}}
+\makeatletter
+\def\input@path{{Plots/},{Tabellen/}}
+%or: \def\input@path{{/path/to/folder}{/path/to/other/folder}}
+\makeatother
+
+\usepackage{media9}
+
+\usepackage{tabu,booktabs,colortbl,amsmath,setspace,xfrac}
+\usepackage[separate-uncertainty = true, output-decimal-marker={.}]{siunitx}
+\ExplSyntaxOn
+\cs_new_eq:NN \siunitx_table_collect_begin:Nn \__siunitx_table_collect_begin:Nn
+\ExplSyntaxOff
+%\usepackage[square]{natbib}
+
+\usetheme{CambridgeUS}
+\usefonttheme[onlymath]{serif}
+\usefonttheme[]{structuresmallcapsserif}
+
+%\makeatletter
+%\setbeamertemplate{title page}%{default}[1][]
+%{
+%%\setbeamercolor{title page}{bg=black}
+%  \vbox{}
+%  \vfill
+%  \begin{centering}
+%  \vspace{.5em}
+%    \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true,shadow=false]{title}
+%      \usebeamerfont{title}\inserttitle\par%
+%      \ifx\insertsubtitle\@empty%
+%      \else%
+%        \vskip0.75em%
+%        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+%      \fi%     
+%    \end{beamercolorbox}%
+%		\vskip10em
+%    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+%    \vskip1em
+%    \par
+%    \begin{beamercolorbox}[sep=2pt,center,colsep=-4bp,rounded=true,shadow=true]{author}
+%      \usebeamerfont{author}\insertauthor
+%    \end{beamercolorbox}
+%    \vskip0.75em
+%    \begin{beamercolorbox}[sep=2pt,center,colsep=-4bp,rounded=true,shadow=true]{institute}
+%      \usebeamerfont{institute}\insertinstitute
+%    \end{beamercolorbox}
+%    \vskip0.75em
+%    \begin{beamercolorbox}[sep=2pt,center,colsep=-4bp,rounded=true,shadow=true]{date}
+%      %\usebeamerfont{date}\insertdate
+%      \textcolor{textblack}{\insertdate}
+%    \end{beamercolorbox}\vskip4em
+%    %{\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+%  \end{centering}
+%  \vfill
+%}
+%\makeatother
+\makeatletter
+\setbeamertemplate{title page}%{default}[1][]
+{
+%\setbeamercolor{title page}{bg=black}
+  \vbox{}
+  \vfill
+  \begin{centering}
+  \vspace{5em}
+    \begin{titleBox}
+      \usebeamerfont{title}\textcolor{textblack}{\inserttitle}\par%
+    \end{titleBox}%
+		\vskip3em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+    \vskip1em
+    \par
+    \begin{NameBox}\centering
+          \ifx\insertsubtitle\@empty%
+      \else%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\textcolor{textblack}{\insertsubtitle}\par}%
+        \vskip0.75em%
+      \fi%     
+      \usebeamerfont{subtitle}\textcolor{textblack}{\insertauthor}
+    \vskip0.75em
+      \usebeamerfont{institute}\textcolor{textblack}{\insertinstitute}
+    \vskip0.75em
+      %\usebeamerfont{date}\insertdate
+      \textcolor{textblack}{Andrea V. Macciò, Aaron A. Dutton}%\\Start of thesis: Sept. 2014}%\insertdate}
+    \end{NameBox}\vskip4em
+    %{\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \end{centering}
+  \vfill
+}
+\makeatother
+
+\makeatletter
+\setbeamertemplate{headline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,right]{section in head/foot}%
+    \usebeamerfont{section in head/foot}\textcolor{footblack}{\insertsectionhead}\hspace*{2ex}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,left]{subsection in head/foot}%
+    \usebeamerfont{subsection in head/foot}\hspace*{2ex}\textcolor{footblack}{\insertsubsectionhead}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+\makeatletter
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\textcolor{footblack}{\insertshortauthor}%~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\textcolor{footblack}{\insertshorttitle}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\textcolor{footblack}{\insertshortdate{}}\hspace*{2em}
+    \textcolor{footblack}{\insertframenumber{} / \inserttotalframenumber}\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+
+\definecolor{dodgerblue}{rgb}{0.33, 0.47, .98}
+\definecolor{darkred}{rgb}{.67,.75,.9}%.45,.66,.76%.67,.78,.94
+\definecolor{black}{rgb}{0.5,0.5,0.5}%.45,.66,.76%.67,.78,.94
+\definecolor{textblack}{rgb}{0,0,0}%.45,.66,.76%.67,.78,.94
+\definecolor{footblack}{rgb}{0.4,0.4,0.4}
+
+\setbeamercolor{myfootlinetext}{fg=footblack,bg=footblack}
+\setbeamercolor{item}{fg=dodgerblue}
+\setbeamercolor{normal text}{fg=textblack,bg=white}
+\setbeamercolor{title}{fg=textblack}
+\setbeamercolor{frametitle}{fg=textblack}
+
+\DeclareSIUnit{\msun}{M_{sun}}
+\DeclareSIUnit{\pc}{pc}
+\DeclareSIUnit{\year}{yr}
+\DeclareSIUnit{\e}{M_{sun}\cdot \kilo\meter\per\second}
+\DeclareSIUnit{\v}{\kilo\meter\per\second}
+%\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
+\newcommand{\N}{{\sc nbody6tid}}
+\newcommand{\lcdm}{$\Lambda CDM$}
+
+\makeatletter
+\providecommand*{\diff}%
+        {\@ifnextchar^{\DIfF}{\DIfF^{}}}
+\def\DIfF^#1{%
+        \mathop{\mathrm{\mathstrut d}}%
+                \nolimits^{#1}\gobblespace
+}
+\def\gobblespace{%
+        \futurelet\diffarg\opspace}
+\def\opspace{%
+        \let\DiffSpace\!%
+        \ifx\diffarg(%
+                \let\DiffSpace\relax
+        \else
+                \ifx\diffarg\[%
+                        \let\DiffSpace\relax
+                \else
+                        \ifx\diffarg\{%
+                                \let\DiffSpace\relax
+                        \fi\fi\fi\DiffSpace}  
+\makeatother
+                        
+ \def\aj{AJ}%
+         % Astronomical Journal
+\def\actaa{Acta Astron.}%
+         % Acta Astronomica
+\def\araa{ARA\&A}%
+         % Annual Review of Astron and Astrophys
+\def\apj{ApJ}%
+         % Astrophysical Journal
+\def\apjl{ApJ}%
+         % Astrophysical Journal, Letters
+\def\apjs{ApJS}%
+         % Astrophysical Journal, Supplement
+\def\ao{Appl.~Opt.}%
+         % Applied Optics
+\def\apss{Ap\&SS}%
+         % Astrophysics and Space Science
+\def\aap{A\&A}%
+         % Astronomy and Astrophysics
+\def\aapr{A\&A~Rev.}%
+         % Astronomy and Astrophysics Reviews
+\def\aaps{A\&AS}%
+         % Astronomy and Astrophysics, Supplement
+\def\azh{AZh}%
+         % Astronomicheskii Zhurnal
+\def\baas{BAAS}%
+         % Bulletin of the AAS
+\def\bac{Bull. astr. Inst. Czechosl.}%
+         % Bulletin of the Astronomical Institutes of Czechoslovakia
+\def\caa{Chinese Astron. Astrophys.}%
+         % Chinese Astronomy and Astrophysics
+\def\cjaa{Chinese J. Astron. Astrophys.}%
+         % Chinese Journal of Astronomy and Astrophysics
+\def\icarus{Icarus}%
+         % Icarus
+\def\jcap{J. Cosmology Astropart. Phys.}%
+         % Journal of Cosmology and Astroparticle Physics
+\def\jrasc{JRASC}%
+         % Journal of the RAS of Canada
+\def\mnras{MNRAS}%
+         % Monthly Notices of the RAS
+\def\memras{MmRAS}%
+         % Memoirs of the RAS
+\def\na{New A}%
+         % New Astronomy
+\def\nar{New A Rev.}%
+         % New Astronomy Review
+\def\pasa{PASA}%
+         % Publications of the Astron. Soc. of Australia
+\def\pra{Phys.~Rev.~A}%
+         % Physical Review A: General Physics
+\def\prb{Phys.~Rev.~B}%
+         % Physical Review B: Solid State
+\def\prc{Phys.~Rev.~C}%
+         % Physical Review C
+\def\prd{Phys.~Rev.~D}%
+         % Physical Review D
+\def\pre{Phys.~Rev.~E}%
+         % Physical Review E
+\def\prl{Phys.~Rev.~Lett.}%
+         % Physical Review Letters
+\def\pasp{PASP}%
+         % Publications of the ASP
+\def\pasj{PASJ}%
+         % Publications of the ASJ
+\def\qjras{QJRAS}%
+         % Quarterly Journal of the RAS
+\def\rmxaa{Rev. Mexicana Astron. Astrofis.}%
+         % Revista Mexicana de Astronomia y Astrofisica
+\def\skytel{S\&T}%
+         % Sky and Telescope
+\def\solphys{Sol.~Phys.}%
+         % Solar Physics
+\def\sovast{Soviet~Ast.}%
+         % Soviet Astronomy
+\def\ssr{Space~Sci.~Rev.}%
+         % Space Science Reviews
+\def\zap{ZAp}%
+         % Zeitschrift fuer Astrophysik
+\def\nat{Nature}%
+         % Nature
+\def\iaucirc{IAU~Circ.}%
+         % IAU Cirulars
+\def\aplett{Astrophys.~Lett.}%
+         % Astrophysics Letters
+\def\apspr{Astrophys.~Space~Phys.~Res.}%
+         % Astrophysics Space Physics Research
+\def\bain{Bull.~Astron.~Inst.~Netherlands}%
+         % Bulletin Astronomical Institute of the Netherlands
+\def\fcp{Fund.~Cosmic~Phys.}%
+         % Fundamental Cosmic Physics
+\def\gca{Geochim.~Cosmochim.~Acta}%
+         % Geochimica Cosmochimica Acta
+\def\grl{Geophys.~Res.~Lett.}%
+         % Geophysics Research Letters
+\def\jcp{J.~Chem.~Phys.}%
+         % Journal of Chemical Physics
+\def\jgr{J.~Geophys.~Res.}%
+         % Journal of Geophysics Research
+\def\jqsrt{J.~Quant.~Spec.~Radiat.~Transf.}%
+         % Journal of Quantitiative Spectroscopy and Radiative Trasfer
+\def\memsai{Mem.~Soc.~Astron.~Italiana}%
+         % Mem. Societa Astronomica Italiana
+\def\nphysa{Nucl.~Phys.~A}%
+         % Nuclear Physics A
+\def\physrep{Phys.~Rep.}%
+         % Physics Reports
+\def\physscr{Phys.~Scr}%
+         % Physica Scripta
+\def\planss{Planet.~Space~Sci.}%
+         % Planetary Space Science
+\def\procspie{Proc.~SPIE}%
+         % Proceedings of the SPIE
+         
+         \newcommand{\inputTikZ}[2]{%  
+     \scalebox{#1}{\input{#2}}  
+}
