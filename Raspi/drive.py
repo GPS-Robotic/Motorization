@@ -1,6 +1,7 @@
 #MAY THE BACKWARD STEERING BE CHANGED?? THIS MAY BECOME CONFUSING!
 #NOTE driving-METHOD-COMMENTS
 
+from __main__ import lg
 from RPIO import PWM
 from time import sleep
 
@@ -76,7 +77,7 @@ def steer(current_status, desired_status):
 			servo.set_servo(GPIO_Servo, Straight)
 		else:
 			steering_error=1
-			print 'ERROR: Non directional information passed to steering function: current_status[0]=forward or break, desired_status[2]=' + desired_status[2] + ' is unknown!'
+			lg.prt('ERROR: Non directional information passed to steering function: current_status[0]=forward or break, desired_status[2]=' + desired_status[2] + ' is unknown!', lv = 100000, inst=__name__)
 
 	elif current_status[0]=='backward':
 		if desired_status[2]=='left':
@@ -96,10 +97,10 @@ def steer(current_status, desired_status):
 			servo.set_servo(GPIO_Servo, Straight)
 		else:
 			steering_error=1
-			print 'ERROR: Non directional information passed to steering function: current_status[0]=backward, desired_status[2]=' + desired_status[2] + ' is unknown!'
+			lg.prt('ERROR: Non directional information passed to steering function: current_status[0]=backward, desired_status[2]=' + desired_status[2] + ' is unknown!', lv = 100000, inst=__name__)
 	else:
 		steering_error=1
-		print 'ERROR: Unknown driving direction passed to steering function: currrent_status[0]=' + current_status[0] + ' is unknown!'
+		lg.prt('ERROR: Unknown driving direction passed to steering function: currrent_status[0]=' + current_status[0] + ' is unknown!', lv=100000, inst=__name__)
 
 #	update current_status if operation succeeded
 	if(steering_error==0):
@@ -132,7 +133,7 @@ def accelerate(current_status, desired_status):
 				servo.set_servo(GPIO_Motor, (Null))
 			else:
 				acceleration_error=1
-				print 'ERROR: Non speed information passed to accelerate function: current_status[0]=forward, desired_status[0]=forward, desired_status[1]=' + desired_status[1] + ' is unknown!'
+				lg.prt('ERROR: Non speed information passed to accelerate function: current_status[0]=forward, desired_status[0]=forward, desired_status[1]=' + desired_status[1] + ' is unknown!', lv=100000, inst=__name__)
 
 		elif desired_status[0]=='backward':
 			if desired_status[1]=='fast':
@@ -161,10 +162,10 @@ def accelerate(current_status, desired_status):
 				servo.set_servo(GPIO_Motor, (Null))
 			else:
 				acceleration_error=1
-				print 'ERROR: Non speed information passed to accelerate function: current_status[0]=forward, desired_status[0]=backward, desired_status[1]=' + desired_status[1] + ' is unknown!'
+				lg.prt('ERROR: Non speed information passed to accelerate function: current_status[0]=forward, desired_status[0]=backward, desired_status[1]=' + desired_status[1] + ' is unknown!', lv=100000, inst=__name__)
 		else:
 			acceleration_error=1
-			print  'Unknown driving directive passed to accelerate function: current_status[0]=forward, desired_status[0]=' + desired_status[0] + ' is unknown!'
+			lg.prt('ERROR: Unknown driving directive passed to accelerate function: current_status[0]=forward, desired_status[0]=' + desired_status[0] + ' is unknown!', lv=100000, inst=__name__)
 
 	elif current_status[0]=='backward':
 		if desired_status[0]=='break':
@@ -186,7 +187,7 @@ def accelerate(current_status, desired_status):
 				servo.set_servo(GPIO_Motor, (Null))
 			else:
 				acceleration_error=1
-				print 'ERROR: Non speed information passed to accelerate function: current_status[0]=backward, desired_status[0]=backward, desired_status[1]=' + desired_status[1] + ' is unknown!'
+				lg.prt('ERROR: Non speed information passed to accelerate function: current_status[0]=backward, desired_status[0]=backward, desired_status[1]=' + desired_status[1] + ' is unknown!', lv=100000, inst=__name__)
 
 		elif desired_status[0]=='forward':
 			if desired_status[1]=='fast':
@@ -203,10 +204,10 @@ def accelerate(current_status, desired_status):
 				servo.set_servo(GPIO_Motor, (Null))
 			else:
 				acceleration_error=1
-				print 'ERROR: Non speed information passed to accelerate function: current_status[0]=backward, desired_status[0]=forward, desired_status[1]=' + desired_status[1] + ' is unknown!'
+				lg.prt('ERROR: Non speed information passed to accelerate function: current_status[0]=backward, desired_status[0]=forward, desired_status[1]=' + desired_status[1] + ' is unknown!', lv=100000, inst=__name__)
 		else:
 			acceleration_error=1
-			print 'ERROR: Unknown driving directive passed to accelerate function: current_status[0]=backward, desired_status[0]=' + desired_status[0] + ' is unknown!'
+			lg.prt( 'ERROR: Unknown driving directive passed to accelerate function: current_status[0]=backward, desired_status[0]=' + desired_status[0] + ' is unknown!', lv=100000, inst=__name__)
 
 	elif current_status[0]=='break':
 		if desired_status[0]=='break':
@@ -227,7 +228,7 @@ def accelerate(current_status, desired_status):
 				servo.set_servo(GPIO_Motor, (Null))
 			else:
 				acceleration_error=1
-				print 'ERROR: Non speed information passed to accelerate function: current_status[0]=break, desired_status[0]=forward, desired_status[1]=' + desired_status[1] + ' is unknown!'
+				lg.prt('ERROR: Non speed information passed to accelerate function: current_status[0]=break, desired_status[0]=forward, desired_status[1]=' + desired_status[1] + ' is unknown!', lv=100000, inst=__name__)
 
 		elif desired_status[0]=='backward':
 			if desired_status[1]=='fast':
@@ -244,14 +245,14 @@ def accelerate(current_status, desired_status):
 				servo.set_servo(GPIO_Motor, (Null))
 			else:
 				acceleration_error=1
-				print 'ERROR: Non speed information passed to accelerate function: current_status[0]=break, desired_status[0]=backward, desired_status[1]=' + desired_status[1] + ' is unknown!'
+				lg.prt('ERROR: Non speed information passed to accelerate function: current_status[0]=break, desired_status[0]=backward, desired_status[1]=' + desired_status[1] + ' is unknown!', lv=100000, inst=__name__)
 		else:
 			acceleration_error=1
-			print 'ERROR: Unknown driving directive passed to accelerate function: current_status[0]=break, desired_status[0]=' + desired_status[0] + ' is unknown!'
+			lg.prt( 'ERROR: Unknown driving directive passed to accelerate function: current_status[0]=break, desired_status[0]=' + desired_status[0] + ' is unknown!', lv=100000, inst=__name__)
 
 	else:
 		acceleration_error=1
-		print 'ERROR: Unknown driving directive passed to accelerate function: current_status[0]=' + current_status[0] + ' is unknown!'
+		lg.prt( 'ERROR: Unknown driving directive passed to accelerate function: current_status[0]=' + current_status[0] + ' is unknown!', lv=100000, inst=__name__)
 
 #	update current_status if operation succeeded
 	if(acceleration_error==0):

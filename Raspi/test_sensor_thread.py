@@ -1,3 +1,5 @@
+from debug_log import debug_print
+lg = debug_print()
 import sensors
 import time
 
