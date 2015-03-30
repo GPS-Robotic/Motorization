@@ -249,6 +249,46 @@ def accelerate(current_status, desired_status):
 		else:
 			acceleration_error=1
 			lg.prt( 'ERROR: Unknown driving directive passed to accelerate function: current_status[0]=break, desired_status[0]=' + desired_status[0] + ' is unknown!', lv=100000, inst=__name__)
+	elif current_status[0]=='null':
+		if desired_status[0]=='break':
+			servo.set_servo(GPIO_Motor, Null) #stop
+
+		elif desired_status[0]=='forward':
+			if desired_status[1]=='fast':
+				# Set motor on GPIO_Motor to fast forward
+				servo.set_servo(GPIO_Motor, (Null+Fast))
+			elif desired_status[1]=='middle':
+				# Set motor on GPIO_Motor to middle forward
+				servo.set_servo(GPIO_Motor, (Null+Middle))
+			elif desired_status[1]=='slow':
+				# Set motor on GPIO_Motor to slow forward
+				servo.set_servo(GPIO_Motor, (Null+Slow-Slow_Offset))
+			elif desired_status[1]=='null':
+				# Set motor on GPIO_Motor to null position #Leerlauf
+				servo.set_servo(GPIO_Motor, (Null))
+			else:
+				acceleration_error=1
+				lg.prt('ERROR: Non speed information passed to accelerate function: current_status[0]=break, desired_status[0]=forward, desired_status[1]=' + desired_status[1] + ' is unknown!', lv=100000, inst=__name__)
+
+		elif desired_status[0]=='backward':
+			if desired_status[1]=='fast':
+				# Set motor on GPIO_Motor to fast backward
+				servo.set_servo(GPIO_Motor, (Null-Fast))
+			elif desired_status[1]=='middle':
+				# Set motor on GPIO_Motor to middle backward
+				servo.set_servo(GPIO_Motor, (Null-Middle))
+			elif desired_status[1]=='slow':
+				# Set motor on GPIO_Motor to slow backward
+				servo.set_servo(GPIO_Motor, (Null-Slow-Slow_Offset))
+			elif desired_status[1]=='null':
+				# Set motor on GPIO_Motor to null position #Leerlauf
+				servo.set_servo(GPIO_Motor, (Null))
+			else:
+				acceleration_error=1
+				lg.prt('ERROR: Non speed information passed to accelerate function: current_status[0]=break, desired_status[0]=backward, desired_status[1]=' + desired_status[1] + ' is unknown!', lv=100000, inst=__name__)
+		else:
+			acceleration_error=1
+			lg.prt( 'ERROR: Unknown driving directive passed to accelerate function: current_status[0]=break, desired_status[0]=' + desired_status[0] + ' is unknown!', lv=100000, inst=__name__)
 
 	else:
 		acceleration_error=1
@@ -316,6 +356,7 @@ def left90test(current_status, desired_status, delay_time, speed='slow'):
 #CAUTION: time-delay....
 def turn180(current_status, desired_status, speed='slow'):
 	right90(current_status, desired_status, speed)
+	sleep(Sleeping_Time)
 	right90(current_status, desired_status, speed)
 	#sleep(Sleeping_Time_90[speed])
 	#driving(current_status, desired_status)

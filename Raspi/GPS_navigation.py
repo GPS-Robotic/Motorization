@@ -101,11 +101,10 @@ while abs(current_distance) > accuracy:
 		lg.prt( 'potential obstacle found!\n\n', lv=1000, inst=__name__)
 		desired_status = ['break', 'slow', 'straight']
 		driving(current_status,desired_status) #put this here to make reaction to obstacles faster
-		time.sleep(2) 	#maybe wait for actual time needed to update all measurements
+		time.sleep(3) 	#maybe wait for actual time needed to update all measurements
 		if sens.measurements[0][0] < obstacle or sens.measurements[2][0] < obstacle:
 		#time.sleep(1)
 			lg.prt('real obstacle found!\n\n', lv=1000, inst=__name__)
-
 			#just a debug-output
 			out = "sensors: " + str(sens.measurements[0][0]) + ", ("
 		        for entry in sens.measurements[1]:
@@ -119,23 +118,35 @@ while abs(current_distance) > accuracy:
 				lg.prt("WAITING FOR OUT OF 2 SIGMA", lv=1000, inst=__name__)
 			else:
 				GPS_tmp = gpsp.fetch()
-			reference_direction = comp_get_direction(GPS_destination, GPS_tmp)
-			lg.prt("reference_direction: ", reference_direction, lv=1000, inst=__name__)
-			if reference_direction <= 0 and reference_direction > -120:		
-				left90(current_status,desired_status,speed='middle')
-				time.sleep(1)
-				reference_direction += 90
-				Turn = True
-			elif reference_direction > 0 and reference_direction < 120:
-				right90(current_status,desired_status,speed='middle')
-				time.sleep(1)
-				reference_direction -= 90
-				Turn = True
+			reference_direction = comp_get_direction(GPS_destination, GPS_tmp) #get direction to target
+			desired_status = navigate(sens.measurements[1], free_path, reference_direction) #take environment scan and get steering direction
+			if desired_status == -1: #no free segment found take smaller distance
+				lg.prt("NO FREE SEGMENT IN LARGE DISTANCE FOUND\nTRY WITH SMALLER DISTANCE", lv=1000, inst=__name__)
+				time.sleep(3)
+				desired_status = navigate(sens.measurements[1], obstacle, reference_direction)
+				if desired_status == -1: #no free segment with small length found turn around
+					lg.prt("NO FREE SEGMENT IN SMALL DISTANCE FOUND\nTURN AROUND", lv=1000, inst=__name__)
+					turn180(current_status,desired_status,speed='middle')
+					time.sleep(1)
+					reference_direction -= 180
+					Turn = True
 			else:
-				turn180(current_status,desired_status,speed='middle')
-				time.sleep(1)
-				reference_direction -= 180
-				Turn = True
+				lg.prt("reference_direction: ", reference_direction, lv=1000, inst=__name__)
+				if desired_status[2] == 'left' or desired_status[2] == 'half-left' :		
+					left90(current_status,desired_status,speed='middle')
+					time.sleep(1)
+					reference_direction += 90
+					Turn = True
+				elif desired_status[2] == 'right' or desired_status[2] == 'half-right' :
+					right90(current_status,desired_status,speed='middle')
+					time.sleep(1)
+					reference_direction -= 90
+					Turn = True
+				else:
+					turn180(current_status,desired_status,speed='middle')
+					time.sleep(1)
+					reference_direction -= 180
+					Turn = True
 			time.sleep(.5)
 		else:
 			lg.prt ( 'no real obstacle found!\n\n', lv=1000, inst=__name__)
@@ -156,29 +167,39 @@ while abs(current_distance) > accuracy:
 		reference_direction = comp_get_direction(GPS_destination, GPS_tmp)
 		desired_status = navigate(sens.measurements[1], free_path, reference_direction)
 		lg.prt("desired status: " + str(desired_status), lv=1000, inst=__name__)
-		if desired_status == -1:					 
-			desired_status = ['break', 'slow', 'straight']	
-			reference_direction = comp_get_direction(GPS_destination, gpsp.fetch())
-			if reference_direction <= 0 and reference_direction > -120:		
-				left90(current_status,desired_status,speed='middle')
-				time.sleep(1)
-				reference_direction += 90
-				Turn = True
-			elif reference_direction > 0 and reference_direction < 120:
-				right90(current_status,desired_status,speed='middle')
-				time.sleep(1)
-				reference_direction -= 90
-				Turn = True
-			else:
+		if desired_status == -1:	#no free path found with large distance	
+			lg.prt("NO FREE SEGMENT IN LARGE DISTANCE FOUND\nTRY WITH SMALLER DISTANCE", lv=1000, inst=__name__)
+			desired_status = navigate(sens.measurements[1], obstacle, reference_direction)
+			#check again with smaller distance			 
+			if desired_status == -1: #no free segment with small length found turn around
+				lg.prt("NO FREE SEGMENT IN SMALL DISTANCE FOUND\nTURN AROUND", lv=1000, inst=__name__)
 				turn180(current_status,desired_status,speed='middle')
 				time.sleep(1)
 				reference_direction -= 180
-				Turn = True
+				Turn = True	
+			else:
+				lg.prt("reference_direction: ", reference_direction, lv=1000, inst=__name__)
+				if desired_status[2] == 'straight':
+					desired_status = ['forward', 'slow', 'straight']
+				elif desired_status[2] == 'left' or desired_status[2] == 'half-left' :		
+					left90(current_status,desired_status,speed='middle')
+					time.sleep(1)
+					reference_direction += 90
+					Turn = True
+				elif desired_status[2] == 'right' or desired_status[2] == 'half-right' :
+					right90(current_status,desired_status,speed='middle')
+					time.sleep(1)
+					reference_direction -= 90
+					Turn = True
+				else:
+					turn180(current_status,desired_status,speed='middle')
+					time.sleep(1)
+					reference_direction -= 180
+					Turn = True
 			time.sleep(.5)
 		else:
 			driving(current_status,desired_status)
 			time.sleep(0.5)
-
 			desired_status = ['forward', 'null', 'straight']
 			driving(current_status,desired_status) 
 			time.sleep(0.5)			
