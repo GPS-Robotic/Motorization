@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.1">
+  <meta name="google-site-verification" content="aexITLS38FdIRzwj25OVWxm87rpa9l-UV0URTyC9cTs" />
+  <title>
+    MARVON finds its way!
+  </title>
+  <link rel="stylesheet" href="/css/site.css">
+  <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Asap:400,700,400italic">
+  <link href="/RC_icon.png" rel="shortcut icon" type="image/x-icon" />
+  <meta name="description" content="Testing the navigation algorithm!" />
+  <link rel="alternate" type="application/atom+xml" title="RSS Feed for Sébastien Saunier's blog" href="/feed.xml" />
+
+  
+
+  
+
+  
+</head>
+<body>
+  <!-- <div class="top-bar">
+  </div> -->
+
+  <div class="header-container">
+    <header class="inner">
+      <nav>
+        <a class="" href="/">Home</a>
+        <a class="" href="/project/">Project</a>
+        <a class="" href="/team/">Team</a>
+        <a class=" contact" href="/contact/">Contact</a>
+        <a class=" contact" href="/links/">Links</a>
+        <a class=" selected " href="/documentation/">Documentation</a>
+        <a href="https://github.com/GPS-Robotic/Motorization">Github</a>
+      </nav>
+      <div class="pull-right right logo">
+        <div class="name">
+          <a href="/">GPS on wheels</a><br />
+          <small>
+            <em>
+              Project homepage
+            </em>
+          </small>
+        </div>
+        <img class="avatar" src="/images/car.jpg" alt="Our profile picture" />
+      </div>
+      <div class="clear"></div>
+    </header>
+    <div class="clear"></div>
+  </div>
+
+  
+
+<article>
+  <h1 class="inner">
+    MARVON finds its way!
+  </h1>
+
+  <p class="meta">Monday 23 March 2015</p>
+
+  
+
+  <div class="post">
+    <p>This time we tested the navigation algorithm, or at least one part of it, namely the obstacle recognition. For this we had a look at this <a href="http://www.academia.edu/757737/Reactive_Navigation_Algorithm_for_Wheeled_Mobile_Robots_under_Non-Holonomic_Constraints">paper</a> and took some ideas how to process the sensor data from it.</p>
+
+<p>After installing all the sensors needed we implemented the software to read out the sensor data, calculate free driving directions and recognize obstacles. But unfortunately we couldn&#39;t test our code as fats as would have liked because first we destroyed our raspberry board and had to get a new one. Finally we went outside to test our obstacle recognition and we were pretty happy that our robot seemed to drive backwards when an obstacle was recognized. This was not what we implemented, but ok. But then the problems became big ones. While testing the robot it suddenly started moving fast and hit an overhanging wall and got stuck. The sensors broke and some of our self invented mountings.</p>
+
+<p>So we now spent a lot of time repairing the robot, debugging the code and reinventing better mountings to protect the sensors during a crash. Now the lab tests are doing much better and we hopefully can test obstacle recognition again tomorrow and maybe implement navigation with GPS to test it. </p>
+
+<p>Due to this many problems encountered in the last week we can&#39;t provide new pictures. But they will follow in the next days.</p>
+
+  </div>
+</article>
+
+<div class="separator"></div>
+
+<section class="comments inner">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'GPS'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+<script>
+  function resizeSlideshares() {
+    var elements = document.getElementsByClassName("slideshare");
+    for (var i in elements) {
+      var element = elements[i];
+      if (element.style) {
+        element.style.height = (element.offsetWidth * 0.805) + 'px';
+      }
+    }
+  }
+  window.addEventListener("resize", resizeSlideshares);
+  window.addEventListener('load', resizeSlideshares);
+</script>
+
+  <div class="separator"></div>
+
+  <div  style="border-bottom: 1px solid #ddd"></div>
+  <footer>
+    <p>
+      Made with <a href="http://jekyllrb.com/">Jekyll</a>,
+      hosted on <a href="https://github.com/GPS-Robotic/Motorization/tree/gh-pages">Github Pages</a>. Theme inspired by <a href="http://sebastien.saunier.me/">sebastien.saunier.me</a>.
+    </p>
+  </footer>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-40867989-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    /*!
+     * http://github.com/ssaunier/track-outbound-links
+     * Copyright 2013 Sébastien Saunier
+     * @license MIT
+     */
+    !function(e,t){function n(){for(var n=t.getElementsByTagName("a"),a=[],r=0;r<n.length;++r){var o=n[r];o.host!=e.location.host&&a.push(o)}return a}function a(n){for(var a=n.srcElement||n.target;a&&("undefined"==typeof a.tagName||"a"!=a.tagName.toLowerCase()||!a.href);)a=a.parentNode;a&&a.href&&(e._gaq&&_gaq.push(["_trackEvent","Outbound link","Click",a.href]),(!a.target||a.target.match(/^_(self|parent|top)$/i))&&(setTimeout(function(){t.location.href=a.href},150),n.preventDefault?n.preventDefault():n.returnValue=!1))}e.addEventListener("load",function(){var e=n();for(var t in e)e[t].addEventListener("click",a)})}(window,document);
+    var links = document.links;
+    for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+       if (links[i].hostname != window.location.hostname) { links[i].target = '_blank'; }
+    }
+
+    /*
+     * Detect if we are included in an iframe => move.
+     */
+    if (window.top !== window.self
+        && !window.self.location.href.match(/headsha\.re/))
+    {
+      window.top.location.replace(window.self.location.href);
+    }
+  </script>
+
+  <!--
+  <script id="_webengage_script_tag" type="text/javascript">
+    // var _weq = _weq || {};
+    // _weq['webengage.licenseCode'] = '11b563c38';
+    // _weq['webengage.widgetVersion'] = "4.0";
+
+    // (function(d){
+    //   var _we = d.createElement('script');
+    //   _we.type = 'text/javascript';
+    //   _we.async = true;
+    //   _we.src = (d.location.protocol == 'https:' ? "https://ssl.widgets.webengage.com" : "http://cdn.widgets.webengage.com") + "/js/widget/webengage-min-v-4.0.js";
+    //   var _sNode = d.getElementById('_webengage_script_tag');
+    //   _sNode.parentNode.insertBefore(_we, _sNode);
+    // })(document);
+  </script>
+  -->
+
+</body>
+</html>
