@@ -30,10 +30,7 @@ As you will have recognized, thanks to our colleges from the image rotator group
 <script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
 <script src="{{ site.baseurl }}/js/rotate.js" type="text/javascript"></script>
 
-<style type="text/css">
-	#image {
 
-	}
 </style>
 </head>
 <table border=0><tr><td align=center>
