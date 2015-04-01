@@ -10,13 +10,13 @@ We fixed the damages caused by our crash, improved our design and took a closer 
 ##But now in more detail.
 After the crash we revisited the whle robot and now it looks like this.
 
-<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/galery/new_design_III.jpg" alt="Current appearance of our car." width="60%"> </div>
+<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/galery/new_design_III.JPG" alt="Current appearance of our car." width="60%"> </div>
 
-<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/galery/new_design_IV.jpg" alt="Current appearance of our car." width="60%"> </div>
+<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/galery/new_design_IV.JPG" alt="Current appearance of our car." width="60%"> </div>
 
 the sensors are now shielded by metal and the GPS/compass module sits above all electrics to get better signal. Furthermore our cool looking shell is more or less finished and looks good.
 
-<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/galery/new_design_II.jpg" alt="Current appearance of our car." width="60%"> </div>
+<div style="text-align:center"> <img src ="{{ site.baseurl }}/images/galery/new_design_II.JPG" alt="Current appearance of our car." width="60%"> </div>
 
 <div style="text-align:center"> <img src ="{{ site.baseurl }}/images/galery/new_design_I.jpg" alt="Current appearance of our car." width="60%"> </div>
 
