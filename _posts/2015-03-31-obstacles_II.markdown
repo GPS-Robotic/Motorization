@@ -25,6 +25,17 @@ In the last week we sat down and did one test after another to improve the navig
 #MARVON rotates
 As you will have recognized, thanks to our colleges from the image rotator group we have now a full 360 degree view of our robot. Isn't it cool.
 
+<br>
+
+<script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
+<script src="{{ site.baseurl }}/js/rotate.js" type="text/javascript"></script>
+
+<style type="text/css">
+	#image {
+
+	}
+</style>
+</head>
 <table border=0><tr><td align=center>
 <body>
 	<div id="image" src="{{ site.baseurl }}/images/captures/" width="640" height="480" ></div>
@@ -35,4 +46,9 @@ As you will have recognized, thanks to our colleges from the image rotator group
 	});
 </script>
 </body>
+<p> Thanks to the image rotator group for this stunning 360° shot of our car! </p>
 </td></tr></table>
+
+
+<br>
+<div  style="border-bottom: 1px solid #ddd"></div>
