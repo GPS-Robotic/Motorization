@@ -11,4 +11,4 @@ Mit Jekyll erstellte Dokumentations-Website des Robotik Praktikums [GPS auf Räd
 
 
 [![GPS on wheels](https://github.com/GPS-Robotic/Motorization/raw/gh-pages/images/ReelyBlaze.jpg)](http://gps-robotic.github.io/Motorization/)
-[![GPS on wheels](https://https://github.com/GPS-Robotic/Motorization/blob/gh-pages/images/galery/new_design_I.jpg)](http://gps-robotic.github.io/Motorization/)
+[![GPS on wheels](https://github.com/GPS-Robotic/Motorization/blob/gh-pages/images/galery/new_design_I.jpg)](http://gps-robotic.github.io/Motorization/)
