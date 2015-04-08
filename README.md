@@ -11,27 +11,4 @@ Mit Jekyll erstellte Dokumentations-Website des Robotik Praktikums [GPS auf Räd
 
 
 #[![GPS on wheels](https://github.com/GPS-Robotic/Motorization/raw/gh-pages/images/ReelyBlaze.jpg)](http://gps-robotic.github.io/Motorization/de/)
-<br>
-
-<script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
-<script src="{{ site.baseurl }}/js/rotate.js" type="text/javascript"></script>
-
-
-</style>
-</head>
-<table border=0><tr><td align=center>
-<body>
-	<div id="image" src="{{ site.baseurl }}/images/captures/" width="640" height="480" ></div>
-
-<script>
-	$(document).ready(function() {
-		$("#image").rotate();
-	});
-</script>
-</body>
-<p> Thanks to the image rotator group for this stunning 360° shot of our car! </p>
-</td></tr></table>
-
-
-<br>
-<div  style="border-bottom: 1px solid #ddd"></div>
+[![GPS on wheels](https://https://github.com/GPS-Robotic/Motorization/blob/gh-pages/images/galery/new_design_I.jpg)
