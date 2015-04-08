@@ -10,5 +10,5 @@ Jekyll website for the robotics internship [GPS on wheels](http://gps-robotic.gi
 Mit Jekyll erstellte Dokumentations-Website des Robotik Praktikums [GPS auf Rädern](http://gps-robotic.github.io/Motorization/). Finde heraus, was passiert, wenn man ein Modellbau Auto mit einem Paspberry Pi und einem GPS Modul ausstattet.
 
 
-#[![GPS on wheels](https://github.com/GPS-Robotic/Motorization/raw/gh-pages/images/ReelyBlaze.jpg)](http://gps-robotic.github.io/Motorization/de/)
-[![GPS on wheels](https://https://github.com/GPS-Robotic/Motorization/blob/gh-pages/images/galery/new_design_I.jpg)
+[![GPS on wheels](https://github.com/GPS-Robotic/Motorization/raw/gh-pages/images/ReelyBlaze.jpg)](http://gps-robotic.github.io/Motorization/)
+[![GPS on wheels](https://https://github.com/GPS-Robotic/Motorization/blob/gh-pages/images/galery/new_design_I.jpg)](http://gps-robotic.github.io/Motorization/)
