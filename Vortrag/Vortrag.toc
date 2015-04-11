@@ -1,0 +1,9 @@
+\beamer@sectionintoc {1}{Projektziel}{3}{0}{1}
+\beamer@sectionintoc {2}{Aufbau des Roboters}{5}{0}{2}
+\beamer@sectionintoc {3}{Funktionen}{6}{0}{3}
+\beamer@sectionintoc {4}{Programmstruktur}{7}{0}{4}
+\beamer@sectionintoc {5}{Probleme}{14}{0}{5}
+\beamer@sectionintoc {6}{Ausblick}{15}{0}{6}
+\beamer@sectionintoc {7}{Vorführung}{16}{0}{7}
+\beamer@endinputifotherversion {3.20pt}
+\select@language {ngerman}

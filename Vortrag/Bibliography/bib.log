@@ -1,0 +1,37 @@
+This is LuaTeX, Version beta-0.70.2-2012062819 (TeX Live 2012) (format=lualatex 2012.11.22)  8 APR 2013 14:52
+ \write18 enabled.
+ file:line:error style messages enabled.
+**bib.tex
+(./bib.tex
+LaTeX2e <2011/06/27>
+LuaTeX adaptation of babel <v3.8m-luatex-1.5> and hyphenation patterns for engl
+ish, dumylang, nohyphenation, loaded.
+
+./bib.tex:1: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 @
+     ARTICLE{R11,
+? 
+./bib.tex:1: Emergency stop.
+ ...                                              
+                                                  
+l.1 @
+     ARTICLE{R11,
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+
+Here is how much of LuaTeX's memory you used:
+ 8 strings out of 494982
+ 100000,89155 words of node,token memory allocated 205 words of node memory still in use:
+   1 hlist, 31 glue_spec, 1 temp, 1 local_par, 1 dir nodes
+   avail lists: 2:11,3:1,4:1
+ 3675 multiletter control sequences out of 65536+200000
+ 14 fonts using 563007 bytes
+ 5i,0n,4p,22b,14s stack positions out of 5000i,500n,10000p,200000b,50000s
+./bib.tex:1:  ==> Fatal error occurred, no output PDF file produced!
