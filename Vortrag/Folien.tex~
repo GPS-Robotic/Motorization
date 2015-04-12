@@ -81,12 +81,12 @@
 \end{frame}
 
 \section{Programmstruktur}
+{
+%\usebackgroundtemplate{\includegraphics[trim=31cm 45cm -1cm 0cm, clip=true,angle=90,width=\textwidth]{Plots/Diagramm11.pdf}}%
 \begin{frame}{Programmstruktur}
-\begin{figure}
-\center
-\includegraphics[height=\textheight]{Plots/Flowchart}
-\end{figure}
-\end{frame}
+
+
+\end{frame}}
 
 
 \begin{frame}{Navigation}
