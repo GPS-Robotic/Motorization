@@ -41,7 +41,7 @@ update_time = 1 # time in seconds in while-loop for updating gps, current_status
 log_file_name='log/RC_log'+str(time.time())+'.txt'
 
 # distance to target
-accuracy = 0.000015 # when is the target reached?? 2*sigma for average of 10 GPS-data; in degree (0.000015 = 1,7m)
+accuracy = 0.00003 # when is the target reached?? 2*sigma for average of 10 GPS-data; in degree (0.000015 = 1,7m)
 accuracy_level=1
 current_distance = accuracy * 10 # dummy value for current distance in meter#
 

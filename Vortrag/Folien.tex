@@ -12,219 +12,180 @@
 \begin{frame}{Projektziel}
 \begin{exampleblock}{Zielvorgaben}
 \begin{itemize}
-\item Roboterarm mit zwei Gelenken
-\item zugehöriges Xylophon
+\item Konstruktion eines autonomen Fahrzeugs
+\begin{itemize}
+\item Fahrt nach GPS-Daten
+\item Ausweichen kleinerer Hindernises
+\end{itemize}
 \end{itemize}
 \end{exampleblock}
 \\[0.5cm]
 \begin{exampleblock}{Umsetzung}
 \begin{itemize}
-\item halbkreisförmiges Xylophon
-\item Microcontroller gesteuerter Servoarm mit Schlägel
-\item Steuerung über serielle Schnittstelle mit einem Terminalprogramm
+\item Umbau eines Modellautos
+\item Steuerung durch einen Raspberry Pi
+\item Erkennen der Hindernisse durch Ultraschallsensoren
+\item GPS Modul mit Kompass
+\item Programmierung in Python
 \end{itemize}
 \end{exampleblock}
 \end{frame}
 
 % Local background must be enclosed by curly braces for grouping.
-{
-\usebackgroundtemplate{\includegraphics[trim=0cm 0cm -10cm -10cm,clip=true,height=1.25\paperheight,angle=90]{Plots/Robo1.jpg}}%
+%{
+%\usebackgroundtemplate{\includegraphics[height=\textheight]{Plots/new_design_IV.JPG}}%
 \begin{frame}{Komponenten}
-\begin{tikzpicture}
-	\node (MC) at (8,1) [rounded corners=4pt, fill=red!50] {$MC$};
-	\node (Servo) at (9.5,-0.5) [rounded corners=4pt, fill=red!50] {$Roboterarm\ mit\ Servos$};
-	\node (Pegelwandler) at (4,1) [rounded corners=4pt, fill=red!50] {$Pegelwandler$};
-	\node (A) at (7,-5) [rounded corners=4pt, fill=red!50] {$Xylophon$};
-	\node (B) at (1.5,-1.7) [rounded corners=4pt, fill=red!50] {$Taster$};
-\end{tikzpicture}
-\end{frame}}
+\vspace*{-.5cm}
+\begin{figure}
+\center
+\includegraphics[height=\textheight]{Plots/new_design_IV_new.JPG}
+\end{figure}
+%\begin{tikzpicture}
+%	\node[inner sep=0pt,remember picture,overlay] at (9,-2.3){\includegraphics[height=.9\textheight]{Plots/new_design_IV.JPG}};
+%	\node (Raspi) at (7.5,-2.5) [rounded corners=4pt, fill=red!50] {$Raspi$};
+%	\node (Servo) at (4,-3) [rounded corners=4pt, fill=red!50] {$Servo$};
+%	\node (Sensoren) at (4,-4) [rounded corners=4pt, fill=red!50] {$Sensoren$};
+%	\node (GPS-Modul) at (9,1) [rounded corners=4pt, fill=red!50] {$GPS-Modul$};
+%	\node (Batterien) at (7.5,-4.2) [rounded corners=4pt, fill=red!50] {$Batterien$};
+%	\node (Spannungswandler) at (8,-2) [rounded corners=4pt, fill=red!50] {$Spannungswandler$};
+%\end{tikzpicture}
+\end{frame}%}
 
-\section{Aufbau des Roboters}
+\section{Aufbau des Autos}
 
-\begin{frame}{Aufbau des Roboters}
+\begin{frame}{Aufbau des Autos}
 \begin{itemize}
-\item Löten des MC
-\item Aufbau des Schlage Mechanismus
-\item Konstruktion des Roboterarms
-\item Programmierung des MC
-\item Aufabu des Xylophons
-\item Programmierung des Konsolen Programms
+\item Bausatz des Modellautos
+\item Plexiglasplatte für Raspi, Spannungswandler, usw.
+\item Ansteuerung des Fahrtreglers und der Servos
+\item Auslesen und Ansteuern von GPS und Ultraschallsensoren
+\item Erarbeitung eines Navigationskonzepts
+\item Entwicklung und Optimierung des Ausweichalgorithmus
+\item Implementierung von GPS und Kompass ins Fahrtkonzept
+\item Optisches Tuning
 \item Fehlerbehebung/Verbesserungen
 \end{itemize}
 \end{frame}
 
-\section{Funktionen}
-\begin{frame}{Funktionen}
-\begin{exampleblock}{Betrieb mit PC}
+\section{Features}
+\begin{frame}{Features}
 \begin{itemize}
-\item Manueller Modus
-\item Lied Modus
-\item neues Lied überspielen
+\item Kommunikation via WLAN
+\item Verschiedenen Output-Level zum Debuggen
+\item Erstellen von Logfiles (GPS + Output) für Plots in Google Maps
+\item GPS und Sensoren in Background-Threads 
+\item Verschiedene Modi für den schwenkbaren Sensor
+\item Findet günstigsten Weg bei vielen Hindernissen
+\item Getrennte Spannungsversorgung
 \end{itemize}
-\end{exampleblock}
-\\[0.5cm]
-\begin{exampleblock}{Betrieb ohne PC}
-\begin{itemize}
-\item gespeichertes Lied starten mit Taster
-\end{itemize}
-\end{exampleblock}
 \end{frame}
 
 \section{Programmstruktur}
 {
-\usebackgroundtemplate{\includegraphics[trim=31cm 45cm -1cm 0cm, clip=true,angle=90,width=\textwidth]{Plots/Diagramm11.pdf}}%
+%\usebackgroundtemplate{\includegraphics[trim=31cm 45cm -1cm 0cm, clip=true,angle=90,width=\textwidth]{Plots/Diagramm11.pdf}}%
 \begin{frame}{Programmstruktur}
+
+
 \end{frame}}
 
 
-\begin{frame}[containsverbatim]{Lied vorbereiten}
+\begin{frame}{Navigation}
 \begin{columns}
-\column{0.49\paperwidth}
-\vspace{-1cm}
-\begin{lstlisting}
-typedef union
-{
-	struct 
-	{
-		uint16_t tonpos_ii;
-		uint16_t tonlaenge_i;
-	} daten;
-	
-	struct 
-	{
-		uint16_t tonpos_i;
-		uint16_t liedlaenge;
-	} daten2;
-	
-	char inhalt[4];
-}packet;
-\end{lstlisting}
 \column{0.49\paperwidth}
 \vspace{-0.5cm}
 \begin{figure}
 \center
-\includegraphics[trim=4cm 3cm 5cm 8cm, clip=true,height=\textheight]{Plots/Diagramm2.pdf}
+\includegraphics[height=.85\textheight]{Plots/navigation1}
 \end{figure}
-\end{columns}
-\end{frame}
-
-\begin{frame}[containsverbatim]{Lied übertragen}
-\begin{columns}
-\column{0.5\paperwidth}
-\begin{lstlisting}[tabsize=2]
-void play(int offset) {	
-
-union packet p;
-while(1)
-{
-	int i;
-	for(i=0; i<4; i++)
-	{
-		p.inhalt[i]=uart_getc();
-	}
-	if(p.daten.tonpos_ii==0)
-	{
-		schlage();
-		uart_putc('f');
-		break;
-	}
-	schlage();
-	setServo(1,p.daten.tonpos_ii+offset);
-	_delay_ms(p.daten.tonlaenge_i-schld);
-	uart_putc('r');
-}
-\end{lstlisting}
-\column{0.5\paperwidth}
-\vspace{-0.5cm}
-\begin{figure}
-\center
-\includegraphics[trim=6.8cm 53cm 27.8cm 7.5cm, clip=true,width=\textwidth,height=0.8\textheight]{Plots/Diagramm3.pdf}
-\end{figure}
-\end{columns}
-\end{frame}
-
-\begin{frame}{Manuelles Spiel}
-\begin{columns}
-\column{0.5\paperwidth}
-\vspace{-1cm}
-\begin{exampleblock}{Manuelles Spiel}
+\column{0.49\paperwidth}
 \begin{itemize}
-\item MC initialisiert mit "m"
-\item Eingabe eines Tons über die Tastatur
-\item Übertragen der Tonposition mit fester Tonlänge
-\item Beenden des manuellen Spiels durch Eingabe einer Zahl
-\item MC sendet "f"\ und geht in Ausgangsposition zurück
+\item Sensoren abfragen
+\item Richtung zum Ziel vom GPS/Kompass
+\\[1cm]
+\item freie Segmente finden
+\item Einteilung in große, mittlere und kleine Lücken
 \end{itemize}
-\end{exampleblock}
-\column{0.5\paperwidth}
-\begin{figure}
-\center
-\includegraphics[trim=11cm 18cm 10cm 29cm, clip=true,angle=90, clip=true,height=\textheight]{Plots/Diagramm1.pdf}
-\end{figure}
 \end{columns}
 \end{frame}
 
+\begin{frame}{Navigation}
+\begin{columns}
+\column{0.49\paperwidth}
+\vspace{-0.5cm}
+\begin{figure}
+\center
+\includegraphics[height=.85\textheight]{Plots/navigation2}
+\end{figure}
+\column{0.49\paperwidth}
+\begin{itemize}
+\item Lenkrichtung anhand einer Kostenfunktion errechnen
+\item $Cost = c_1 (r_{ref} - r_{gap}) + c_2 d_{gap}$
+\\[1cm]
+\item in errechnete Richtung ausweichen
+\end{itemize}
+\end{columns}
+\end{frame}
 
-\begin{frame}[containsverbatim]{Neues Lied übertragen}
+\begin{frame}{Sensor-Thread}
+\begin{itemize}
+\item Abfragereihenfolge: links, oben, rechts, oben, links, ...
+\item Bei Abfrage oben, drehe den Servo weiter nach rechts
+\item Am rechten Rand, springe nach links \\[0.5cm]
+\item Speichere aktuelle Sensordaten in Array
+\item Ignoriere Werte kleiner als 7cm
+\item Fünf Versuche für korrekte Messung
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[containsverbatim]{Sensor-Thread}
 %\vspace{-1cm}
-\begin{exampleblock}{Neues Lied übertragen}
-\begin{itemize}
-\item MC initialisiert mit "n"
-\item Eingabe eines Liedes wie beim Liedmodus
-\item Übertragen des Liedes wie beim Liedmodus
-\item Aber: Speichern des Liedes als Array im EEPROM Speicher des MC
-\item Lied abrufbar durch Drücken des Tasters
-\end{itemize}
-\end{exampleblock}
+\begin{columns}
+\column{0.49\paperwidth}
 \begin{lstlisting}[tabsize=2, basicstyle=\ttfamily\scriptsize]
-eeprom_read_block (tondauer, tonlaengen, sizeof(tonlaengen));
-eeprom_read_block (tonpos, tonpositionen, sizeof(tonpositionen));
+def get_distance(i):
+	GPIO.setmode(GPIO.BCM)
+
+	TRIG = [15, 8, 7]  
+	ECHO = [14, 9, 11] 
+
+	GPIO.setup(TRIG[i], GPIO.OUT)
+	GPIO.setup(ECHO[i], GPIO.IN)
+
+	GPIO.output(TRIG[i], False)
+
+	time.sleep(.04)
+
+	GPIO.output(TRIG[i], True)
+	time.sleep(0.00001)
+	GPIO.output(TRIG[i], False)
+\end{lstlisting}	
+\column{0.49\paperwidth}
+\begin{lstlisting}[tabsize=2, basicstyle=\ttfamily\scriptsize]
+	while (GPIO.input(ECHO[i])!=1):
+		start_time = time.time()
 	
-else if (s=='n')
-{
-	eeprom_write_block (tondauer, tonlaengen,sizeof(tondauer));
-	eeprom_write_block (tonpos, tonpositionen,sizeof(tonpos));
-	uart_putc('f');
-}
+	while (GPIO.input(ECHO[i])==1):
+		dt = time.time() - start_time
+		if(dt>0.05):
+			return 10000000.0
+
+	dist = dt*17000.0
+	time.sleep(.04)
+	return dist
 \end{lstlisting}
-\end{frame}
-
-\begin{frame}{GUI}
-\begin{itemize}
-\item Grafische Benutzeroberfläche
-\item erstellt mit wxGlade
-\item basierend auf wxWidgets
-\end{itemize}
-\begin{figure}
-\center
-\includegraphics[trim=0cm 0cm 0cm 0cm, clip=true,width=\textwidth]{Plots/GUI.pdf}
-\end{figure}
-\end{frame}
-
-\begin{frame}[containsverbatim]{GNU Gettext}
-\begin{itemize}
-\item Internationalisierung des Programms ohne Kenntnis des Quellcodes
-\item Übersetzung in extra Datei
-\item bis jetzt 2 Sprachen vor dem Start wählbar (DE,EN)
-\end{itemize}
-{\scriptsize http://www.gnu.org/software/gettext/}
-\begin{exampleblock}{Code}
-\begin{lstlisting}
-printf("Ein wenig Text");
-
-printf(gettext("Ein wenig Text"));
-\end{lstlisting}
-\end{exampleblock}
+\end{columns}
 \end{frame}
 
 \section{Probleme}
 
 \begin{frame}{Probleme}
 \begin{itemize}
-\item Schlägel
-\item Spannung
-\item zu kräftiger Servo
-\item defekter Pegelwandler
+\item Spannungsversorgung
+\item defekte Bauteile und Lieferschwierigkeiten
+\item Ultraschallsensoren
+\item GPS-Genauigkeit und Kompass
+\item Testfahrten
 \end{itemize}
 \end{frame}
 
@@ -232,15 +193,20 @@ printf(gettext("Ein wenig Text"));
 
 \begin{frame}{Ausblick}
 \begin{itemize}
-\item Zusammenspiel mit Flötenroboter u.ä.
-\item Verbesserung des manuellen Modus
-\item Einbinden von MIDI Dateien
-\item Verbesserung GUI
+\item feinere Motor- und Sensoransteuerung, schnellere Sensorabfrage
+\item Verbesserung des GPS
+\item bessere Sensoren
+\item Verfeinerung des Navigationsalgorithmus
+\item Benutzeroberfläche (z.B. Webpage zur Steuerung)
+\item interne Karte bzw. Einbindung von OpenStreetMaps
 \end{itemize}
 \end{frame}
 
-\section{Vorführung}
-\setbeamercolor{background canvas}{bg=black}
-\begin{frame}[plain]
-
+\begin{frame}
+\begin{center}
+\textcolor{darkred}{
+Vielen Dank für Ihre Aufmerksamkeit
+\\[1cm]
+Es folgt GPS auf Rädern B}
+\end{center}
 \end{frame}
