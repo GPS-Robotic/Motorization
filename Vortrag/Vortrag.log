@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.79.1 (TeX Live 2014) (rev 4971)  (format=lualatex 2014.9.7)  12 APR 2015 16:10
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2014) (rev 4971)  (format=lualatex 2014.9.7)  13 APR 2015 09:35
  \write18 enabled.
  file:line:error style messages enabled.
 **Vortrag.tex
@@ -927,7 +927,7 @@ luatexbase-attr: luatexbase.attributes["luaotfload@cursbase"] = 6
 luatexbase-attr: luatexbase.attributes["luaotfload@curscurs"] = 7
 luatexbase-attr: luatexbase.attributes["luaotfload@cursdone"] = 8
 luatexbase-attr: luatexbase.attributes["luaotfload@state"] = 9
-luaotfload | main : fontloader loaded in 0.077 seconds
+luaotfload | main : fontloader loaded in 0.096 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -2003,23 +2003,30 @@ Overfull \vbox (23.19579pt too high) detected at line 52
 
 ] [6
 
-] [7
-
 ]
-<Plots/navigation1.png, id=268, 288.07625pt x 412.54124pt>
+<Plots/Flowchart.jpg, id=238, 845.0772pt x 597.432pt>
+File: Plots/Flowchart.jpg Graphic file (type jpg)
+
+<use Plots/Flowchart.jpg>
+Package pdftex.def Info: Plots/Flowchart.jpg used on input line 90.
+(pdftex.def)             Requested size: 317.53502pt x 224.48819pt.
+ [7
+
+<./Plots/Flowchart.jpg>]
+<Plots/navigation1.png, id=269, 288.07625pt x 412.54124pt>
 File: Plots/navigation1.png Graphic file (type png)
 
 <use Plots/navigation1.png>
-Package pdftex.def Info: Plots/navigation1.png used on input line 109.
+Package pdftex.def Info: Plots/navigation1.png used on input line 110.
 (pdftex.def)             Requested size: 148.05542pt x 212.01959pt.
  [8
 
 <./Plots/navigation1.png>]
-<Plots/navigation2.png, id=298, 288.07625pt x 378.41376pt>
+<Plots/navigation2.png, id=299, 288.07625pt x 378.41376pt>
 File: Plots/navigation2.png Graphic file (type png)
 
 <use Plots/navigation2.png>
-Package pdftex.def Info: Plots/navigation2.png used on input line 127.
+Package pdftex.def Info: Plots/navigation2.png used on input line 128.
 (pdftex.def)             Requested size: 161.4051pt x 212.01959pt.
  [9
 
@@ -2058,14 +2065,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 12.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41233 strings out of 494694
+ 41247 strings out of 494694
  100000,953878 words of node,token memory allocated
  2496 words of node memory still in use:
    36 hlist, 10 vlist, 6 rule, 6 disc, 62 glue, 8 kern, 19 penalty, 57 glyph, 16
 9 attribute, 91 glue_spec, 110 attribute_list, 4 write, 7 local_par, 24 pdf_colo
 rstack nodes
    avail lists: 2:3123,3:762,4:3328,5:643,6:1130,7:552,8:39,9:2135,10:143,11:1
- 43351 multiletter control sequences out of 65536+600000
+ 43356 multiletter control sequences out of 65536+600000
  52 fonts using 4007967 bytes
  65i,17n,71p,484b,971s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/local/texlive/2014/texmf-dist/fonts/opentype/public/lm/lmmono8-regular.otf
@@ -2078,9 +2085,9 @@ ular.otf><</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 10.pfb><</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
 pfb><</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb>
-Output written on Vortrag.pdf (14 pages, 313059 bytes).
+Output written on Vortrag.pdf (14 pages, 2036533 bytes).
 
-PDF statistics: 525 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 526 PDF objects out of 1000 (max. 8388607)
  463 compressed objects within 5 object streams
  37 named destinations out of 1000 (max. 131072)
  112 words of extra memory for PDF output out of 10000 (max. 10000000)
