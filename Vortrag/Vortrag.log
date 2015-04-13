@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.79.1 (TeX Live 2014) (rev 4971)  (format=lualatex 2014.9.7)  13 APR 2015 09:35
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2014) (rev 4971)  (format=lualatex 2014.9.7)  13 APR 2015 10:36
  \write18 enabled.
  file:line:error style messages enabled.
 **Vortrag.tex
@@ -927,7 +927,7 @@ luatexbase-attr: luatexbase.attributes["luaotfload@cursbase"] = 6
 luatexbase-attr: luatexbase.attributes["luaotfload@curscurs"] = 7
 luatexbase-attr: luatexbase.attributes["luaotfload@cursdone"] = 8
 luatexbase-attr: luatexbase.attributes["luaotfload@state"] = 9
-luaotfload | main : fontloader loaded in 0.096 seconds
+luaotfload | main : fontloader loaded in 0.055 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -2085,7 +2085,7 @@ ular.otf><</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 10.pfb><</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
 pfb><</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb>
-Output written on Vortrag.pdf (14 pages, 2036533 bytes).
+Output written on Vortrag.pdf (14 pages, 2036493 bytes).
 
 PDF statistics: 526 PDF objects out of 1000 (max. 8388607)
  463 compressed objects within 5 object streams
