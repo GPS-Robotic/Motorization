@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+
+	\node (A) at (0,0) [rounded corners=4pt, fill=red!50] {$Hauptprogramm$};
+	\node (B) at (-4,-2) [rounded corners=4pt, fill=red!50] {$Testmodus$};
+	\node (C) at (0,-2) [rounded corners=4pt, fill=red!50] {$Liedmodus$};
+	\node (D) at (4,-2) [rounded corners=4pt, fill=red!50] {$Interkativer Modus$};
+	\node (E) at (-4,-4) [rounded corners=4pt, fill=green!50] {$Ausführung eines Tests$};
+	\node (F) at (0,-4) [rounded corners=4pt, fill=green!50] {$Eingabe eines Liedpfades$};
+	\node (G) at (4,-4) [rounded corners=4pt, fill=green!50] {$Eingabe eines Tons$};
+	\node (H) at (-4,-6) [rounded corners=4pt, fill=blue!50] {$Versendung eines Testlieds$};
+	\node (I) at (0,-6) [rounded corners=4pt, fill=blue!50] {$Einlesen des Liedes und Versenden$};
+	\node (J) at (4,-6) [rounded corners=4pt, fill=blue!50] {$Versendung des Tons$};
+	\node (K) at (0,-10) [circle, shade,draw] {$MC: Empfang der Packete$};
+	
+	\foreach \x in {B,C,D}
+	{\draw [->, very thick] (A) to (\x);}	
+	\foreach \y in {H,I,J}
+	{\draw [->, very thick] (\y) to (K);}	
+	\draw [->, very thick] (B) to (E);
+	\draw [->, very thick] (C) to (F);
+	\draw [->, very thick] (D) to (G);
+	\draw [->, very thick] (E) to (H);
+	\draw [->, very thick] (F) to (I);
+	\draw [->, very thick] (G) to (J);
+	
+\end{tikzpicture}

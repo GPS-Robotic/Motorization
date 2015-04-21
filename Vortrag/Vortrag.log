@@ -1543,6 +1543,10 @@ Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \pgf@plot@mark@count=\count328
+\pgfplotmarksizric/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
+\pgf@plot@mark@count=\count330
 \pgfplotmarksize=\dimen331
 )
 \tikz@lastx=\dimen332
@@ -1555,19 +1559,19 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
 \tikz@figbox@bg=\box272
 \tikz@tempbox=\box273
 \tikz@tempbox@bg=\box274
-\tikztreelevel=\count329
-\tikznumberofchildren=\count330
-\tikznumberofcurrentchild=\count331
-\tikz@fig@count=\count332
+\tikztreelevel=\count331
+\tikznumberofchildren=\count332
+\tikznumberofcurrentchild=\count333
+\tikz@fig@count=\count334
 
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
 e.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count333
-\pgfmatrixcurrentcolumn=\count334
-\pgf@matrix@numberofcolumns=\count335
+\pgfmatrixcurrentrow=\count335
+\pgfmatrixcurrentcolumn=\count336
+\pgf@matrix@numberofcolumns=\count337
 )
-\tikz@expandcount=\count336
+\tikz@expandcount=\count338
 
 (/usr/local/texlive/2014/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarytopaths.code.tex
@@ -1596,40 +1600,41 @@ Package: beamercolorthemebeaver 2010/06/17  (rcs-revision d02a7cf4d8ae)
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\\' on input line 4.
 
-(./Vortrag.aux (./Folien.aux
+./Vortrag.tex:5: Undefined control sequence.
+l.5 \shortauthor
+              {Max, Philipp, Tobias}
+? 
 
-LaTeX Warning: Label `title<1>' multiply defined.
+./Vortrag.tex:5: LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \shortauthor{M
+                ax, Philipp, Tobias}
+? 
+./Vortrag.tex:5: Emergency stop.
+ ...                                              
+                                                  
+l.5 \shortauthor{M
+                ax, Philipp, Tobias}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-LaTeX Warning: Label `title' multiply defined.
 
-))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for EU2/lmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 10.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 10.
- (/usr/local/texlive/2014/texmf-dist/tex/latex/tipa/t3cmr.fd
-File: t3cmr.fd 2001/12/31 TIPA font definitions
-)
-LaTeX Font Info:    ... okay on input line 10.
-
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
+Here is how much of LuaTeX's memory you used:
+ 38475 strings out of 494694
+ 100000,953878 words of node,token memory allocated 353 words of node memory still in use:
+   4 hlist, 1 rule, 1 kern, 3 attribute, 52 glue_spec, 3 attribute_list, 1 temp,
+ 3 write, 1 local_par, 1 dir, 1 pdf_colorstack nodes
+   avail lists: 2:14,3:1,4:2,6:1,7:1,9:2,11:1
+ 40970 multiletter control sequences out of 65536+600000
+ 21 fonts using 1267543 bytes
+ 65i,0n,63p,484b,294s stack positions out of 5000i,500n,10000p,200000b,100000s
+./Vortrag.tex:5:  ==> Fatal error occurred, no output PDF file produced!
+bose mode - [ preamble ] result:
 * driver: pdftex
 * paper: custom
 * layout: <same size as paper>
