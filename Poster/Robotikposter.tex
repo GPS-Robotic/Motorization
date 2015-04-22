@@ -92,12 +92,12 @@
 }
 %%% Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\sf\textbf{
-	Xylophon Roboter A}
+	GPS auf Rädern A}
 }
 %%% Authors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {
-	\vspace{1em} Simon Stemmle, Tobias Buck\\
-	{\smaller Betreuer: Benjamin Reh und Thomas Kloepfer}
+	\vspace{1em} Maximilian Hartmann, Philipp Gernandt, Tobias Buck\\
+	{\smaller Betreuer: Gero Plettenberg und Thomas Kloepfer}
 }
 %%% Logo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {
@@ -117,33 +117,15 @@
 }
 
 \headerbox{Projektziel}{name=Ziel,column=0,row=0}{
-Die Zielsetzung dieses Projektes bestand darin, einen Roboterarm mit zwei Servogelenken sowie ein zugehöriges Xylophon zu konstruieren.\\
-Hierzu wurde ein handelsübliches, chromatisches (d.h. ein Grund- und Halbtöne umfassendes) Xylophon derart angeordnet, dass der Roboterarm in einer Kreisbewegung dieses spielen kann. Weiterhin sollte die zugehörige Software zur Steuerung des Roboterarms und zum Abspielen von Liedern entwickelt werden.
+Die Zielsetzung unseres Projektes besteht darin, ein Modellbauto über ein on-board GPS-Modul anzusteuern. Dabei liest ein RaspberryPi die GPS-Daten ein und kommuniziert mit Lenkung und Antrieb, um eine Zielkoordinate anzufahren.\\In einem weiteren Schritt bringen wir Sensoren an das Auto an, die das Erkennen von Hinder- nissen ermöglichen. Ein Algorithmus soll daraufhin die Route derart anpassen, dass das Ziel dennoch erreicht wird.Beim Projekt ”GPS auf Rädern“ steht ein ansprechendes Design ebenso im Vordergrund wie ein funktionales.
 %\includegraphics[width=\linewidth]{time_windows}
 }
 
-\headerbox{Einlesen eines Liedes}{name=tonformat,column=0,below=Ziel}{
-Beim Start des Terminalprogramms wird eine Tabelle mit Informationen über die Tonpositionen geladen. Nach der Auswahl eines Liedes wird das Lied vom Programm eingelesen, dabei werden die Töne mit den vorher eingelesenen Tonpositionen verknüpft und die Servopositionen der Töne in einem Array gespeichert. Zusätzlich wird die Tonlänge anhand der Tempoangabe in Millisekunden umgerechnet und ebenfalls in einem Array gespeichert.
+\headerbox{Navigationsalgorithmus}{name=references,column=0,below=Ziel,above=bottom}{
 \begin{center}
-	\includegraphics[trim=4.5cm 7.5cm 7.5cm 8.5cm, clip=true,height=8cm]{Bilder/Diagramm2.pdf}
+	\includegraphics[height=18cm]{Bilder/navigation}
 \end{center}
-Beim Einlesen der Töne werden Pausen direkt verarbeitet und der vorherige Ton wird um die Dauer der Pause verlängert. Diese Vereinfachung ist möglich, da bei einem Xylophon die Tonlänge konstant ist. Zum Schluss wird anhand des größten Tonabstandes, der zugehörigen Tonlänge sowie der Geschwindigkeit des Servos die maximale Liedgeschwindigkeit berechnet. Liegt diese über dem angegebenen Tempo des Liedes, so wird das Tempo des Liedes entsprechend angepasst und das Lied langsamer gespielt. Ist dies nicht der Fall, so wird das Lied in Originalgeschwindigkeit abgespielt.	
 }
-
-\headerbox{Extras}{name=references,column=0,below=tonformat,above=bottom}{
-\begin{itemize}
-\item grafische Benutzeroberfläche
-\end{itemize}
-\vspace{-0.25cm}
-\includegraphics[width=\linewidth]{GUI}
-\vspace{-0.75cm}
-\begin{itemize}
-\item 2 sprachige Menüführung, Übersetzung erstellt mit GNU gettext\\
-http://www.gnu.org/software/gettext/
-\item Tonformat kompatibel zu dem des Flötenroboters
-\end{itemize}
-\vspace{-0.4cm}
-\footnotesize http://ornella.iwr.uni-heidelberg.de/ROBOTICSLAB/ROBPROJECTS/COMPLETED/2012PFEIFE\_A/index.html
 %\vspace{1cm}
 %\smaller													% Make the whole text smaller
 %\vspace{-0.4em} 										% Save some space at the beginning
@@ -154,15 +136,14 @@ http://www.gnu.org/software/gettext/
 %\setlength{\baselineskip}{0.4em}					% Save space with longer lines
 %\bibitem{flöte} Flötenroboter Semester \emph{Projektname}, Webseite
 %\end{thebibliography}
-}
 
-\headerbox{Aufbau des Xylophonroboters}{name=Aufbau,span=2,column=1,row=0}{
-Der Xylophonroboter besteht aus einem halbrunden Xylophon und einem selbstgebauten Roboterarm mit zwei Servos, gesteuert durch einen Microcontroller. Alle Teile wurden auf einer Holzplatte montiert. 
+
+\headerbox{Aufbau des Roboters}{name=Aufbau,span=2,column=1,row=0}{
 \begin{center}
-\includegraphics[trim=0cm 8cm 4cm 3cm, clip=true,width=0.34\linewidth]{Mickey.jpg}
-\includegraphics[trim=0cm 0.1cm 0.2cm 0.2cm, clip=true,width=0.65\linewidth]{Aufbau.pdf}
+\includegraphics[width=7.5cm]{new_design_IV_new}
+\includegraphics[width=7.5cm]{new_design_II}
+%\includegraphics[trim=0cm 0.1cm 0.2cm 0.2cm, clip=true,width=0.65\linewidth]{Aufbau.pdf}
 \end{center}
-Ein ansprechendes Äußeres wird dem Roboter durch die abnehmbare Mickey Maus verliehen. Der Pegelwandler dient der Kommunikation mit einem PC über eine serielle Schnittstelle. Über den Taster kann der Roboter auch ohne Verbindung mit einem Computer benutzt werden. 
 }
 
 \headerbox{Steuerung}{name=konzept,span=2,column=1,below=Aufbau}{
@@ -170,18 +151,10 @@ Die Steuerung des Xylophonroboters gliedert sich in zwei Hauptbestandteile, den 
 Hierbei wird das Lied in einem speziellen Tonformat auf dem PC gespeichert und dann über das Terminalprogramm eingelesen, verarbeitet und dem Microcontroller paketweise per serieller Schnittstelle gesendet. Das Paket wurde ebenfalls speziell zu diesem Zweck entwickelt (siehe Desktop-Programm) und enthält die Servopositionen der Töne sowie die Tonlänge in Millisekunden. Auf dem Microcontroller befindet sich lediglich die Software, die aus den erhaltenen Paketen die Servoposition und die Tonlänge extrahiert und den entsprechenden Ton anfährt, schlägt und die Tonlänge abwartet.
 }
 
-\headerbox{Desktop-Programm}{name=desktop,span=2,column=1,below=konzept}{
-\begin{multicols}{2}
-%\begin{center}
-\includegraphics[trim=31.5cm 46.5cm 3.5cm 4cm, clip=true,angle=90,width=\columnwidth]{Bilder/Diagramm11.pdf}
-%\end{center}
-Der Roboter besitzt 3 verschiedene Betriebsmodi, die zu Beginn des Programmstarts auszuwählen sind. Man kann ihn im \textbf{"manuellen Modus"}, im \textbf{"Liedmodus"} oder zum Aufspielen eines \textbf{neuen Liedes} starten. Beim \textbf{"manuellen Modus"} können durch Eingabe der Tonnamen über die Tastatur einzelne Töne gespielt werden. Beendet wird dieser Modus durch Eingabe einer Ziffer.
-Der \textbf{"Liedmodus"} und das Aufspielen eines \textbf{neuen Liedes} sind von der Menüführung fast identisch. Zu Beginn wählt man ein Lied aus einer Liste abgespeicherter Lieder oder eines selbstgeschriebenen und in dem Programmordner abgespeicherten Liedes. Beim \textbf{"Liedmodus"} wird das ausgewählte Lied direkt abgespielt, beim Aufspielen eine neuen Liedes hingegen wird das ausgewählte Lied auf dem MC gespeichert. 
-\vspace{-0.5cm}
+\headerbox{Programmierung}{name=desktop,span=2,column=1,below=konzept}{
 \begin{center}
-\includegraphics[trim=6.8cm 53cm 27.8cm 7.5cm, clip=true,width=6.5cm]{Bilder/Diagramm3.pdf}
-\end{center}
-\end{multicols}
+	\includegraphics[height=10cm]{Bilder/Flowchart.jpg}
+\end{center}	
 }
 
 \headerbox{Weiterentwicklung}{name=ausblick,column=1,below=desktop,above=bottom}{
@@ -203,10 +176,13 @@ Der \textbf{"Liedmodus"} und das Aufspielen eines \textbf{neuen Liedes} sind von
 %\smaller						% Make the whole text smaller
 %\vspace{-0.4em}			% Save some space at the beginning
 \center
-Simon Stemmle\\
-5. Semester Physik\\
-Stemmle@stud.uni-heidelberg.de\\
+Maximilian Hartmann\\
+9. Semester Physik\\
+hartmann@stud.uni-heidelberg.de\\
 \vspace{0.3cm}
+Philipp Gernandt\\
+9. Semester Physik\\
+gernandt@stud.uni-heidelberg.de\\
 Tobias Buck\\
 5. Semester Physik\\
 buck@stud.uni-heidelberg.de\\

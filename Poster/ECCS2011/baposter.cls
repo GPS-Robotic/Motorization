@@ -1,1 +1,0 @@
-../../baposter.cls
