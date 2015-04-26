@@ -1,14 +1,24 @@
 ---
 layout: post
 title: "Final remarks"
-description: "Detail information."
+description: "Detail information for follow up projects."
 category: documentation
 ---
 
-7cm
+### Connectivity
 
-Uhrzeit
+At the beginning of the internship, it was quite tiresome to hook the car up to a Raspi station every time you want to access some of the code on it. We got a small WLAN stick from a friend and configured it to create its own access point. The car's network is called "GPS-Robotic" and the password is "gps_robotic14". Because we had to return the stick, you will need one of your own and some luck that it works right away.
 
-Wlan
+### Sensor errors
+
+One common error of the ultrasonic sensors was, that is reported a distance around 5cm when there was no obstacle at all. We circumvented this by rejecting any sensor measurement smaller than 7cm. This is also the approximate extend of our bumper bar. So it seems reasonable that we cannot measure anything closer than 7cm, but maybe its better to let you know.
+
+### Clock
+
+The internal clock of the Raspi is not going right. We tried to sync it with the time from the GPS module, but did not bother too much, when we did not succeed. In principle the sync is possible so its up to you to master this challenge.
+
+### Login
+
+As on any Raspi, the login is "pi" and the password is "raspberry". We did not change that.
 
 

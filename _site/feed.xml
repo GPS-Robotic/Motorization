@@ -60,13 +60,21 @@
     
     <item>
       <title>Final remarks</title>
-      <description>&lt;p&gt;7cm&lt;/p&gt;
+      <description>&lt;h3 id=&quot;connectivity&quot;&gt;Connectivity&lt;/h3&gt;
 
-&lt;p&gt;Uhrzeit&lt;/p&gt;
+&lt;p&gt;At the beginning of the internship, it was quite tiresome to hook the car up to a Raspi station every time you want to access some of the code on it. We got a small WLAN stick from a friend and configured it to create its own access point. The car&amp;#39;s network is called &amp;quot;GPS-Robotic&amp;quot; and the password is &amp;quot;gps_robotic14&amp;quot;. Because we had to return the stick, you will need one of your own and some luck that it works right away.&lt;/p&gt;
 
-&lt;p&gt;Wlan&lt;/p&gt;
+&lt;h3 id=&quot;sensor-errors&quot;&gt;Sensor errors&lt;/h3&gt;
 
-&lt;p&gt;login&lt;/p&gt;
+&lt;p&gt;One common error of the ultrasonic sensors was, that is reported a distance around 5cm when there was no obstacle at all. We circumvented this by rejecting any sensor measurement smaller than 7cm. This is also the approximate extend of our bumper bar. So it seems reasonable that we cannot measure anything closer than 7cm, but maybe its better to let you know.&lt;/p&gt;
+
+&lt;h3 id=&quot;clock&quot;&gt;Clock&lt;/h3&gt;
+
+&lt;p&gt;The internal clock of the Raspi is not going right. We tried to sync it with the time from the GPS module, but did not bother too much, when we did not succeed. In principle the sync is possible so its up to you to master this challenge.&lt;/p&gt;
+
+&lt;h3 id=&quot;login&quot;&gt;Login&lt;/h3&gt;
+
+&lt;p&gt;As on any Raspi, the login is &amp;quot;pi&amp;quot; and the password is &amp;quot;raspberry&amp;quot;. We did not change that.&lt;/p&gt;
 </description>
       <pubDate>Sun, 26 Apr 2015 00:00:00 +0200</pubDate>
       <link>/documentation/2015/04/26/final_remarks.html</link>
@@ -106,9 +114,9 @@
 
 &lt;p&gt;At first the background threads for the ultrasonic sensors and the GPS module are started, the cruise control is initialized and a log-file is created. After this the main loop starts. It is repeatedly executed until the distance to the target (based on GPS data) is smaller than an estimated GPS accuracy.&lt;/p&gt;
 
-&lt;p&gt;The loop start by interrogating the two fixed front sensors. When they see an obstacle, the car breaks in order not to bump into anything. Because the sensors return quite many wrong measurements, we repeat the measurement and back-off only when we really find an obstacle.&lt;/p&gt;
+&lt;p&gt;The loop starts by interrogating the two fixed front sensors. When they see an obstacle, the car breaks in order not to bump into anything. Because the sensors return quite many wrong measurements, we repeat the measurement and back-off only when we really find an obstacle.&lt;/p&gt;
 
-&lt;p&gt;When the path is clear, the &lt;a href=&quot;/documentation/2015/04/25/obstacles_III.html&quot;&gt;navigation function&lt;/a&gt; takes over and returns a steering direction and a motor command (backward/ forward). After some exception handling (in cases, where no free path is found) the driving function executes the commands computed before. We choose to drive only 0.5 meter in each loop, because some crash experiences made us quiet carefull.&lt;/p&gt;
+&lt;p&gt;When the path is clear, the &lt;a href=&quot;/documentation/2015/04/25/obstacles_III.html&quot;&gt;navigation function&lt;/a&gt; takes over and returns a steering direction and a motor command (backward/ forward). After some exception handling (in cases, where no free path is found) the driving function executes the commands computed before. We chose to drive only 0.5 meter in each loop, because some crash experiences made us quiet carefull.&lt;/p&gt;
 
 &lt;div style=&quot;text-align:center&quot;&gt; &lt;img src =&quot;/images/documentation/Flowchart.png&quot; alt=&quot;One loop cycle.&quot; width=&quot;80%&quot;&gt; &lt;/div&gt;
 </description>

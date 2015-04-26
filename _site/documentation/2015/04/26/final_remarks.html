@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/css/site.css">
   <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Asap:400,700,400italic">
   <link href="/RC_icon.png" rel="shortcut icon" type="image/x-icon" />
-  <meta name="description" content="Detail information." />
+  <meta name="description" content="Detail information for follow-up projects." />
   <link rel="alternate" type="application/atom+xml" title="RSS Feed for Sébastien Saunier's blog" href="/feed.xml" />
 
   
@@ -62,13 +62,21 @@
   
 
   <div class="post">
-    <p>7cm</p>
+    <h3 id="connectivity">Connectivity</h3>
 
-<p>Uhrzeit</p>
+<p>At the beginning of the internship, it was quite tiresome to hook the car up to a Raspi station every time you want to access some of the code on it. We got a small WLAN stick from a friend and configured it to create its own access point. The car&#39;s network is called &quot;GPS-Robotic&quot; and the password is &quot;gps_robotic14&quot;. Because we had to return the stick, you will need one of your own and some luck that it works right away.</p>
 
-<p>Wlan</p>
+<h3 id="sensor-errors">Sensor errors</h3>
 
-<p>login</p>
+<p>One common error of the ultrasonic sensors was, that is reported a distance around 5cm when there was no obstacle at all. We circumvented this by rejecting any sensor measurement smaller than 7cm. This is also the approximate extend of our bumper bar. So it seems reasonable that we cannot measure anything closer than 7cm, but maybe its better to let you know.</p>
+
+<h3 id="clock">Clock</h3>
+
+<p>The internal clock of the Raspi is not going right. We tried to sync it with the time from the GPS module, but did not bother too much, when we did not succeed. In principle the sync is possible so its up to you to master this challenge.</p>
+
+<h3 id="login">Login</h3>
+
+<p>As on any Raspi, the login is &quot;pi&quot; and the password is &quot;raspberry&quot;. We did not change that.</p>
 
   </div>
 </article>
