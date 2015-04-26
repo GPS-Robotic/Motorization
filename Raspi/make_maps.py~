@@ -65,3 +65,9 @@ else:
 		print "ERROR at file " + file_name
 
 print "Done."
+
+# not entirely up-to-date:
+
+#make_route_LOG(input_file="", input_path="../log", output_path="./GPS_route_log", output_file="", data_separator="\t", new_data_separator=",", auto_all=True, data_format=['time', 'year', 'month', 'day', 'hour', 'minute', 'second', 'latitude', 'longitude', 'altitude', 'track', 'satellites', 'GPS_time', 'steering_direction', 'steering_velocity', 'steering_position'], prefix = 'RC_log', suffix = '.txt')
+
+#make_route_HTML(input_file_name, output_file_name="", input_path="./GPS_route_log", output_path="../route_htmls", data_separator=",", open_at_finish=False)

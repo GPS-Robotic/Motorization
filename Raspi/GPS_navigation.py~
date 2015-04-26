@@ -233,6 +233,6 @@ while abs(current_distance) > accuracy: # stop if we are close enough to target-
 
 lg.prt("-----------------------------------------------------\n",
 	"-----------------------------------------------------\n", "[08] DESTINATION REACHED! STOP!", lv=200, inst=__name__)
-sens.pause() # stop background scripts at target-destination
+sens.pause()
 gpsp.running = False
 log_file.stop()
