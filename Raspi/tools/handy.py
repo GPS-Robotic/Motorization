@@ -1,4 +1,4 @@
-# Program for remote-controlling the RC-car via cell-phone
+# Program for remote-controlling the RC-car via cell-phone (may be needed to be improved...)
 # call "sudo python ~/Robotic/handy.py command" to run command. see commands below
 
 import sys
@@ -91,5 +91,5 @@ else:
 		print "steering half right..."
 	else:
 		print "unknown argument, exit program...."
-sleep(1)
+sleep(1) # may be needed to adjust
 print ""

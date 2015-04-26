@@ -1,3 +1,6 @@
+# This script continously saves GPS-data to a file in the format 'lat,long' for debbuging-issues
+# for example one afterwards can calculate the average & standard-deviation via calc_dev.py
+
 import time
 import debug_log
 lg = debug_log.debug_print()
@@ -8,7 +11,7 @@ fn=" "
 
 while fn != 'no':
 	print "save gps data as list"
-	fn = raw_input("filename? i.e. GPS_DATA1.txt ")
+	fn = raw_input("filename? e.g. GPS_DATA1.txt")
 	print
 
 	filex = open(fn, "w")
@@ -20,6 +23,6 @@ while fn != 'no':
 	
 	filex.close()
 
-	fn = raw_input("no for quit")
+	fn = raw_input("next filename? no for quit ")
 
 gps.running = False

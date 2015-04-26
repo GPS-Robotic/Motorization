@@ -1,3 +1,5 @@
+# This script simply starts the sensor-thread & gives out the sensor-data in a desired mode.
+
 from debug_log import debug_print
 lg = debug_print()
 import sensors

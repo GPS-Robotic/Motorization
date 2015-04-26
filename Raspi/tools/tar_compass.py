@@ -1,4 +1,7 @@
-#!/usr/bin/python
+# This script is used to tar the compass:
+# start this script and turn around the compass in 360 degrees (you got 500 loop-calls for that)
+# then you get the x- & y- offset. Re-adjust your compass with that values (in gpsdData.py).
+
 import smbus
 import time
 import math

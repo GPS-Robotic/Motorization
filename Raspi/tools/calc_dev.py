@@ -1,3 +1,6 @@
+# This script calculates the average & standard-deviation of GPS-data given in a file
+# in the format latitude,longitude (linewise)
+
 import numpy
 
 print "calculate average lat/long with error"

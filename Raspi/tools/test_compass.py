@@ -1,5 +1,6 @@
-import debug_log
-lg = debug_log.debug_print()
+# This script starts gpsdData.py as background-thread and displays the compass-data.
+# May be used to check wether the compass delivers valid data.
+
 import gpsdData
 import time
 
