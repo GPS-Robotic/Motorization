@@ -67,7 +67,7 @@
 	% Option is left on true though the eyecatcher is not used. The reason is
 	% that we have a bit nicer looking title and author formatting in the headercol
 	% this way
-	%eyecatcher=false, 
+	eyecatcher=true, 
 	borderColor=bordercol,
 	headerColorOne=headercol1,
 	headerColorTwo=headercol2,
@@ -88,15 +88,25 @@
 }
 %%% Eye Cacther %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {
-	Eye Catcher, empty if option eyecatcher=false - unused
+	%Eye Catcher, empty if option eyecatcher=false - unused
+%\hspace{-3.5cm}
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{0.5pt}
+\fbox{
+\begin{minipage}{10em}
+	\includegraphics[width=10em]{transparent_side2.png}
+\end{minipage}
+}
 }
 %%% Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-{\sf\textbf{
-	GPS auf Rädern A}
+{
+\sf\textbf{\hspace{-4.5em} GPS auf Rädern A}
 }
 %%% Authors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {
+	\hspace{-7.5em}
 	\vspace{1em} Maximilian Hartmann, Philipp Gernandt, Tobias Buck\\
+	\hspace{-7.5em}
 	{\smaller Betreuer: Gero Plettenberg und Thomas Kloepfer}
 }
 %%% Logo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -117,9 +127,9 @@
 }
 
 \headerbox{Projektziel}{name=Ziel,column=0,row=0}{
-Die Zielsetzung unseres Projektes besteht darin, ein Modellbauto über ein on-board GPS-Modul zu steuern. Dabei liest ein Raspberry-Pi GPS-Daten ein und kommuniziert mit Lenkung und Antrieb, um eine Zielkoordinate anzufahren.\\
-In einem weiteren Schritt bringen wir Sensoren an das Auto an, die das Erkennen von Hindernissen ermöglichen. Ein Algorithmus soll daraufhin die Route derart anpassen, dass das Ziel dennoch erreicht wird.
-Beim Projekt ”GPS auf Rädern“ steht ein ansprechendes Design ebenso im Vordergrund wie ein funktionales.
+Die Zielsetzung unseres Projektes bestand darin, ein Modellbauto über ein on-board GPS-Modul zu steuern. Dabei liest ein Raspberry-Pi GPS-Daten ein und kommuniziert mit Lenkung und Antrieb, um eine Zielkoordinate anzufahren.\\
+In einem weiteren Schritt haben wir Sensoren an das Auto angebracht, die das Erkennen von Hindernissen ermöglichen. Ein Algorithmus passt dann die Route derart an, dass das Ziel dennoch erreicht wird.
+Beim Projekt ”GPS auf Rädern“ stand ein ansprechendes Design ebenso im Vordergrund wie ein funktionales.
 %\includegraphics[width=\linewidth]{time_windows}
 }
 
@@ -155,7 +165,7 @@ Die Navigation des Roboters erfolgt durch einen drehbaren Ultraschall-Sensor, de
 \end{center}
 \vspace{-.75cm}
 \begin{itemize}
-\item[6.] Fahren in die errechnete Lenkrichtung und 
+\item[6.] Fahren in die errechnete Lenkrichtung 
 \end{itemize}
 \begin{center}
 	\vspace{-.25cm}
@@ -222,7 +232,7 @@ Maximilian Hartmann\\
 9. Semester Physik\\
 %\vspace{0.3cm}
 Philipp Gernandt\\
-8. Semester Physik\\
+7. Semester Physik\\
 Tobias Buck\\
 9. Semester Physik\\
 gps\_robotic@gmx.de
@@ -230,7 +240,7 @@ gps\_robotic@gmx.de
 %\includegraphics[width=1\linewidth]{23uhr.jpg}
 } 
 
-\headerbox{References}{name=ref,span=2,column=1,above=bottom}{
+\headerbox{Referenzen}{name=ref,span=2,column=1,above=bottom}{
 \smaller						% Make the whole text smaller
 \begin{multicols}{2}
 http://gps-robotic.github.io/Motorization/\\
