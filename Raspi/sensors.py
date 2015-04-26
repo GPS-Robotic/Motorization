@@ -109,7 +109,7 @@
 #	Wrong-Sensor-Number-Error will be returned, but not saved
 
 
-from __main__ import lg
+from __main__ import lg # for output-control
 import time
 import threading
 import RPi.GPIO as GPIO
@@ -130,21 +130,14 @@ class sensors(threading.Thread):
 		# mode:	0 = update all sensors in cycle 0-1-2-1-0-1-2-1-0-..., servo not moved
 		#	1 = scanning all sensors in cycle 0-1-2-1-0-1-2-1-0-..., servo scans: from left to right to left to right...
 		#	2 = scanning all sensors in cycle 0-1-2-1-0-1-2-1-0-..., servo scans: from left to right jump, form left to right, ...
-        #   3 = like mode 2, but averaging over two measurements
+	        #   3 = like mode 2, but averaging over two measurements
 		self.mode = mode 
 
 		# set standart-Sensor- & Servo- PINS
 		# USE GPIO-NUMBERING, NOT BOARD-NUMBERING!
-		model_B=True # which model are we using? / which pins are used
-			     #    True -> Model B (Check cat /proc/cpuinfo --> Revision 000e), False -> Model B+
-		if model_B==True: # Model B
-			self.TRIG = [7, 8, 25]
-			self.ECHO = [11, 9, 10]
-			self.SERVO = 24
-		else:	# Model B+
-			self.TRIG = [21, 20, 16] # CAUTION! Numbering differs from old sheet....
-			self.ECHO = [26, 19, 13]
-			self.SERVO = 12
+		self.TRIG = [7, 8, 25]
+		self.ECHO = [11, 9, 10]
+		self.SERVO = 24
 
 		# are the pins initialized to the GPIO-Module?
 		self.pins_set = False

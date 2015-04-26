@@ -1,4 +1,4 @@
-# This is a function to write log-data to a log-file
+# This is a function to write GPS-log-data to a log-file
 #
 # The module can be used (after import log) by mylog = log.log(log_file_name),
 # where log_file_name is the filename of the log-file which will be created
@@ -24,7 +24,7 @@
 #	fix_time = GPS_time = time, when GPS position was aquired (in seconds since 1970 or somewhat... form time.time()) <-- not sure about that
 
 from __main__ import lg
-import time	# maybe needs to be in add_log??
+import time
 
 class gpslog:
 	# initialize: open file, set to open, set separator

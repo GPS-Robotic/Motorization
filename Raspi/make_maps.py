@@ -1,4 +1,4 @@
-# This script shall convert old log-files into new ones and creat GPS-route-maps in html-format (google-maps).
+# This script shall convert old GPS-log-files into new ones and creat GPS-route-maps in html-format (google-maps).
 #
 # to start:
 #	sudo python make_maps.py		--> converts all files, but doesn't open all maps in browser

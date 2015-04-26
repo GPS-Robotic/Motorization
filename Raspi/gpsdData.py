@@ -4,7 +4,7 @@
 
 # modified by GPS-Robotics-Team
 
-# This module creates a gps-background instance (Thread), which constantly updates the current GPS-data.
+# This module creates a gps-background instance (Thread), which constantly updates the current GPS-data & compass.
 # To include the module: import gpsdData
 # To create an instance & start it immediately: gpsp = gpsdData.GpsPoller()
 # To create an instance & start it later: gpsp = gpsdData.GpsPoller(start = False), start it later by gpsp.start()
@@ -15,6 +15,11 @@
 # whereby time.time() is the time of the GPS-measurement
 # if no valid data is received (also in the begining), all entries of data are float('nan').
 # This can be checked by (import math) math.isnan(data[i]) or data[i] == data[i] (False if nan)
+#
+# The GPS-data will be averaged over self.averaging_number (e.g. 10) values.
+# The variable self.is_new tells wether the averaged data has changed by more than 2*sigma (self.sigma) since the last time fetching data.
+#	In this way fluctuations due to bad GPS-data are avoided.
+#
 
 from __main__ import lg
 from gps import *

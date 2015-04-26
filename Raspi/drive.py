@@ -7,54 +7,38 @@ from time import sleep
 
 servo = PWM.Servo()
 
-#define PIN-Settings (Board-Numbering, not GPIO-Numbering)
-#	actually not needed here as we use GPIO-Numbering
-#PIN_Servo=11	#Servo-Signal
-#PIN_Motor=7	#Motor-Signal
-#PIN_SDA=3	#Kompass SDA
-#PIN_SCL=5	#Kompass SCL
-#PIN_TX=8	#GPS TX
-#PIN_RX=10	#GPS RX
-
 #define PIN-Settings (GPIO-Numbering, not Board-Numbering)
 GPIO_Servo=17
 GPIO_Motor=4
-#GPIO_SDA=2	# not needed in this module
-#GPIO_SCL=3
-#GPIO_TX=14
-#GPIO_RX=15
 
 #define Servopositions for steering
 #	values adjusted to incrementer 10us (micro-seconds)
-Offset=50	#for fine-adjusting the steering
+Offset=50	# for fine-adjusting the steering
 Left = 1900 + Offset
 Half_Left = 1700 + Offset #needed?
 Straight = 1500 + Offset
 Half_Right = 1300 + Offset #needed?
 Right = 1100 + Offset
 
-#define Servopositions for steering
+#define Motor-Values for accelerating
 #	values adjusted to incrementer 10us (micro-seconds)
 Null = 1500
-Slow = 100	#check these values!!! starts from 1550
+Slow = 100	
 Middle = 200
 Fast = 300
 Slow_Offset = 10
 #define waiting time between stop and steer in seconds
 Sleeping_Time=.5
 
-#define time needed for 90-degrees-turn (ADJUST!)
+#define time needed for 90-degrees-turn 
 Sleeping_Time_90={"slow":0.63,"middle":0.2,"fast":0.083}
-
-# Clear servo on GPIO_Servo
-#servo.stop_servo(GPIO_Servo)
 
 
 # steering function, current_status and desired_status are lists, containing the vehicle status
-# status = [direction,velocity,steer position] with:
-#	direction = break, forward or backward
-#	velocity = fast, middle or slow
-#	steer position = left, half-left, straight, half-right or right
+# 	status = [direction,velocity,steer position] with:
+#		direction = break, forward or backward
+#		velocity = fast, middle or slow
+#		steer position = left, half-left, straight, half-right or right
 
 
 def steer(current_status, desired_status):
@@ -275,7 +259,7 @@ def print_status(status):
 #MAY THIS BE CHANGED???
 def driving(current_status, desired_status):
 	accelerate(current_status, desired_status)	#first accelerate
-	steer(current_status, desired_status)	#then steer
+	steer(current_status, desired_status)		#then steer
 
 #function for turning 90 degrees right 
 #speed=slow, middle, fast (for turning process only)
@@ -333,6 +317,7 @@ def turn180(current_status, desired_status, speed='slow'):
 	right90(current_status, desired_status, speed)
 	#sleep(Sleeping_Time_90[speed])
 	#driving(current_status, desired_status)
+
 
 #----
 # initialize Fahrtregler
