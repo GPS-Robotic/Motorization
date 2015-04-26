@@ -117,39 +117,49 @@
 }
 
 \headerbox{Projektziel}{name=Ziel,column=0,row=0}{
-Die Zielsetzung unseres Projektes besteht darin, ein Modellbauto über ein on-board GPS-Modul anzusteuern. Dabei liest ein RaspberryPi die GPS-Daten ein und kommuniziert mit Lenkung und Antrieb, um eine Zielkoordinate anzufahren.\\
-In einem weiteren Schritt bringen wir Sensoren an das Auto an, die das Erkennen von Hinder- nissen ermöglichen. Ein Algorithmus soll daraufhin die Route derart anpassen, dass das Ziel dennoch erreicht wird.
+Die Zielsetzung unseres Projektes besteht darin, ein Modellbauto über ein on-board GPS-Modul zu steuern. Dabei liest ein Raspberry-Pi GPS-Daten ein und kommuniziert mit Lenkung und Antrieb, um eine Zielkoordinate anzufahren.\\
+In einem weiteren Schritt bringen wir Sensoren an das Auto an, die das Erkennen von Hindernissen ermöglichen. Ein Algorithmus soll daraufhin die Route derart anpassen, dass das Ziel dennoch erreicht wird.
 Beim Projekt ”GPS auf Rädern“ steht ein ansprechendes Design ebenso im Vordergrund wie ein funktionales.
 %\includegraphics[width=\linewidth]{time_windows}
 }
 
 \headerbox{Navigationsalgorithmus}{name=references,column=0,below=Ziel,above=bottom}{
 Die Navigation des Roboters erfolgt durch einen drehbaren Ultraschall-Sensor, der seine Umgebung in einem Bereich von 180 Grad in zehn Segmenten abtastet. Daraufhin werden freie Wege und Hindernisse erkannt und eine geeignete Fahrtrichtung zum Ziel errechnet. Der Ablauf ist wie folgt:
+\vspace{-.25cm}
 \begin{itemize}
+\setlength\itemsep{-.25em}
 \item[1.] Berechnung der gewünschten Fahrtrichtung anhand der aktuellen GPS-Daten und der Richtung zum Ziel
 \item[2.] Abfrage der Sensoren zum Auffinden von Hindernissen
 \end{itemize}
 \begin{center}
-	\includegraphics[width=6cm]{Bilder/navigation3}
+	\vspace{-.25cm}
+	\includegraphics[width=5.75cm]{Bilder/navigation3}
 \end{center}
+\vspace{-.75cm}
 \begin{itemize}
+\setlength\itemsep{-.25em}
 \item[3.] Einteilung der Segmente in frei und belegt anhand der Sensordaten
 \item[4.] Einteilung der freien Segmente in große, mittlere und kleine Lücken
 \end{itemize}
 \begin{center}
-	\includegraphics[width=6cm]{Bilder/navigation1}
+	\vspace{-.25cm}
+	\includegraphics[width=5.75cm]{Bilder/navigation1}
 \end{center}
+\vspace{-.75cm}
 \begin{itemize}
 \item[5.] Berechnung der Lenkrichtung anhand der Richtung zum Ziel und den errechneten Lücken, weite Lücken werden bevorzugt.
 \end{itemize}
 \begin{center}
-	\includegraphics[width=6cm]{Bilder/navigation2}
+	\vspace{-.25cm}
+	\includegraphics[width=5.75cm]{Bilder/navigation2}
 \end{center}
+\vspace{-.75cm}
 \begin{itemize}
 \item[6.] Fahren in die errechnete Lenkrichtung und 
 \end{itemize}
 \begin{center}
-	\includegraphics[width=6cm]{Bilder/navigation4}
+	\vspace{-.25cm}
+	\includegraphics[width=5.75cm]{Bilder/navigation4}
 \end{center}
 }
 
@@ -166,55 +176,68 @@ Die Navigation des Roboters erfolgt durch einen drehbaren Ultraschall-Sensor, de
 
 
 \headerbox{Aufbau des Roboters}{name=Aufbau,span=2,column=1,row=0}{
-Der GPS Roboter besteht aus einem Fernsteuerauto, dessen Fernbedienung durch einen Raspberry-Pi ersetzt wurde. Zusammen mit einem GPS-Modul und Ultraschallsensoren bildet der Raspberry-Pi das Gehirn des Autos. Sensordaten und GPS-Daten dienen dem Raspberry-Pi zur Orientierung. Anhand 
+\begin{multicols}{2}
+Der GPS Roboter besteht aus einem Fernsteuerauto, dessen Fernbedienung durch einen Mini-Computer, einem  Raspberry-Pi, ersetzt wurde. Zusammen mit einem GPS-Modul und Ultraschallsensoren bildet der Raspberry-Pi das Gehirn des Autos. Sensordaten und GPS-Daten dienen dem Raspberry-Pi zur Orientierung. Anhand der Daten errechnet der Raspberry-Pi die gewünschte Lenkrichtung um Hindernissen auszuweichen und das Ziel zu finden.
 \begin{center}
+\vspace{-.5cm}
 \includegraphics[width=7.5cm]{new_design_II}
+\end{center}
+\columnbreak
+\begin{center}
 \includegraphics[width=7.5cm]{new_design_IV_new}
 %\includegraphics[trim=0cm 0.1cm 0.2cm 0.2cm, clip=true,width=0.65\linewidth]{Aufbau.pdf}
 \end{center}
+\end{multicols}
 }
 
 \headerbox{Steuerung}{name=konzept,span=2,column=1,below=Aufbau}{
-Die Steuerung des Xylophonroboters gliedert sich in zwei Hauptbestandteile, den Mikrokontroller mit Servos und Xylophon sowie in ein Desktop-Programm, von dem aus der Roboter durch Eingabebefehle gesteuert werden kann.
-Hierbei wird das Lied in einem speziellen Tonformat auf dem PC gespeichert und dann über das Terminalprogramm eingelesen, verarbeitet und dem Microcontroller paketweise per serieller Schnittstelle gesendet. Das Paket wurde ebenfalls speziell zu diesem Zweck entwickelt (siehe Desktop-Programm) und enthält die Servopositionen der Töne sowie die Tonlänge in Millisekunden. Auf dem Microcontroller befindet sich lediglich die Software, die aus den erhaltenen Paketen die Servoposition und die Tonlänge extrahiert und den entsprechenden Ton anfährt, schlägt und die Tonlänge abwartet.
-}
-
-\headerbox{Programmierung}{name=desktop,span=2,column=1,below=konzept}{
+Hier wird der schematische Ablauf eines Programmdurchlaufs beschrieben. Zuerst werden Fahrtregler, Sensoren und GPS-Modul initialisiert. Danach startet das Hauptprogramm. Zuerst werden die Sensoren abgefragt um ein direkt voraus liegendes Hindernis zu erkennen. Ist dies nicht der Fall, so startet die Navigationsfunktion. Diese gibt eine Lenkrichtung und einen Motorbefehl (vorwärts/rückwärts) zurück.
+Dann übernimmt die Fahrfunktion und führt die errechneten Befehle aus. Danach startet dir Hauptschleife wieder von vorne bis das Ziel erreicht ist.
 \begin{center}
-	\includegraphics[height=10cm]{Bilder/Flowchart.jpg}
+	\includegraphics[height=10cm]{Bilder/Flowchart}
 \end{center}	
 }
 
-\headerbox{Weiterentwicklung}{name=ausblick,column=1,below=desktop,above=bottom}{
+\headerbox{Weiterentwicklung}{name=ausblick,column=1,below=konzept}{
 %Zur Weiterentwicklung bzw. Verbesserung des Roboters können folgende Punkte umgesetzt werden:
 \begin{itemize}
+\setlength\itemsep{-.2em}
 %\vspace{-0.2cm}
-	\item Synchronisation/Zusammenspiel mit anderen Instrumentalrobotern, z.B. Flötenroboter
+	\item Verfeinerung des Navigationsalgorithmus
 %\vspace{-0.65cm}
-	\item Einbinden von MIDI Datein
+	\item Verbesserung der Sensoren (z.B. Infrarotsensoren)
 %\vspace{-0.2cm}
-	\item Modifizieren des manuellen Modus
+	\item Einbindung von OpenStreetMaps, Handysteuerung
 %\vspace{-0.2cm}
-	\item Verbesserung der grafischen Benutzeroberfläche
+	\item Steuerung des Roboters via Webpage
 \end{itemize}
 %\includegraphics[angle=-90,width=0.49\linewidth]{team.jpg}
 } 
 
-\headerbox{Das Team}{name=team,column=2,below=desktop,above=bottom}{
+\headerbox{Das Team}{name=team,column=2,below=konzept}{
 %\smaller						% Make the whole text smaller
 %\vspace{-0.4em}			% Save some space at the beginning
-\center
+\begin{center}
 Maximilian Hartmann\\
 9. Semester Physik\\
-hartmann@stud.uni-heidelberg.de\\
-\vspace{0.3cm}
+%\vspace{0.3cm}
 Philipp Gernandt\\
-9. Semester Physik\\
-gernandt@stud.uni-heidelberg.de\\
+8. Semester Physik\\
 Tobias Buck\\
-5. Semester Physik\\
-buck@stud.uni-heidelberg.de\\
+9. Semester Physik\\
+gps\_robotic@gmx.de
+\end{center}
 %\includegraphics[width=1\linewidth]{23uhr.jpg}
+} 
+
+\headerbox{References}{name=ref,span=2,column=1,above=bottom}{
+\smaller						% Make the whole text smaller
+\begin{multicols}{2}
+http://gps-robotic.github.io/Motorization/\\
+https://github.com/GPS-Robotic/Motorization\\
+http://joanna.iwr.uni-heidelberg.de/rlab/de/home\\
+http://cdn.intechopen.com/pdfs-wm/6321.pdf
+\end{multicols}
 } 
 
 \end{poster}
