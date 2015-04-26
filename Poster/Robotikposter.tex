@@ -117,15 +117,42 @@
 }
 
 \headerbox{Projektziel}{name=Ziel,column=0,row=0}{
-Die Zielsetzung unseres Projektes besteht darin, ein Modellbauto über ein on-board GPS-Modul anzusteuern. Dabei liest ein RaspberryPi die GPS-Daten ein und kommuniziert mit Lenkung und Antrieb, um eine Zielkoordinate anzufahren.\\In einem weiteren Schritt bringen wir Sensoren an das Auto an, die das Erkennen von Hinder- nissen ermöglichen. Ein Algorithmus soll daraufhin die Route derart anpassen, dass das Ziel dennoch erreicht wird.Beim Projekt ”GPS auf Rädern“ steht ein ansprechendes Design ebenso im Vordergrund wie ein funktionales.
+Die Zielsetzung unseres Projektes besteht darin, ein Modellbauto über ein on-board GPS-Modul anzusteuern. Dabei liest ein RaspberryPi die GPS-Daten ein und kommuniziert mit Lenkung und Antrieb, um eine Zielkoordinate anzufahren.\\
+In einem weiteren Schritt bringen wir Sensoren an das Auto an, die das Erkennen von Hinder- nissen ermöglichen. Ein Algorithmus soll daraufhin die Route derart anpassen, dass das Ziel dennoch erreicht wird.
+Beim Projekt ”GPS auf Rädern“ steht ein ansprechendes Design ebenso im Vordergrund wie ein funktionales.
 %\includegraphics[width=\linewidth]{time_windows}
 }
 
 \headerbox{Navigationsalgorithmus}{name=references,column=0,below=Ziel,above=bottom}{
+Die Navigation des Roboters erfolgt durch einen drehbaren Ultraschall-Sensor, der seine Umgebung in einem Bereich von 180 Grad in zehn Segmenten abtastet. Daraufhin werden freie Wege und Hindernisse erkannt und eine geeignete Fahrtrichtung zum Ziel errechnet. Der Ablauf ist wie folgt:
+\begin{itemize}
+\item[1.] Berechnung der gewünschten Fahrtrichtung anhand der aktuellen GPS-Daten und der Richtung zum Ziel
+\item[2.] Abfrage der Sensoren zum Auffinden von Hindernissen
+\end{itemize}
 \begin{center}
-	\includegraphics[height=18cm]{Bilder/navigation}
+	\includegraphics[width=6cm]{Bilder/navigation3}
+\end{center}
+\begin{itemize}
+\item[3.] Einteilung der Segmente in frei und belegt anhand der Sensordaten
+\item[4.] Einteilung der freien Segmente in große, mittlere und kleine Lücken
+\end{itemize}
+\begin{center}
+	\includegraphics[width=6cm]{Bilder/navigation1}
+\end{center}
+\begin{itemize}
+\item[5.] Berechnung der Lenkrichtung anhand der Richtung zum Ziel und den errechneten Lücken, weite Lücken werden bevorzugt.
+\end{itemize}
+\begin{center}
+	\includegraphics[width=6cm]{Bilder/navigation2}
+\end{center}
+\begin{itemize}
+\item[6.] Fahren in die errechnete Lenkrichtung und 
+\end{itemize}
+\begin{center}
+	\includegraphics[width=6cm]{Bilder/navigation4}
 \end{center}
 }
+
 %\vspace{1cm}
 %\smaller													% Make the whole text smaller
 %\vspace{-0.4em} 										% Save some space at the beginning
@@ -139,9 +166,10 @@ Die Zielsetzung unseres Projektes besteht darin, ein Modellbauto über ein on-b
 
 
 \headerbox{Aufbau des Roboters}{name=Aufbau,span=2,column=1,row=0}{
+Der GPS Roboter besteht aus einem Fernsteuerauto, dessen Fernbedienung durch einen Raspberry-Pi ersetzt wurde. Zusammen mit einem GPS-Modul und Ultraschallsensoren bildet der Raspberry-Pi das Gehirn des Autos. Sensordaten und GPS-Daten dienen dem Raspberry-Pi zur Orientierung. Anhand 
 \begin{center}
-\includegraphics[width=7.5cm]{new_design_IV_new}
 \includegraphics[width=7.5cm]{new_design_II}
+\includegraphics[width=7.5cm]{new_design_IV_new}
 %\includegraphics[trim=0cm 0.1cm 0.2cm 0.2cm, clip=true,width=0.65\linewidth]{Aufbau.pdf}
 \end{center}
 }

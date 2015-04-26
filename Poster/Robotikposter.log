@@ -1,11 +1,11 @@
-This is LuaTeX, Version beta-0.79.1 (TeX Live 2014) (rev 4971)  (format=lualatex 2014.9.7)  22 APR 2015 14:47
- \write18 enabled.
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2014) (rev 4971)  (format=lualatex 2014.9.7)  26 APR 2015 14:33
+ restricted \write18 enabled.
  file:line:error style messages enabled.
 **Robotikposter.tex
 (./Robotikposter.tex
 LaTeX2e <2014/05/01>
 Babel <3.9k> and hyphenation patterns for 79 languages loaded.
-(/usr/local/texlive/texmf-local/tex/baposter/baposter.cls
+(./baposter.cls
 Document Class: baposter 2011/11/26 v2.0 baposter class
 (/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
@@ -1304,7 +1304,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> EU2/lmtt/bx/n on input line 52.
 Poster rendering started
-Memory usage before: 792&606810; after: 755&606803
+Memory usage before: 792&606811; after: 755&606804
 <Bilder/iwr.png, id=31, 180.675pt x 139.52126pt>
 File: Bilder/iwr.png Graphic file (type png)
  <use Bilder/iwr.png>
@@ -1327,39 +1327,79 @@ Users/buck-tobias/Library/texlive/2014/texmf-var/luatex-cache/generic/fonts/otf/
 lmsans10-bold.luc)
 luaotfload | load : Lookup/name: "LinuxLibertineO" -> "LinLibertine_R.otf"
 luaotfload | load : Lookup/name: "LinuxLibertineO" -> "LinLibertine_R.otf"
-Memory usage before: 14247&611746; after: 14210&611739
+Memory usage before: 14247&611747; after: 14210&611740
 (compiling luc: /usr/local/texlive/2014/texmf-var/luatex-cache/generic/fonts/otf
 /lmsans12-regular.luc)(load luc: /Users/buck-tobias/Library/texlive/2014/texmf-v
 ar/luatex-cache/generic/fonts/otf/lmsans12-regular.luc)
-<Bilder/navigation.png, id=34, 288.07625pt x 860.21375pt>
-File: Bilder/navigation.png Graphic file (type png)
+Underfull \hbox (badness 1325) in paragraph at lines 154--154
+\EU2/LinuxLibertineO(0)/m/n/10 an-hand der ak-tu-el-len GPS-Daten und der
+ []
 
-<use Bilder/navigation.png>
-Package pdftex.def Info: Bilder/navigation.png used on input line 130.
-(pdftex.def)             Requested size: 171.51518pt x 512.1496pt.
 
-<Bilder/new_design_IV_new.jpg, id=35, 642.4pt x 481.8pt>
-File: Bilder/new_design_IV_new.jpg Graphic file (type jpg)
+Underfull \hbox (badness 1087) in paragraph at lines 154--154
+[][]\EU2/LinuxLibertineO(0)/m/n/10 Ab-fra-ge der Sen-so-ren zum Auf-fin-den von
 
-<use Bilder/new_design_IV_new.jpg>
-Package pdftex.def Info: Bilder/new_design_IV_new.jpg used on input line 149.
-(pdftex.def)             Requested size: 213.39566pt x 160.04578pt.
+ []
 
-<Bilder/new_design_II.jpg, id=36, 3276.24pt x 2457.18pt>
-File: Bilder/new_design_II.jpg Graphic file (type jpg)
+<Bilder/navigation3.png, id=34, 286.06876pt x 181.67876pt>
+File: Bilder/navigation3.png Graphic file (type png)
 
-<use Bilder/new_design_II.jpg>
-Package pdftex.def Info: Bilder/new_design_II.jpg used on input line 149.
-(pdftex.def)             Requested size: 213.39566pt x 160.02225pt.
+<use Bilder/navigation3.png>
+Package pdftex.def Info: Bilder/navigation3.png used on input line 154.
+(pdftex.def)             Requested size: 170.71652pt x 108.42038pt.
 
-<Bilder/Flowchart.jpg, id=37, 845.0772pt x 597.432pt>
+Underfull \hbox (badness 2165) in paragraph at lines 154--154
+[][]\EU2/LinuxLibertineO(0)/m/n/10 Ein-tei-lung der frei-en Seg-men-te in gro-
+ße,
+ []
+
+<Bilder/navigation1.png, id=35, 288.07625pt x 190.7125pt>
+File: Bilder/navigation1.png Graphic file (type png)
+
+<use Bilder/navigation1.png>
+Package pdftex.def Info: Bilder/navigation1.png used on input line 154.
+(pdftex.def)             Requested size: 170.71652pt x 113.02283pt.
+
+Underfull \hbox (badness 1184) in paragraph at lines 154--154
+[][]\EU2/LinuxLibertineO(0)/m/n/10 Be-rech-nung der Lenk-rich-tung an-hand der
+ []
+
+<Bilder/navigation2.png, id=36, 287.0725pt x 200.75pt>
+File: Bilder/navigation2.png Graphic file (type png)
+
+<use Bilder/navigation2.png>
+Package pdftex.def Info: Bilder/navigation2.png used on input line 154.
+(pdftex.def)             Requested size: 170.71652pt x 119.38492pt.
+
+<Bilder/navigation4.png, id=37, 288.07625pt x 159.59625pt>
+File: Bilder/navigation4.png Graphic file (type png)
+
+<use Bilder/navigation4.png>
+Package pdftex.def Info: Bilder/navigation4.png used on input line 154.
+(pdftex.def)             Requested size: 170.71652pt x 94.58224pt.
+
+<Bilder/new_design_IV_new.png, id=38, 412.54124pt x 451.6875pt>
+File: Bilder/new_design_IV_new.png Graphic file (type png)
+
+<use Bilder/new_design_IV_new.png>
+Package pdftex.def Info: Bilder/new_design_IV_new.png used on input line 174.
+(pdftex.def)             Requested size: 213.39566pt x 233.64514pt.
+
+<Bilder/new_design_II.png, id=39, 3067.46pt x 1973.3725pt>
+File: Bilder/new_design_II.png Graphic file (type png)
+
+<use Bilder/new_design_II.png>
+Package pdftex.def Info: Bilder/new_design_II.png used on input line 174.
+(pdftex.def)             Requested size: 213.39566pt x 137.27696pt.
+
+<Bilder/Flowchart.jpg, id=40, 845.0772pt x 597.432pt>
 File: Bilder/Flowchart.jpg Graphic file (type jpg)
 
 <use Bilder/Flowchart.jpg>
-Package pdftex.def Info: Bilder/Flowchart.jpg used on input line 160.
+Package pdftex.def Info: Bilder/Flowchart.jpg used on input line 185.
 (pdftex.def)             Requested size: 402.47322pt x 284.52756pt.
 
-Underfull \hbox (badness 2119) in paragraph at lines 175--175
+Underfull \hbox (badness 2119) in paragraph at lines 200--200
 [][]\EU2/LinuxLibertineO(0)/m/n/10 Syn-chro-ni-sa-ti-on/Zu-sam-men-spiel mit an
 -de-
  []
@@ -1435,27 +1475,28 @@ Missing character: There is no ; (U+003B) in font nullfont!
 Missing character: There is no ; (U+003B) in font nullfont!
 Missing character: There is no ; (U+003B) in font nullfont!
 Missing character: There is no ; (U+003B) in font nullfont!
-<./Bilder/iwr.png><./Bilder/navigation.png><./Bilder/new_design_IV_new.jpg><./Bi
-lder/new_design_II.jpg><./Bilder/Flowchart.jpg>]
-Memory usage before: 73334&615004; after: 46287&614866
+<./Bilder/iwr.png><./Bilder/navigation3.png><./Bilder/navigation1.png><./Bilder/
+navigation2.png><./Bilder/navigation4.png><./Bilder/new_design_IV_new.png><./Bil
+der/new_design_II.png><./Bilder/Flowchart.jpg>]
+Memory usage before: 93352&615750; after: 58877&615612
 (./Robotikposter.aux))
 
 Here is how much of LuaTeX's memory you used:
- 28242 strings out of 494694
+ 28243 strings out of 494694
  100000,662416 words of node,token memory allocated
  591 words of node memory still in use:
    11 hlist, 1 vlist, 1 rule, 2 glue, 1 kern, 5 attribute, 54 glue_spec, 5 attri
 bute_list, 2 write, 16 pdf_literal, 8 pdf_refxform, 16 pdf_colorstack nodes
-   avail lists: 2:9145,3:1526,4:2365,5:300,6:4238,7:142,9:853,10:584
- 30969 multiletter control sequences out of 65536+600000
+   avail lists: 2:11542,3:1638,4:2971,5:380,6:5736,7:142,9:977,10:780
+ 30981 multiletter control sequences out of 65536+600000
  46 fonts using 6863971 bytes
  62i,10n,76p,608b,995s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/local/texlive/2014/texmf-dist/fonts/opentype/public/libertine/LinLibertine
 _R.otf></usr/local/texlive/2014/texmf-dist/fonts/opentype/public/lm/lmsans10-bol
 d.otf>
-Output written on Robotikposter.pdf (1 page, 3723585 bytes).
+Output written on Robotikposter.pdf (1 page, 10620444 bytes).
 
-PDF statistics: 59 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 67 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  124 words of extra memory for PDF output out of 10000 (max. 10000000)
