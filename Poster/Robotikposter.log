@@ -1,4 +1,4 @@
-This is LuaTeX, Version beta-0.79.1 (TeX Live 2014) (rev 4971)  (format=lualatex 2014.9.7)  26 APR 2015 15:20
+This is LuaTeX, Version beta-0.79.1 (TeX Live 2014) (rev 4971)  (format=lualatex 2014.9.7)  26 APR 2015 15:22
  restricted \write18 enabled.
  file:line:error style messages enabled.
 **Robotikposter.tex
@@ -865,7 +865,7 @@ luatexbase-attr: luatexbase.attributes["luaotfload@cursbase"] = 6
 luatexbase-attr: luatexbase.attributes["luaotfload@curscurs"] = 7
 luatexbase-attr: luatexbase.attributes["luaotfload@cursdone"] = 8
 luatexbase-attr: luatexbase.attributes["luaotfload@state"] = 9
-luaotfload | main : fontloader loaded in 0.043 seconds
+luaotfload | main : fontloader loaded in 0.063 seconds
 luatexbase-mcb: inserting 'luaotfload.node_processor'
 at position 1 in 'pre_linebreak_filter'
 luatexbase-mcb: inserting 'luaotfload.node_processor'
@@ -1472,7 +1472,7 @@ Missing character: There is no ; (U+003B) in font nullfont!
 <./Bilder/iwr.png><./Bilder/navigation3.png><./Bilder/navigation1.png><./Bilder/
 navigation2.png><./Bilder/navigation4.png><./Bilder/new_design_II.png><./Bilder/
 new_design_IV_new.png><./Bilder/Flowchart.png>]
-Memory usage before: 99266&615712; after: 62685&615574
+Memory usage before: 99262&615716; after: 62681&615578
 (./Robotikposter.aux))
 
 Here is how much of LuaTeX's memory you used:
@@ -1481,14 +1481,14 @@ Here is how much of LuaTeX's memory you used:
  591 words of node memory still in use:
    11 hlist, 1 vlist, 1 rule, 2 glue, 1 kern, 5 attribute, 54 glue_spec, 5 attri
 bute_list, 2 write, 16 pdf_literal, 8 pdf_refxform, 16 pdf_colorstack nodes
-   avail lists: 2:12335,3:1684,4:3172,5:374,6:6206,7:69,9:1029,10:790
+   avail lists: 2:12335,3:1684,4:3171,5:374,6:6206,7:69,9:1029,10:790
  30982 multiletter control sequences out of 65536+600000
- 47 fonts using 7271087 bytes
+ 47 fonts using 7271151 bytes
  62i,10n,76p,477b,995s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/local/texlive/2014/texmf-dist/fonts/opentype/public/libertine/LinLibertine
 _R.otf></usr/local/texlive/2014/texmf-dist/fonts/opentype/public/lm/lmsans10-bol
 d.otf>
-Output written on Robotikposter.pdf (1 page, 9712363 bytes).
+Output written on Robotikposter.pdf (1 page, 9712354 bytes).
 
 PDF statistics: 68 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream
