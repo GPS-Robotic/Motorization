@@ -1,0 +1,2509 @@
+[200] __main__: [01] start GPS & initialize speed control 
+[200] __main__: [02] open GPS-log-file: log/RC_log1424659000.89.txt 
+[200] __main__: [03] Waiting for valid GPS-information 
+[100] __main__: [nan, nan, nan, -166.6441749571448, [], 1424659002.825514] 
+[100] __main__: still waiting...  
+[100] __main__: [49.417816888, 8.6695608464, 117.152, -166.6441749571448, [], 1424659003.32996] 
+[200] __main__: [04] got valid GPS-data; wait further 10s for better data 
+[100] __main__: [49.417816888, 8.6695608464, 117.152, -166.6441749571448, [], 1424659003.32996] 
+[100] __main__: [49.4178078963, 8.669559115199998, 116.58780000000002, -166.02222640763935, [], 1424659007.327989] 
+[200] __main__: [05] start driving-routine 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 49.0 [500.0, 179.0, 500.0, 500.0, 500.0, 500.0, 500.0, 500.0, 46.0, 100.0, 500.0] 165.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [2, 3, 4] , narrow= [0, 7, 9] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000336276789484 / 1.5e-05; in meter: 37.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 79.0 [500.0, 188.0, 500.0, 500.0, 500.0, 176.0, 152.0, 500.0, 99.0, 500.0, 119.0] 212.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [2, 3, 4] , narrow= [0, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000339716417894 / 1.5e-05; in meter: 37.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 225.0 [500.0, 188.0, 500.0, 500.0, 500.0, 97.0, 500.0, 500.0, 500.0, 83.0, 119.0] 90.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [2, 3, 4, 6, 7, 8] , narrow= [0] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000347364307773 / 1.5e-05; in meter: 38.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 50.0 [147.0, 151.0, 500.0, 500.0, 500.0, 97.0, 500.0, 500.0, 500.0, 83.0, 500.0] 89.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [2, 3, 4, 6, 7, 8] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000351324207691 / 1.5e-05; in meter: 38.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 133.0 [147.0, 151.0, 500.0, 90.0, 167.0, 146.0, 149.0, 500.0, 153.0, 53.0, 500.0] 104.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000353332367356 / 1.5e-05; in meter: 38.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 54.0 [206.0, 101.0, 253.0, 90.0, 167.0, 146.0, 149.0, 500.0, 153.0, 53.0, 832.0] 179.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 2, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000351507692376 / 1.5e-05; in meter: 38.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 102.0 [206.0, 101.0, 253.0, 253.0, 252.0, 120.0, 300.0, 152.0, 198.0, 80.0, 832.0] 141.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [2, 3, 4] , narrow= [0, 6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000349352967765 / 1.5e-05; in meter: 38.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 168.0 [194.0, 98.0, 184.0, 184.0, 252.0, 120.0, 300.0, 152.0, 198.0, 80.0, 149.0] 99.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [4, 6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000348556371289 / 1.5e-05; in meter: 38.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 106.0 [194.0, 98.0, 184.0, 184.0, 148.0, 151.0, 99.0, 315.0, 90.0, 91.0, 72.0] 251.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000349125100663 / 1.5e-05; in meter: 38.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 153.0 [102.0, 72.0, 195.0, 237.0, 148.0, 151.0, 99.0, 315.0, 90.0, 91.0, 72.0] 54.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[10000] sensors: exception from sensor 1 of 3 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000349533808891 / 1.5e-05; in meter: 38.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 138.0 [102.0, 72.0, 195.0, 237.0, 150.0, 95.0, 101.0, 95.0, 148.0, 113.0, 72.0] 147.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.00034755861614 / 1.5e-05; in meter: 38.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 135.0 [141.0, 168.0, 500.0, 237.0, 150.0, 95.0, 101.0, 95.0, 148.0, 113.0, 500.0] 155.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 3] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.00034625404106 / 1.5e-05; in meter: 38.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 107.0 [141.0, 168.0, 500.0, 58.0, 152.0, 149.0, 176.0, 60.0, 89.0, 99.0, 500.0] 500.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000346462193289 / 1.5e-05; in meter: 38.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 122.0 [122.0, 120.0, 46.0, 126.0, 152.0, 149.0, 176.0, 60.0, 89.0, 99.0, 500.0] 159.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): -1 
+[1000] __main__: 	NO FREE SEGMENT IN LARGE DISTANCE FOUND --> TRY WITH SMALLER DISTANCE 
+[150] navigation: 			 wide= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] , medium= [] , narrow= [] 
+[1000] __main__: 	 reference_direction from navigate(obstacle):  75.4961684944 
+[10000] sensors: exception from sensor 1 of 3 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000371156513231 / 1.5e-05; in meter: 40.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 152.0 [112.0, 97.0, 147.0, 171.0, 505.0, 152.0, 125.0, 103.0, 143.0, 83.0, 157.0] 88.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [4] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000370445027985 / 1.5e-05; in meter: 40.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 80.0 [500.0, 500.0, 500.0, 171.0, 505.0, 152.0, 125.0, 103.0, 143.0, 83.0, 108.0] 79.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [0, 1, 2] , narrow= [4] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000367181472004 / 1.5e-05; in meter: 40.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 112.0 [500.0, 500.0, 500.0, 148.0, 149.0, 77.0, 148.0, 500.0, 78.0, 83.0, 108.0] 163.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [0, 1, 2] , narrow= [7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000365896801378 / 1.5e-05; in meter: 40.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 103.0 [151.0, 76.0, 500.0, 148.0, 149.0, 77.0, 148.0, 500.0, 78.0, 168.0, 308.0] 163.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[10000] sensors: exception from sensor 2 of 3 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000365309952877 / 1.5e-05; in meter: 40.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 138.0 [151.0, 76.0, 500.0, 88.0, 500.0, 235.0, 203.0, 157.0, 78.0, 168.0, 308.0] 136.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [4, 5, 6] , narrow= [2] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000358682284165 / 1.5e-05; in meter: 39.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 49.0 [193.0, 170.0, 500.0, 88.0, 500.0, 235.0, 203.0, 157.0, 500.0, 106.0, 129.0] 117.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------GOT NEW GPS: [49.417856581500004, 8.6696413183, 120.38580000000002, -50.781597235653635, [], 1424659047.330485] ---------- 
+[150] navigation: 			 wide= [5, 6, 7, 8] , medium= [] , narrow= [0, 2] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000343502435296 / 1.5e-05; in meter: 37.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 242.0 [500.0, 106.0, 500.0, 96.0, 124.0, 500.0, 500.0, 500.0, 500.0, 63.0, 500.0] 117.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [5, 6, 7, 8] , medium= [] , narrow= [0, 2] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000339524073089 / 1.5e-05; in meter: 37.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 106.0 [500.0, 106.0, 500.0, 500.0, 500.0, 100.0, 500.0, 66.0, 86.0, 63.0, 500.0] 43.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [3, 4, 5, 6, 7] , medium= [] , narrow= [9] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000340424726166 / 1.5e-05; in meter: 37.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 253.0 [154.0, 100.0, 148.0, 500.0, 500.0, 500.0, 500.0, 500.0, 185.0, 500.0, 500.0] 65.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [3, 4, 5, 6, 7] , medium= [] , narrow= [9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[10000] sensors: exception from sensor 2 of 3 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.00034186696741 / 1.5e-05; in meter: 37.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 213.0 [117.0, 132.0, 116.0, 500.0, 500.0, 500.0, 500.0, 500.0, 185.0, 500.0, 331.0] 304.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [3, 4, 5, 6, 7] , medium= [] , narrow= [9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000341474655624 / 1.5e-05; in meter: 37.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 545.0 [117.0, 132.0, 116.0, 238.0, 500.0, 149.0, 510.0, 58.0, 500.0, 500.0, 331.0] 130.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 4, 6, 8, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000340201157359 / 1.5e-05; in meter: 37.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 91.0 [500.0, 101.0, 116.0, 238.0, 500.0, 149.0, 510.0, 58.0, 500.0, 87.0, 500.0] 151.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 3, 4, 6, 8] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000338312018211 / 1.5e-05; in meter: 37.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 138.0 [500.0, 101.0, 500.0, 100.0, 500.0, 150.0, 151.0, 145.0, 151.0, 87.0, 500.0] 142.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 2, 4] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000335801453656 / 1.5e-05; in meter: 36.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 95.0 [135.0, 97.0, 500.0, 100.0, 500.0, 150.0, 151.0, 145.0, 151.0, 80.0, 148.0] 139.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 4] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000332007641977 / 1.5e-05; in meter: 36.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 146.0 [135.0, 97.0, 115.0, 165.0, 159.0, 154.0, 500.0, 500.0, 500.0, 80.0, 148.0] 150.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [6, 7, 8] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.00032968018756 / 1.5e-05; in meter: 36.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 96.0 [154.0, 120.0, 115.0, 165.0, 159.0, 154.0, 500.0, 500.0, 500.0, 58.0, 168.0] 109.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [6, 7, 8] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000327280408318 / 1.5e-05; in meter: 36.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 141.0 [154.0, 120.0, 201.0, 74.0, 127.0, 500.0, 162.0, 68.0, 56.0, 58.0, 168.0] 142.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 5] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000324019522189 / 1.5e-05; in meter: 35.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 118.0 [89.0, 80.0, 201.0, 74.0, 127.0, 500.0, 162.0, 68.0, 56.0, 500.0, 331.0] 130.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [5, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000320686622207 / 1.5e-05; in meter: 35.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 72.0 [89.0, 80.0, 75.0, 105.0, 93.0, 79.0, 500.0, 500.0, 84.0, 500.0, 331.0] 143.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [6, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000317009763586 / 1.5e-05; in meter: 34.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 85.0 [137.0, 64.0, 75.0, 105.0, 93.0, 79.0, 500.0, 500.0, 84.0, 500.0, 328.0] 136.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [6, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000313591587352 / 1.5e-05; in meter: 34.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 72.0 [137.0, 64.0, 69.0, 77.0, 141.0, 82.0, 284.0, 117.0, 152.0, 500.0, 328.0] 154.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [6, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000311269356265 / 1.5e-05; in meter: 34.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 143.0 [125.0, 244.0, 148.0, 77.0, 141.0, 82.0, 284.0, 117.0, 152.0, 54.0, 632.0] 74.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [1, 6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000309103082506 / 1.5e-05; in meter: 34.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 70.0 [125.0, 244.0, 148.0, 500.0, 114.0, 500.0, 188.0, 244.0, 204.0, 54.0, 632.0] 126.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [1, 3, 5, 7, 8] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000307421290505 / 1.5e-05; in meter: 33.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 168.0 [81.0, 100.0, 101.0, 500.0, 114.0, 500.0, 188.0, 244.0, 204.0, 127.0, 500.0] 52.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 5, 7, 8] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000304967895744 / 1.5e-05; in meter: 33.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 96.0 [81.0, 100.0, 101.0, 106.0, 121.0, 58.0, 57.0, 333.0, 150.0, 55.0, 500.0] 140.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000300270385429 / 1.5e-05; in meter: 33.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 177.0 [149.0, 50.0, 89.0, 134.0, 121.0, 58.0, 57.0, 333.0, 150.0, 55.0, 127.0] 80.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000296666658485 / 1.5e-05; in meter: 32.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 79.0 [149.0, 50.0, 89.0, 134.0, 305.0, 152.0, 205.0, 112.0, 95.0, 263.0, 127.0] 153.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [4, 6, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.00029316098031 / 1.5e-05; in meter: 32.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 225.0 [86.0, 99.0, 101.0, 500.0, 305.0, 152.0, 205.0, 112.0, 95.0, 263.0, 199.0] 117.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 4, 6, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000290194043023 / 1.5e-05; in meter: 31.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 112.0 [86.0, 99.0, 101.0, 500.0, 133.0, 210.0, 130.0, 103.0, 98.0, 232.0, 199.0] 214.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 5, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000286226932325 / 1.5e-05; in meter: 31.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 81.0 [192.0, 68.0, 76.0, 110.0, 133.0, 210.0, 130.0, 103.0, 98.0, 232.0, 500.0] 165.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [5, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000279780061146 / 1.5e-05; in meter: 30.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 74.0 [192.0, 68.0, 76.0, 110.0, 85.0, 500.0, 96.0, 500.0, 140.0, 112.0, 500.0] 80.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [5, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000273687035073 / 1.5e-05; in meter: 30.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 145.0 [500.0, 121.0, 37.0, 48.0, 85.0, 500.0, 96.0, 500.0, 140.0, 112.0, 137.0] 109.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 5, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000269556848661 / 1.5e-05; in meter: 29.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 124.0 [500.0, 121.0, 37.0, 48.0, 500.0, 135.0, 121.0, 110.0, 111.0, 500.0, 137.0] 45.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------GOT NEW GPS: [49.41793404370001, 8.669601604099999, 130.6144, -21.774537494869946, [], 1424659092.337978] ---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.00026251685135 / 1.5e-05; in meter: 28.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 95.0 [37.0, 36.0, 40.0, 39.0, 152.0, 111.0, 110.0, 110.0, 105.0, 118.0, 500.0] 108.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): -1 
+[1000] __main__: 	NO FREE SEGMENT IN LARGE DISTANCE FOUND --> TRY WITH SMALLER DISTANCE 
+[150] navigation: 			 wide= [4, 5, 6, 7, 8, 9] , medium= [] , narrow= [] 
+[1000] __main__: 	 reference_direction from navigate(obstacle):  -30.1326774164 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000259015259793 / 1.5e-05; in meter: 28.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 251.0 [38.0, 36.0, 39.0, 43.0, 145.0, 500.0, 107.0, 109.0, 102.0, 71.0, 500.0] 103.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [5] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000257602584972 / 1.5e-05; in meter: 28.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 157.0 [38.0, 36.0, 38.0, 140.0, 742.0, 152.0, 500.0, 77.0, 78.0, 71.0, 500.0] 41.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000257332781467 / 1.5e-05; in meter: 28.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 81.0 [37.0, 89.0, 142.0, 131.0, 140.0, 176.0, 75.0, 71.0, 74.0, 74.0, 312.0] 82.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): -1 
+[1000] __main__: 	NO FREE SEGMENT IN LARGE DISTANCE FOUND --> TRY WITH SMALLER DISTANCE 
+[150] navigation: 			 wide= [1, 2, 3, 4, 5, 6, 7, 8, 9] , medium= [] , narrow= [] 
+[1000] __main__: 	 reference_direction from navigate(obstacle):  -37.925670327 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000263554557969 / 1.5e-05; in meter: 29.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 85.0 [157.0, 45.0, 127.0, 149.0, 61.0, 59.0, 75.0, 88.0, 129.0, 141.0, 135.0] 88.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): -1 
+[1000] __main__: 	NO FREE SEGMENT IN LARGE DISTANCE FOUND --> TRY WITH SMALLER DISTANCE 
+[150] navigation: 			 wide= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] , medium= [] , narrow= [] 
+[1000] __main__: 	 reference_direction from navigate(obstacle):  12.6360795654 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000262750620117 / 1.5e-05; in meter: 28.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 68.0 [79.0, 140.0, 149.0, 89.0, 81.0, 79.0, 119.0, 93.0, 132.0, 145.0, 99.0] 95.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): -1 
+[1000] __main__: 	NO FREE SEGMENT IN LARGE DISTANCE FOUND --> TRY WITH SMALLER DISTANCE 
+[150] navigation: 			 wide= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] , medium= [] , narrow= [] 
+[1000] __main__: 	 reference_direction from navigate(obstacle):  15.49373795 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000263313492033 / 1.5e-05; in meter: 29.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 86.0 [150.0, 72.0, 112.0, 80.0, 81.0, 79.0, 90.0, 310.0, 149.0, 146.0, 144.0] 88.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000263454316016 / 1.5e-05; in meter: 29.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 60.0 [114.0, 103.0, 63.0, 80.0, 81.0, 79.0, 90.0, 310.0, 149.0, 146.0, 293.0] 69.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000262450487778 / 1.5e-05; in meter: 28.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 117.0 [114.0, 103.0, 63.0, 70.0, 47.0, 110.0, 127.0, 49.0, 112.0, 106.0, 293.0] 106.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): -1 
+[1000] __main__: 	NO FREE SEGMENT IN LARGE DISTANCE FOUND --> TRY WITH SMALLER DISTANCE 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 4, 6, 7, 9] 
+[1000] __main__: 	 reference_direction from navigate(obstacle):  0.822592101393 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000270794478579 / 1.5e-05; in meter: 29.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 138.0 [104.0, 180.0, 258.0, 202.0, 154.0, 150.0, 186.0, 287.0, 144.0, 109.0, 150.0] 59.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 3, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000269755211348 / 1.5e-05; in meter: 29.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 126.0 [104.0, 180.0, 258.0, 202.0, 154.0, 58.0, 181.0, 227.0, 151.0, 117.0, 203.0] 138.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 3, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000264962354043 / 1.5e-05; in meter: 29.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 304.0 [163.0, 154.0, 500.0, 157.0, 500.0, 58.0, 181.0, 227.0, 151.0, 117.0, 203.0] 237.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 4, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000261852343871 / 1.5e-05; in meter: 28.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 106.0 [163.0, 154.0, 500.0, 157.0, 500.0, 178.0, 254.0, 164.0, 130.0, 500.0, 500.0] 88.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 4, 6, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[10000] sensors: exception from sensor 3 of 3 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000258891005519 / 1.5e-05; in meter: 28.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 141.0 [149.0, 258.0, 149.0, 151.0, 500.0, 178.0, 254.0, 164.0, 130.0, 500.0, 500.0] 282.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [1, 4, 6, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000255760280959 / 1.5e-05; in meter: 28.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 215.0 [149.0, 258.0, 149.0, 151.0, 500.0, 500.0, 185.0, 336.0, 143.0, 100.0, 96.0] 126.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [1, 4, 5, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000251608966258 / 1.5e-05; in meter: 27.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 144.0 [113.0, 94.0, 189.0, 95.0, 63.0, 500.0, 185.0, 336.0, 143.0, 100.0, 96.0] 78.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [5, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.00024534938311 / 1.5e-05; in meter: 27.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 235.0 [113.0, 94.0, 189.0, 95.0, 63.0, 324.0, 152.0, 193.0, 111.0, 500.0, 500.0] 100.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [5, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000239796475764 / 1.5e-05; in meter: 26.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 164.0 [129.0, 106.0, 500.0, 500.0, 63.0, 324.0, 152.0, 193.0, 111.0, 500.0, 500.0] 47.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [2, 3, 4, 5, 6, 7] , medium= [] , narrow= [9] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000242068051852 / 1.5e-05; in meter: 26.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 324.0 [111.0, 117.0, 500.0, 500.0, 500.0, 500.0, 500.0, 500.0, 98.0, 500.0, 500.0] 159.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [2, 3, 4, 5, 6, 7] , medium= [] , narrow= [9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000244456797448 / 1.5e-05; in meter: 26.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 134.0 [111.0, 117.0, 500.0, 500.0, 500.0, 500.0, 378.0, 157.0, 346.0, 157.0, 191.0] 102.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [2, 3, 4, 5, 6] , medium= [] , narrow= [8] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[10000] sensors: exception from sensor 1 of 3 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000243404552868 / 1.5e-05; in meter: 26.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 291.0 [149.0, 62.0, 97.0, 500.0, 500.0, 500.0, 378.0, 157.0, 346.0, 157.0, 191.0] 339.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [3, 4, 5, 6] , medium= [] , narrow= [8] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000237703156563 / 1.5e-05; in meter: 26.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 186.0 [149.0, 62.0, 97.0, 500.0, 81.0, 146.0, 500.0, 165.0, 90.0, 105.0, 191.0] 426.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000227536106882 / 1.5e-05; in meter: 25.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 172.0 [135.0, 162.0, 500.0, 500.0, 81.0, 146.0, 500.0, 165.0, 90.0, 105.0, 500.0] 186.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 3, 6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000218523324339 / 1.5e-05; in meter: 24.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 146.0 [135.0, 162.0, 500.0, 500.0, 49.0, 273.0, 500.0, 74.0, 80.0, 295.0, 500.0] 107.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 3, 5, 6, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.00021127659185 / 1.5e-05; in meter: 23.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 101.0 [500.0, 108.0, 258.0, 91.0, 49.0, 273.0, 500.0, 74.0, 80.0, 295.0, 312.0] 196.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 2, 5, 6, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000204303328923 / 1.5e-05; in meter: 22.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 127.0 [500.0, 108.0, 258.0, 91.0, 179.0, 149.0, 55.0, 643.0, 92.0, 95.0, 100.0] 92.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 2, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000196489131961 / 1.5e-05; in meter: 21.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 90.0 [374.0, 149.0, 86.0, 500.0, 179.0, 149.0, 55.0, 643.0, 92.0, 95.0, 100.0] 141.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 3, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[10000] sensors: exception from sensor 2 of 3 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000187758574737 / 1.5e-05; in meter: 20.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 75.0 [374.0, 149.0, 86.0, 500.0, 362.0, 500.0, 500.0, 500.0, 500.0, 95.0, 100.0] 140.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [3, 4, 5, 6, 7, 8] , medium= [] , narrow= [0] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000180520420469 / 1.5e-05; in meter: 19.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 500.0 [500.0, 500.0, 86.0, 500.0, 362.0, 500.0, 500.0, 500.0, 500.0, 150.0, 500.0] 147.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [3, 4, 5, 6, 7, 8] , medium= [] , narrow= [0, 1] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000173665493876 / 1.5e-05; in meter: 19.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 162.0 [500.0, 500.0, 181.0, 374.0, 500.0, 500.0, 500.0, 500.0, 500.0, 150.0, 500.0] 72.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [3, 4, 5, 6, 7, 8] , medium= [] , narrow= [0, 1] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000166149331919 / 1.5e-05; in meter: 18.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 81.0 [91.0, 500.0, 181.0, 374.0, 500.0, 500.0, 500.0, 500.0, 93.0, 244.0, 500.0] 500.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [3, 4, 5, 6, 7] , medium= [] , narrow= [1, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.00015927993506 / 1.5e-05; in meter: 17.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 135.0 [91.0, 116.0, 103.0, 97.0, 500.0, 142.0, 74.0, 500.0, 93.0, 244.0, 500.0] 60.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [4, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.00015240017468 / 1.5e-05; in meter: 16.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 500.0 [63.0, 116.0, 103.0, 97.0, 500.0, 142.0, 74.0, 500.0, 500.0, 500.0, 178.0] 158.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [7, 8, 9] , narrow= [4] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.00014611021222 / 1.5e-05; in meter: 16.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 125.0 [63.0, 66.0, 83.0, 87.0, 68.0, 88.0, 231.0, 178.0, 500.0, 500.0, 178.0] 85.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [6, 8, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.00013931750005 / 1.5e-05; in meter: 15.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 176.0 [73.0, 66.0, 83.0, 87.0, 68.0, 88.0, 231.0, 178.0, 104.0, 115.0, 100.0] 55.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.00013266400164 / 1.5e-05; in meter: 14.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 120.0 [73.0, 78.0, 79.0, 80.0, 97.0, 299.0, 151.0, 149.0, 104.0, 115.0, 100.0] 139.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [5] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000126236184639 / 1.5e-05; in meter: 13.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 500.0 [67.0, 78.0, 79.0, 80.0, 97.0, 299.0, 151.0, 149.0, 54.0, 161.0, 500.0] 76.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [5] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000119874735427 / 1.5e-05; in meter: 13.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 53.0 [67.0, 19.0, 500.0, 191.0, 500.0, 500.0, 500.0, 149.0, 54.0, 161.0, 500.0] 151.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [4, 5, 6] , narrow= [2] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000114307405296 / 1.5e-05; in meter: 12.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 106.0 [70.0, 19.0, 500.0, 191.0, 500.0, 500.0, 500.0, 500.0, 156.0, 99.0, 230.0] 500.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [4, 5, 6, 7] , medium= [] , narrow= [2] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000107923743794 / 1.5e-05; in meter: 11.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 169.0 [70.0, 500.0, 500.0, 500.0, 500.0, 500.0, 500.0, 500.0, 156.0, 99.0, 230.0] 179.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [1, 2, 3, 4, 5, 6, 7] , medium= [] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000102174335208 / 1.5e-05; in meter: 11.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 382.0 [70.0, 500.0, 500.0, 500.0, 500.0, 500.0, 500.0, 260.0, 142.0, 500.0, 500.0] 223.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [1, 2, 3, 4, 5, 6, 7] , medium= [] , narrow= [9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 9.65035308867e-05 / 1.5e-05; in meter: 10.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 98.0 [133.0, 84.0, 500.0, 495.0, 500.0, 500.0, 500.0, 260.0, 142.0, 500.0, 500.0] 158.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [2, 3, 4, 5, 6, 7] , medium= [] , narrow= [9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.87661383977e-05 / 1.5e-05; in meter: 9.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 260.0 [133.0, 84.0, 500.0, 495.0, 500.0, 500.0, 99.0, 185.0, 170.0, 149.0, 204.0] 114.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [2, 3, 4, 5] , medium= [] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.40877452728e-05 / 1.5e-05; in meter: 9.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 229.0 [118.0, 81.0, 111.0, 500.0, 115.0, 117.0, 99.0, 185.0, 170.0, 149.0, 204.0] 309.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.01855328517e-05 / 1.5e-05; in meter: 8.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 86.0 [118.0, 81.0, 111.0, 500.0, 115.0, 117.0, 317.0, 227.0, 80.0, 243.0, 150.0] 164.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 6, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.75221104454e-05 / 1.5e-05; in meter: 8.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 137.0 [91.0, 66.0, 500.0, 58.0, 80.0, 81.0, 317.0, 227.0, 80.0, 243.0, 150.0] 153.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 6, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.63687101318e-05 / 1.5e-05; in meter: 8.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 40.0 [91.0, 66.0, 500.0, 58.0, 80.0, 81.0, 184.0, 500.0, 188.0, 313.0, 173.0] 117.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------GOT NEW GPS: [49.4180850368, 8.6694785208, 140.6832, -61.749366490717534, [], 1424659187.340129] ---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [5] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.42372588996e-05 / 1.5e-05; in meter: 9.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 104.0 [72.0, 98.0, 145.0, 38.0, 151.0, 234.0, 152.0, 103.0, 133.0, 65.0, 310.0] 120.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [5] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.82370457163e-05 / 1.5e-05; in meter: 9.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 49.0 [72.0, 98.0, 160.0, 67.0, 63.0, 55.0, 146.0, 206.0, 170.0, 65.0, 310.0] 108.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [7] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 9.22589451136e-05 / 1.5e-05; in meter: 10.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 111.0 [44.0, 45.0, 47.0, 50.0, 56.0, 181.0, 152.0, 227.0, 100.0, 164.0, 152.0] 139.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 9.26580388234e-05 / 1.5e-05; in meter: 10.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 82.0 [47.0, 106.0, 52.0, 69.0, 48.0, 70.0, 152.0, 227.0, 100.0, 164.0, 152.0] 66.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.99258033907e-05 / 1.5e-05; in meter: 9.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 130.0 [47.0, 106.0, 52.0, 69.0, 48.0, 70.0, 62.0, 109.0, 500.0, 54.0, 78.0] 57.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [8] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.63400443655e-05 / 1.5e-05; in meter: 9.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 132.0 [57.0, 123.0, 59.0, 321.0, 129.0, 150.0, 62.0, 109.0, 500.0, 54.0, 78.0] 115.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 8] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.40390728659e-05 / 1.5e-05; in meter: 9.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 338.0 [57.0, 123.0, 59.0, 321.0, 129.0, 150.0, 165.0, 207.0, 143.0, 172.0, 153.0] 131.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.24214000703e-05 / 1.5e-05; in meter: 9.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 141.0 [150.0, 73.0, 70.0, 69.0, 148.0, 179.0, 68.0, 207.0, 143.0, 172.0, 153.0] 106.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.95233385134e-05 / 1.5e-05; in meter: 8.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 129.0 [150.0, 73.0, 70.0, 69.0, 148.0, 179.0, 68.0, 500.0, 90.0, 340.0, 109.0] 117.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.80103561236e-05 / 1.5e-05; in meter: 8.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 148.0 [500.0, 92.0, 500.0, 323.0, 99.0, 151.0, 282.0, 500.0, 90.0, 340.0, 109.0] 142.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 2, 3, 6, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.7809733131e-05 / 1.5e-05; in meter: 8.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 88.0 [500.0, 92.0, 500.0, 323.0, 99.0, 151.0, 282.0, 419.0, 152.0, 86.0, 73.0] 52.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 2, 3, 6, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[10000] sensors: exception from sensor 3 of 3 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.76798272623e-05 / 1.5e-05; in meter: 8.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 66.0 [79.0, 188.0, 150.0, 144.0, 215.0, 86.0, 282.0, 419.0, 152.0, 86.0, 73.0] 158.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [4, 6, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.8627324797e-05 / 1.5e-05; in meter: 8.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 46.0 [79.0, 188.0, 150.0, 144.0, 215.0, 86.0, 131.0, 46.0, 109.0, 85.0, 65.0] 88.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: real obstacle found! 
+[1000] __main__: 	sensors: 49.0, (71.0, 83.0, 69.0, 153.0, 152.0, 188.0, 335.0, 143.0, 105.0, 150.0, 129.0, ), 63.0 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [6] 
+[1000] __main__: 	 making turn manoever, reference_direction from navigate(free_path):  -15.1404529213 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.30605861973e-05 / 1.5e-05; in meter: 9.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 103.0 [71.0, 43.0, 73.0, 52.0, 150.0, 245.0, 97.0, 78.0, 158.0, 179.0, 500.0] 87.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [5] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.62887624652e-05 / 1.5e-05; in meter: 9.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 194.0 [83.0, 43.0, 73.0, 52.0, 150.0, 245.0, 97.0, 78.0, 105.0, 104.0, 273.0] 70.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [5] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.80744926794e-05 / 1.5e-05; in meter: 9.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 62.0 [83.0, 126.0, 81.0, 138.0, 500.0, 500.0, 49.0, 47.0, 105.0, 104.0, 273.0] 121.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [4, 5] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.91205516102e-05 / 1.5e-05; in meter: 9.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 51.0 [81.0, 126.0, 81.0, 138.0, 500.0, 500.0, 49.0, 47.0, 48.0, 92.0, 500.0] 260.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [4, 5] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.87087286687e-05 / 1.5e-05; in meter: 9.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 118.0 [81.0, 500.0, 500.0, 157.0, 151.0, 170.0, 229.0, 61.0, 48.0, 92.0, 500.0] 87.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [1, 2, 6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.88068547573e-05 / 1.5e-05; in meter: 9.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 134.0 [133.0, 145.0, 500.0, 157.0, 151.0, 170.0, 229.0, 61.0, 84.0, 103.0, 139.0] 116.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 9.03328422747e-05 / 1.5e-05; in meter: 9.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 141.0 [133.0, 145.0, 500.0, 54.0, 54.0, 126.0, 197.0, 149.0, 84.0, 103.0, 139.0] 181.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[10000] sensors: exception from sensor 2 of 3 
+[1000] __main__: 
+calculate new distance to target / accuracy: 9.30137883797e-05 / 1.5e-05; in meter: 10.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 164.0 [127.0, 145.0, 500.0, 54.0, 54.0, 126.0, 197.0, 149.0, 104.0, 78.0, 99.0] 206.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 9.59962095247e-05 / 1.5e-05; in meter: 10.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 60.0 [127.0, 105.0, 150.0, 66.0, 188.0, 109.0, 98.0, 115.0, 104.0, 78.0, 99.0] 110.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): -1 
+[1000] __main__: 	NO FREE SEGMENT IN LARGE DISTANCE FOUND --> TRY WITH SMALLER DISTANCE 
+[150] navigation: 			 wide= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] , medium= [] , narrow= [] 
+[1000] __main__: 	 reference_direction from navigate(obstacle):  7.44554804667 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000103611065634 / 1.5e-05; in meter: 11.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 129.0 [150.0, 152.0, 130.0, 75.0, 64.0, 144.0, 206.0, 164.0, 146.0, 110.0, 219.0] 122.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000103667346133 / 1.5e-05; in meter: 11.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 138.0 [500.0, 85.0, 149.0, 58.0, 64.0, 144.0, 206.0, 164.0, 146.0, 110.0, 219.0] 136.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 0.000101583365379 / 1.5e-05; in meter: 11.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 102.0 [500.0, 85.0, 149.0, 58.0, 500.0, 500.0, 103.0, 81.0, 86.0, 106.0, 219.0] 405.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 4, 5] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 9.99728523377e-05 / 1.5e-05; in meter: 11.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 140.0 [97.0, 250.0, 500.0, 58.0, 500.0, 500.0, 103.0, 81.0, 86.0, 106.0, 105.0] 118.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [1, 2, 4, 5] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 9.76099977328e-05 / 1.5e-05; in meter: 10.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 61.0 [97.0, 250.0, 500.0, 436.0, 173.0, 149.0, 206.0, 500.0, 92.0, 500.0, 105.0] 140.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [1, 2, 3] , narrow= [6, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 9.42569024524e-05 / 1.5e-05; in meter: 10.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 64.0 [500.0, 500.0, 500.0, 436.0, 173.0, 149.0, 206.0, 500.0, 92.0, 500.0, 312.0] 67.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [0, 1, 2, 3] , medium= [] , narrow= [6, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.74371438188e-05 / 1.5e-05; in meter: 9.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 105.0 [500.0, 500.0, 500.0, 107.0, 273.0, 500.0, 500.0, 500.0, 97.0, 500.0, 312.0] 47.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 5, 9] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.66894218537e-05 / 1.5e-05; in meter: 8.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 53.0 [500.0, 83.0, 135.0, 135.0, 151.0, 500.0, 152.0, 150.0, 190.0, 461.0, 278.0] 77.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 5, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.26496425306e-05 / 1.5e-05; in meter: 8.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 74.0 [128.0, 107.0, 107.0, 500.0, 46.0, 500.0, 152.0, 150.0, 190.0, 461.0, 278.0] 57.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 5, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 6.74991023029e-05 / 1.5e-05; in meter: 7.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 82.0 [128.0, 107.0, 107.0, 500.0, 46.0, 104.0, 96.0, 103.0, 500.0, 165.0, 110.0] 54.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 8] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 6.36094538388e-05 / 1.5e-05; in meter: 7.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 144.0 [202.0, 165.0, 234.0, 185.0, 42.0, 104.0, 96.0, 103.0, 500.0, 165.0, 110.0] 37.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: real obstacle found! 
+[1000] __main__: 	sensors: 62.0, (246.0, 178.0, 283.0, 104.0, 139.0, 35.0, 43.0, 46.0, 104.0, 49.0, 183.0, ), 39.0 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 2] 
+[1000] __main__: 	 making turn manoever, reference_direction from navigate(free_path):  3.14781966393 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.10429048386e-05 / 1.5e-05; in meter: 7.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 102.0 [82.0, 288.0, 152.0, 151.0, 150.0, 151.0, 149.0, 124.0, 90.0, 55.0, 242.0] 126.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [1] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.53585462305e-05 / 1.5e-05; in meter: 8.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 81.0 [150.0, 84.0, 101.0, 232.0, 211.0, 173.0, 157.0, 124.0, 90.0, 55.0, 242.0] 140.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 4] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.78247158659e-05 / 1.5e-05; in meter: 8.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 500.0 [150.0, 84.0, 101.0, 232.0, 211.0, 173.0, 157.0, 205.0, 500.0, 115.0, 106.0] 82.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 4, 7, 8] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.73988660467e-05 / 1.5e-05; in meter: 8.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 139.0 [500.0, 198.0, 78.0, 500.0, 324.0, 151.0, 150.0, 205.0, 500.0, 115.0, 106.0] 94.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 3, 4, 7, 8] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.77140306259e-05 / 1.5e-05; in meter: 8.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 53.0 [155.0, 198.0, 78.0, 500.0, 324.0, 151.0, 150.0, 143.0, 55.0, 293.0, 94.0] 267.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 4, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.24294894031e-05 / 1.5e-05; in meter: 9.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 81.0 [155.0, 100.0, 149.0, 500.0, 190.0, 112.0, 289.0, 143.0, 55.0, 293.0, 94.0] 98.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 6, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.61149318898e-05 / 1.5e-05; in meter: 9.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 92.0 [80.0, 100.0, 149.0, 500.0, 190.0, 112.0, 289.0, 500.0, 151.0, 500.0, 153.0] 152.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 6, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 8.42532433208e-05 / 1.5e-05; in meter: 9.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 92.0 [80.0, 76.0, 163.0, 109.0, 196.0, 150.0, 150.0, 500.0, 151.0, 500.0, 153.0] 124.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.62174950741e-05 / 1.5e-05; in meter: 8.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 111.0 [150.0, 76.0, 163.0, 109.0, 196.0, 150.0, 150.0, 86.0, 328.0, 140.0, 40.0] 268.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [8] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.26835238118e-05 / 1.5e-05; in meter: 8.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 48.0 [150.0, 651.0, 149.0, 489.0, 160.0, 213.0, 176.0, 76.0, 328.0, 140.0, 40.0] 113.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 2, 4, 5, 7, 9] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 7.02986875094e-05 / 1.5e-05; in meter: 7.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 102.0 [500.0, 104.0, 500.0, 55.0, 500.0, 500.0, 92.0, 500.0, 100.0, 306.0, 201.0] 500.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 2, 4, 5, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 6.98885859854e-05 / 1.5e-05; in meter: 7.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 152.0 [89.0, 500.0, 500.0, 55.0, 500.0, 500.0, 92.0, 500.0, 100.0, 500.0, 147.0] 500.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [1, 2, 4, 5, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 6.82104973926e-05 / 1.5e-05; in meter: 7.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 125.0 [89.0, 500.0, 493.0, 500.0, 500.0, 500.0, 84.0, 500.0, 100.0, 500.0, 147.0] 322.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [1, 2, 3, 4, 5] , medium= [] , narrow= [7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 6.5748017725e-05 / 1.5e-05; in meter: 7.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 500.0 [500.0, 500.0, 493.0, 500.0, 500.0, 500.0, 84.0, 500.0, 111.0, 156.0, 500.0] 98.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [0, 1, 2, 3, 4, 5] , medium= [] , narrow= [7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 6.44966513164e-05 / 1.5e-05; in meter: 7.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 301.0 [500.0, 500.0, 500.0, 500.0, 500.0, 500.0, 500.0, 500.0, 111.0, 156.0, 500.0] 112.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [0, 1, 2, 3, 4, 5, 6, 7] , medium= [] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 6.7024792291e-05 / 1.5e-05; in meter: 7.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 73.0 [500.0, 500.0, 500.0, 500.0, 500.0, 500.0, 500.0, 500.0, 56.0, 500.0, 52.0] 119.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [0, 1, 2, 3, 4, 5, 6, 7] , medium= [] , narrow= [9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[10000] sensors: exception from sensor 1 of 3 
+[1000] __main__: 
+calculate new distance to target / accuracy: 6.32554053442e-05 / 1.5e-05; in meter: 7.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 128.0 [500.0, 106.0, 500.0, 145.0, 223.0, 170.0, 500.0, 500.0, 56.0, 500.0, 52.0] 71.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 2, 4, 6, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 5.66812965388e-05 / 1.5e-05; in meter: 6.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 106.0 [500.0, 106.0, 500.0, 145.0, 223.0, 170.0, 150.0, 205.0, 308.0, 190.0, 500.0] 49.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [3, 4, 5] , narrow= [0, 7, 9] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 5.24227957517e-05 / 1.5e-05; in meter: 5.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 93.0 [500.0, 181.0, 98.0, 500.0, 500.0, 500.0, 186.0, 500.0, 69.0, 500.0, 500.0] 87.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [3, 4, 5] , narrow= [0, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 5.38139318768e-05 / 1.5e-05; in meter: 5.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 163.0 [137.0, 115.0, 375.0, 112.0, 500.0, 500.0, 500.0, 500.0, 69.0, 500.0, 500.0] 179.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [4, 5, 6, 7] , medium= [] , narrow= [2, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 4.71336910441e-05 / 1.5e-05; in meter: 5.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 468.0 [137.0, 115.0, 375.0, 112.0, 500.0, 500.0, 500.0, 328.0, 73.0, 117.0, 51.0] 117.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [4, 5, 6, 7] , medium= [] , narrow= [2] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 4.29217304417e-05 / 1.5e-05; in meter: 4.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 104.0 [142.0, 126.0, 97.0, 58.0, 61.0, 118.0, 500.0, 328.0, 73.0, 117.0, 51.0] 98.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [6, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 4.53394353932e-05 / 1.5e-05; in meter: 5.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 110.0 [142.0, 126.0, 97.0, 58.0, 61.0, 118.0, 500.0, 500.0, 95.0, 127.0, 500.0] 116.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [6, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 4.64389346758e-05 / 1.5e-05; in meter: 5.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 49.0 [147.0, 500.0, 500.0, 104.0, 500.0, 500.0, 500.0, 500.0, 95.0, 127.0, 500.0] 94.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------GOT NEW GPS: [49.41806547589999, 8.6693970516, 130.47269999999997, -41.88950480670303, [], 1424659298.092124] ---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 4, 5, 7, 9] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 3.05929688601e-05 / 1.5e-05; in meter: 3.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 69.0 [500.0, 89.0, 169.0, 106.0, 500.0, 500.0, 55.0, 500.0, 57.0, 327.0, 376.0] 63.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 4, 5, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.7991309548e-05 / 1.5e-05; in meter: 3.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 165.0 [149.0, 89.0, 169.0, 106.0, 500.0, 500.0, 55.0, 500.0, 149.0, 149.0, 44.0] 218.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [4, 5, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.69521949112e-05 / 1.5e-05; in meter: 3.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 139.0 [149.0, 48.0, 133.0, 218.0, 171.0, 191.0, 500.0, 500.0, 149.0, 149.0, 44.0] 89.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 6, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.5584491465e-05 / 1.5e-05; in meter: 2.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 143.0 [141.0, 48.0, 133.0, 218.0, 171.0, 191.0, 500.0, 500.0, 107.0, 233.0, 499.0] 138.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 6, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.49357644988e-05 / 1.5e-05; in meter: 2.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 89.0 [141.0, 597.0, 102.0, 196.0, 95.0, 153.0, 204.0, 156.0, 107.0, 233.0, 499.0] 135.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [1, 6, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.28806882797e-05 / 1.5e-05; in meter: 2.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 81.0 [136.0, 597.0, 102.0, 196.0, 95.0, 153.0, 204.0, 156.0, 99.0, 311.0, 500.0] 176.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [1, 6, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 1.96114080876e-05 / 1.5e-05; in meter: 2.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 131.0 [136.0, 134.0, 79.0, 191.0, 500.0, 191.0, 141.0, 148.0, 99.0, 311.0, 500.0] 135.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [4, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 1.7706342872e-05 / 1.5e-05; in meter: 1.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 142.0 [129.0, 134.0, 79.0, 191.0, 500.0, 191.0, 141.0, 148.0, 191.0, 148.0, 168.0] 42.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [1, 5] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.87872804028e-05 / 1.5e-05; in meter: 3.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 140.0 [155.0, 240.0, 146.0, 108.0, 122.0, 217.0, 152.0, 150.0, 141.0, 84.0, 244.0] 133.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [1, 5] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.81786208351e-05 / 1.5e-05; in meter: 3.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 146.0 [155.0, 240.0, 146.0, 108.0, 500.0, 500.0, 120.0, 218.0, 105.0, 53.0, 244.0] 149.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [1, 4, 5, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.51282713713e-05 / 1.5e-05; in meter: 2.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 352.0 [117.0, 119.0, 500.0, 108.0, 500.0, 500.0, 120.0, 218.0, 105.0, 53.0, 101.0] 174.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 4, 5, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.32502227866e-05 / 1.5e-05; in meter: 2.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 311.0 [117.0, 119.0, 500.0, 54.0, 500.0, 109.0, 500.0, 500.0, 500.0, 53.0, 101.0] 86.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [6, 7, 8] , narrow= [2, 4] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.41219950235e-05 / 1.5e-05; in meter: 2.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 197.0 [99.0, 101.0, 161.0, 54.0, 500.0, 109.0, 500.0, 500.0, 500.0, 600.0, 171.0] 243.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [6, 7, 8, 9] , medium= [] , narrow= [4] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.77181000864e-05 / 1.5e-05; in meter: 3.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 42.0 [99.0, 101.0, 161.0, 500.0, 500.0, 280.0, 500.0, 500.0, 500.0, 600.0, 171.0] 175.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [4, 5, 6, 7] , medium= [] , narrow= [2] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 3.57238277234e-05 / 1.5e-05; in meter: 3.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 106.0 [86.0, 86.0, 500.0, 96.0, 500.0, 500.0, 500.0, 500.0, 169.0, 105.0, 500.0] 140.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [4, 5, 6, 7] , medium= [] , narrow= [2] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 3.99489472662e-05 / 1.5e-05; in meter: 4.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 66.0 [115.0, 70.0, 44.0, 81.0, 500.0, 500.0, 500.0, 500.0, 169.0, 105.0, 500.0] 46.0 
+[1000] __main__: potential obstacle found! 
+[10000] sensors: exception from sensor 2 of 3 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------GOT NEW GPS: [49.4180621546, 8.6694009788, 127.7805, -25.08485292873496, [], 1424659328.348462] ---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 5, 7, 9] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 3.43694217354e-05 / 1.5e-05; in meter: 3.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 97.0 [127.0, 77.0, 89.0, 500.0, 100.0, 500.0, 93.0, 500.0, 107.0, 500.0, 500.0] 104.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [3, 5, 7, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 3.27843396904e-05 / 1.5e-05; in meter: 3.6m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 272.0 [127.0, 77.0, 89.0, 500.0, 297.0, 500.0, 92.0, 500.0, 500.0, 500.0, 500.0] 103.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [3, 4, 5, 7, 8, 9] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 3.09232143284e-05 / 1.5e-05; in meter: 3.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 98.0 [55.0, 50.0, 64.0, 71.0, 297.0, 500.0, 92.0, 500.0, 500.0, 500.0, 436.0] 157.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [7, 8, 9] , narrow= [4, 5] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[10000] sensors: exception from sensor 1 of 3 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.96184430956e-05 / 1.5e-05; in meter: 3.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 141.0 [55.0, 50.0, 64.0, 71.0, 151.0, 109.0, 500.0, 118.0, 68.0, 149.0, 436.0] 271.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.77284500514e-05 / 1.5e-05; in meter: 3.0m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 108.0 [52.0, 60.0, 59.0, 71.0, 151.0, 109.0, 500.0, 118.0, 68.0, 149.0, 500.0] 88.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.48904748677e-05 / 1.5e-05; in meter: 2.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 128.0 [52.0, 60.0, 59.0, 164.0, 73.0, 80.0, 500.0, 68.0, 76.0, 149.0, 500.0] 220.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.07639731045e-05 / 1.5e-05; in meter: 2.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 140.0 [134.0, 94.0, 327.0, 147.0, 73.0, 80.0, 500.0, 68.0, 76.0, 149.0, 48.0] 83.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 1.74541174918e-05 / 1.5e-05; in meter: 1.9m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 102.0 [134.0, 94.0, 327.0, 147.0, 319.0, 149.0, 500.0, 151.0, 105.0, 104.0, 48.0] 115.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 4, 6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 1.59923608149e-05 / 1.5e-05; in meter: 1.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 98.0 [209.0, 86.0, 500.0, 123.0, 319.0, 149.0, 500.0, 151.0, 105.0, 104.0, 263.0] 184.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 2, 4, 6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[10000] sensors: exception from sensor 2 of 3 
+[1000] __main__: 
+calculate new distance to target / accuracy: 1.52598290494e-05 / 1.5e-05; in meter: 1.7m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 175.0 [209.0, 86.0, 500.0, 123.0, 197.0, 500.0, 151.0, 500.0, 105.0, 104.0, 263.0] 149.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 2, 5, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 1.29802610237e-05 / 1.5e-05; in meter: 1.4m 
+[200] __main__: [08] Destination reached within accuracy level  1 ; change accuracy to 2sigma= 0.83383105014 
+[100] __main__: wait 10sec for accurate gps-data 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 238.0 [140.0, 103.0, 500.0, 123.0, 197.0, 500.0, 151.0, 500.0, 105.0, 107.0, 241.0] 241.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [2, 5, 7] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[200] __main__: 
+----------GPS position lost! Stopping car and waiting for valid GPS-information.---------- 
+[100] __main__: [nan, nan, nan, 2.9427514674408712, [], 1424659345.594785] 
+[100] __main__: still waiting...  
+[100] __main__: [nan, nan, nan, 3.735836650847318, [], 1424659346.096207] 
+[100] __main__: still waiting...  
+[100] __main__: [nan, nan, nan, 2.7145532506174277, [], 1424659346.600446] 
+[100] __main__: still waiting...  
+[100] __main__: [nan, nan, nan, 3.21547031183502, [], 1424659347.091518] 
+[100] __main__: still waiting...  
+[100] __main__: [nan, nan, nan, 3.486011541998721, [], 1424659347.594027] 
+[100] __main__: still waiting...  
+[100] __main__: [nan, nan, nan, 2.9427514674408712, [], 1424659348.095983] 
+[100] __main__: still waiting...  
+[100] __main__: [49.4180869387, 8.66937626155, 125.59844999999999, 2.964915320543355, [], 1424659348.593597] 
+[200] __main__: [04] got valid GPS-data, continue driving. 
+[100] __main__: [49.4180869387, 8.66937626155, 125.59844999999999, 2.964915320543355, [], 1424659348.593597] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.08143379929e-05 / 7.5e-06; in meter: 2.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 130.0 [144.0, 500.0, 500.0, 500.0, 500.0, 500.0, 500.0, 199.0, 51.0, 95.0, 500.0] 241.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [1, 2, 3, 4, 5, 6] , medium= [] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.56689855228e-05 / 7.5e-06; in meter: 2.8m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 134.0 [150.0, 142.0, 152.0, 500.0, 500.0, 500.0, 500.0, 199.0, 51.0, 95.0, 500.0] 140.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [3, 4, 5, 6] , medium= [] , narrow= [] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.94168529717e-05 / 7.5e-06; in meter: 3.2m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 139.0 [150.0, 142.0, 152.0, 119.0, 637.0, 116.0, 611.0, 76.0, 167.0, 71.0, 500.0] 69.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [4, 6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 3.05602032592e-05 / 7.5e-06; in meter: 3.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 135.0 [202.0, 76.0, 121.0, 119.0, 637.0, 116.0, 611.0, 76.0, 167.0, 71.0, 500.0] 129.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [] , narrow= [0, 4, 6] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'straight'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.86253623959e-05 / 7.5e-06; in meter: 3.1m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 58.0 [202.0, 76.0, 121.0, 155.0, 153.0, 188.0, 54.0, 500.0, 55.0, 103.0, 500.0] 46.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------GOT NEW GPS: [49.4180821342, 8.669377334099998, 124.98044999999999, 66.20971021417057, [], 1424659358.088703] ---------- 
+[150] navigation: 			 wide= [] , medium= [7, 8, 9] , narrow= [0, 2, 3] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.24576141319e-05 / 7.5e-06; in meter: 2.5m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 162.0 [500.0, 63.0, 500.0, 500.0, 60.0, 200.0, 126.0, 500.0, 500.0, 500.0, 177.0] 74.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [7, 8, 9] , narrow= [0, 2, 3] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-right'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.18392358962e-05 / 7.5e-06; in meter: 2.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 46.0 [151.0, 166.0, 88.0, 188.0, 182.0, 200.0, 126.0, 500.0, 500.0, 500.0, 177.0] 171.0 
+[1000] __main__: potential obstacle found! 
+[1000] __main__: no real obstacle found! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [2, 3, 4, 5] , medium= [] , narrow= [8, 9] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.09072451804e-05 / 7.5e-06; in meter: 2.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 454.0 [109.0, 49.0, 500.0, 500.0, 500.0, 500.0, 54.0, 42.0, 500.0, 500.0, 368.0] 53.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [2, 3, 4, 5] , medium= [] , narrow= [8, 9] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.13521918094e-05 / 7.5e-06; in meter: 2.3m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 151.0 [109.0, 49.0, 500.0, 500.0, 500.0, 500.0, 54.0, 500.0, 218.0, 107.0, 222.0] 102.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [2, 3, 4, 5] , medium= [] , narrow= [7, 8] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
+[1000] __main__: 
+calculate new distance to target / accuracy: 2.16148158046e-05 / 7.5e-06; in meter: 2.4m 
+[1000] __main__: 
+beginn of loop
+_________________________________________________________________________
+
+ 
+[100] __main__: wrote log-entry: 
+[1000] __main__: sensors: 117.0 [88.0, 151.0, 309.0, 240.0, 294.0, 99.0, 54.0, 500.0, 218.0, 107.0, 222.0] 181.0 
+[1000] __main__: driving towards goal! 
+[1000] __main__: ----------WAITING FOR OUT OF 2 SIGMA---------- 
+[150] navigation: 			 wide= [] , medium= [2, 3, 4] , narrow= [7, 8] 
+[1000] __main__: desired status from navigate(free_path): ['forward', 'slow', 'half-left'] 
