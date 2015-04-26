@@ -21,4 +21,7 @@ The internal clock of the Raspi is not going right. We tried to sync it with the
 
 As on any Raspi, the login is "pi" and the password is "raspberry". We did not change that.
 
+### Presentation
+
+And finally the <a href="https://github.com/GPS-Robotic/Motorization/blob/master/Vortrag/Vortrag.pdf">slides</a> for the presentation of our robot.
 
