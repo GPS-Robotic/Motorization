@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Final remarks"
+description: "Detail information."
+category: documentation
+---
+
+7cm
+
+Uhrzeit
+
+Wlan
+
+login
+
+

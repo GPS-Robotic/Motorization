@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.1">
   <meta name="google-site-verification" content="aexITLS38FdIRzwj25OVWxm87rpa9l-UV0URTyC9cTs" />
   <title>
-    GPS on wheels - Documentation
+    Navigation theory
   </title>
   <link rel="stylesheet" href="/css/site.css">
   <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Asap:400,700,400italic">
   <link href="/RC_icon.png" rel="shortcut icon" type="image/x-icon" />
-  
+  <meta name="description" content="How MARVON decides where to go." />
   <link rel="alternate" type="application/atom+xml" title="RSS Feed for Sébastien Saunier's blog" href="/feed.xml" />
 
   
@@ -50,101 +50,73 @@
     <div class="clear"></div>
   </div>
 
-  <section class="inner">
-  <h1>Documentation</h1>
-  <p>Follow us through the steps of our project.</p>
-  <ul class="posts">
-    
-      <li>
-        <span class="date">26 Apr 2015</span>
-        <strong><a href="/documentation/2015/04/26/final_remarks.html">Final remarks</a></strong>
-        
-        <br />
-        <span class="description">Detail information.</span>
-      </li>
-    
-      <li>
-        <span class="date">25 Apr 2015</span>
-        <strong><a href="/documentation/2015/04/25/obstacles_III.html">Navigation theory</a></strong>
-        
-        <br />
-        <span class="description">How MARVON decides where to go.</span>
-      </li>
-    
-      <li>
-        <span class="date">25 Apr 2015</span>
-        <strong><a href="/documentation/2015/04/25/main_program.html">The main program cycle</a></strong>
-        
-        <br />
-        <span class="description">The one loop to rule them all.</span>
-      </li>
-    
-      <li>
-        <span class="date">31 Mar 2015</span>
-        <strong><a href="/documentation/2015/03/31/obstacles_II.html">MARVON on the way to its goal!</a></strong>
-        
-        <br />
-        <span class="description">Testing the navigation algorithm II!</span>
-      </li>
-    
-      <li>
-        <span class="date">23 Mar 2015</span>
-        <strong><a href="/documentation/2015/03/23/obstacles.html">MARVON finds its way!</a></strong>
-        
-        <br />
-        <span class="description">Testing the navigation algorithm!</span>
-      </li>
-    
-      <li>
-        <span class="date">02 Mar 2015</span>
-        <strong><a href="/documentation/2015/03/02/getting-eyes.html">Giving the Reely an reality check!</a></strong>
-        
-        <br />
-        <span class="description">Connecting the ultrasonic sensors!</span>
-      </li>
-    
-      <li>
-        <span class="date">18 Feb 2015</span>
-        <strong><a href="/documentation/2015/02/18/on-the-road.html">Reely finds it's wheels!</a></strong>
-        
-        <br />
-        <span class="description">First time on the road!</span>
-      </li>
-    
-      <li>
-        <span class="date">18 Feb 2015</span>
-        <strong><a href="/documentation/2015/02/18/Adding-a-WIFI-module-to-the-car-with-an-own-Access-Point.html">Adding a WIFI-module to the car -- with an own Access-Point!</a></strong>
-        
-        <br />
-        <span class="description">With a WIFI-module and an own Access-Point we can remote-control the car!</span>
-      </li>
-    
-      <li>
-        <span class="date">26 Jan 2015</span>
-        <strong><a href="/documentation/2015/01/26/next-level.html">To the next level!</a></strong>
-        
-        <br />
-        <span class="description">Promoting the transparency of our car!</span>
-      </li>
-    
-      <li>
-        <span class="date">21 Jan 2015</span>
-        <strong><a href="/documentation/2015/01/21/Welcome.html">Welcome to our page!</a></strong>
-        
-        <br />
-        <span class="description">Hi Fans!</span>
-      </li>
-    
-      <li>
-        <span class="date">20 Jan 2015</span>
-        <strong><a href="/documentation/2015/01/20/how-to-make-an-entry.html">Default documentation entry</a></strong>
-        
-        <br />
-        <span class="description">The subtitle is displayed below</span>
-      </li>
-    
-  </ul>
+  
+
+<article>
+  <h1 class="inner">
+    Navigation theory
+  </h1>
+
+  <p class="meta">Saturday 25 April 2015</p>
+
+  
+
+  <div class="post">
+    <p>As mentioned in a previous post, we simplified the navigation algorithm proposed in this <a href="http://www.academia.edu/757737/Reactive_Navigation_Algorithm_for_Wheeled_Mobile_Robots_under_Non-Holonomic_Constraints">paper</a>. </p>
+
+<p>On large distances, our car drives to a hard-coded GPS point using its GPS module with compass and simple geometrical considerations. But on its way it may encounter obstacles.</p>
+
+<p>Besides two ultrasonic sensors which only prevent the car from hitting anything coming up in front, we mounted a third one on top of a servo motor. This one checks also the surroundings of the car for free passage. To be more specific: it measures in eleven segments and whenever the measurement result is an obstacle closer than two meters, this segment is classified as occupied.</p>
+
+<div style="text-align:center"> <img src ="/images/documentation/navigation3.png" alt="Navigation algorithm." width="50%"> </div>
+
+<p>So if there is any obstacle, how does the car decide which way to go? First it groups the free segments together in wide, middle and small gaps. This is important, because it is easier to pass through a large opening than through a small one. In our case, a middle sized gap is exactly three free segements. Wide gaps are any gaps larger and small gaps are any gaps narrower than that.</p>
+
+<div style="text-align:center"> <img src ="/images/documentation/navigation1.png" alt="Navigation algorithm." width="50%"> </div>
+
+<p>Finally the decision is done through a cost function, which takes two considerations into account for each segment. The further the direction of the segment points away from the goal, the more it leads us away from our objective. We want to find the shortest route. The second cost depends on the gap size. As pointed out above, it is better to drive through large gaps.</p>
+
+<div style="text-align:center"> <img src ="/images/documentation/navigation2.png" alt="Navigation algorithm." width="50%"> </div>
+
+<p>The segment which minimizes the cost function is then choosen as new steering direction and the steering is executed.</p>
+
+<div style="text-align:center"> <img src ="/images/documentation/navigation4.png" alt="Navigation algorithm." width="50%"> </div>
+
+  </div>
+</article>
+
+<div class="separator"></div>
+
+<section class="comments inner">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'GPS'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </section>
+
+<script>
+  function resizeSlideshares() {
+    var elements = document.getElementsByClassName("slideshare");
+    for (var i in elements) {
+      var element = elements[i];
+      if (element.style) {
+        element.style.height = (element.offsetWidth * 0.805) + 'px';
+      }
+    }
+  }
+  window.addEventListener("resize", resizeSlideshares);
+  window.addEventListener('load', resizeSlideshares);
+</script>
 
   <div class="separator"></div>
 

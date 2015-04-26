@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.1">
   <meta name="google-site-verification" content="aexITLS38FdIRzwj25OVWxm87rpa9l-UV0URTyC9cTs" />
   <title>
-    GPS on wheels - Documentation
+    The main program cycle
   </title>
   <link rel="stylesheet" href="/css/site.css">
   <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Ubuntu+Mono|Asap:400,700,400italic">
   <link href="/RC_icon.png" rel="shortcut icon" type="image/x-icon" />
-  
+  <meta name="description" content="The one loop to rule them all." />
   <link rel="alternate" type="application/atom+xml" title="RSS Feed for Sébastien Saunier's blog" href="/feed.xml" />
 
   
@@ -50,101 +50,63 @@
     <div class="clear"></div>
   </div>
 
-  <section class="inner">
-  <h1>Documentation</h1>
-  <p>Follow us through the steps of our project.</p>
-  <ul class="posts">
-    
-      <li>
-        <span class="date">26 Apr 2015</span>
-        <strong><a href="/documentation/2015/04/26/final_remarks.html">Final remarks</a></strong>
-        
-        <br />
-        <span class="description">Detail information.</span>
-      </li>
-    
-      <li>
-        <span class="date">25 Apr 2015</span>
-        <strong><a href="/documentation/2015/04/25/obstacles_III.html">Navigation theory</a></strong>
-        
-        <br />
-        <span class="description">How MARVON decides where to go.</span>
-      </li>
-    
-      <li>
-        <span class="date">25 Apr 2015</span>
-        <strong><a href="/documentation/2015/04/25/main_program.html">The main program cycle</a></strong>
-        
-        <br />
-        <span class="description">The one loop to rule them all.</span>
-      </li>
-    
-      <li>
-        <span class="date">31 Mar 2015</span>
-        <strong><a href="/documentation/2015/03/31/obstacles_II.html">MARVON on the way to its goal!</a></strong>
-        
-        <br />
-        <span class="description">Testing the navigation algorithm II!</span>
-      </li>
-    
-      <li>
-        <span class="date">23 Mar 2015</span>
-        <strong><a href="/documentation/2015/03/23/obstacles.html">MARVON finds its way!</a></strong>
-        
-        <br />
-        <span class="description">Testing the navigation algorithm!</span>
-      </li>
-    
-      <li>
-        <span class="date">02 Mar 2015</span>
-        <strong><a href="/documentation/2015/03/02/getting-eyes.html">Giving the Reely an reality check!</a></strong>
-        
-        <br />
-        <span class="description">Connecting the ultrasonic sensors!</span>
-      </li>
-    
-      <li>
-        <span class="date">18 Feb 2015</span>
-        <strong><a href="/documentation/2015/02/18/on-the-road.html">Reely finds it's wheels!</a></strong>
-        
-        <br />
-        <span class="description">First time on the road!</span>
-      </li>
-    
-      <li>
-        <span class="date">18 Feb 2015</span>
-        <strong><a href="/documentation/2015/02/18/Adding-a-WIFI-module-to-the-car-with-an-own-Access-Point.html">Adding a WIFI-module to the car -- with an own Access-Point!</a></strong>
-        
-        <br />
-        <span class="description">With a WIFI-module and an own Access-Point we can remote-control the car!</span>
-      </li>
-    
-      <li>
-        <span class="date">26 Jan 2015</span>
-        <strong><a href="/documentation/2015/01/26/next-level.html">To the next level!</a></strong>
-        
-        <br />
-        <span class="description">Promoting the transparency of our car!</span>
-      </li>
-    
-      <li>
-        <span class="date">21 Jan 2015</span>
-        <strong><a href="/documentation/2015/01/21/Welcome.html">Welcome to our page!</a></strong>
-        
-        <br />
-        <span class="description">Hi Fans!</span>
-      </li>
-    
-      <li>
-        <span class="date">20 Jan 2015</span>
-        <strong><a href="/documentation/2015/01/20/how-to-make-an-entry.html">Default documentation entry</a></strong>
-        
-        <br />
-        <span class="description">The subtitle is displayed below</span>
-      </li>
-    
-  </ul>
+  
+
+<article>
+  <h1 class="inner">
+    The main program cycle
+  </h1>
+
+  <p class="meta">Saturday 25 April 2015</p>
+
+  
+
+  <div class="post">
+    <p>This is a brief description of our main program which we named &quot;GPS_navigation.py&quot; (#sudo #python).</p>
+
+<p>At first the background threads for the ultrasonic sensors and the GPS module are started, the cruise control is initialized and a log-file is created. After this the main loop starts. It is repeatedly executed until the distance to the target (based on GPS data) is smaller than an estimated GPS accuracy.</p>
+
+<p>The loop start by interrogating the two fixed front sensors. When they see an obstacle, the car breaks in order not to bump into anything. Because the sensors return quite many wrong measurements, we repeat the measurement and back-off only when we really find an obstacle.</p>
+
+<p>When the path is clear, the <a href="/documentation/2015/04/25/obstacles_III.html">navigation function</a> takes over and returns a steering direction and a motor command (backward/ forward). After some exception handling (in cases, where no free path is found) the driving function executes the commands computed before. We choose to drive only 0.5 meter in each loop, because some crash experiences made us quiet carefull.</p>
+
+<div style="text-align:center"> <img src ="/images/documentation/Flowchart.png" alt="One loop cycle." width="80%"> </div>
+
+  </div>
+</article>
+
+<div class="separator"></div>
+
+<section class="comments inner">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'GPS'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </section>
+
+<script>
+  function resizeSlideshares() {
+    var elements = document.getElementsByClassName("slideshare");
+    for (var i in elements) {
+      var element = elements[i];
+      if (element.style) {
+        element.style.height = (element.offsetWidth * 0.805) + 'px';
+      }
+    }
+  }
+  window.addEventListener("resize", resizeSlideshares);
+  window.addEventListener('load', resizeSlideshares);
+</script>
 
   <div class="separator"></div>
 
